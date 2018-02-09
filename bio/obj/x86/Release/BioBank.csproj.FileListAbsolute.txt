@@ -1,0 +1,5 @@
+Z:\piechin_Files\work2\BioBank\bio\obj\x86\Release\BioBank.BioBank.resources
+Z:\piechin_Files\work2\BioBank\bio\obj\x86\Release\BioBank.LogIn.resources
+Z:\piechin_Files\work2\BioBank\bio\obj\x86\Release\BioBank.Properties.Resources.resources
+Z:\piechin_Files\work2\BioBank\bio\obj\x86\Release\BioBank.csproj.GenerateResource.Cache
+Z:\piechin_Files\work2\BioBank\bio\bin\Release\BioBank.exe.config
