@@ -427,7 +427,7 @@ namespace BioBank
                     {
                         //兩個db皆無
                         lblAlarmId.Visible = true;
-                        txtPWD.Enabled = false;
+                        txtPWD.Enabled = true;
                         txtNewPwd.Enabled = false;
                         txtNewPwdVer.Enabled = false;
                         btnSavePwd.Enabled = false;
