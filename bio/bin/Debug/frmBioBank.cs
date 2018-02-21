@@ -3481,6 +3481,9 @@ namespace BioBank
 
         }
 
-
+        private void BioBank_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

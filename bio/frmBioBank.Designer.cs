@@ -28,25 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle47 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle49 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle50 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle51 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle52 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle53 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle54 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle55 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle56 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle57 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BioBank));
             this.buttonBrowser = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
@@ -498,6 +498,9 @@
             // 
             // tabForm
             // 
+            this.tabForm.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabForm.Controls.Add(this.tpImport);
             this.tabForm.Controls.Add(this.tpImportRecord);
             this.tabForm.Controls.Add(this.tpSelect);
@@ -524,16 +527,17 @@
             this.tpImport.Controls.Add(this.buttonClear);
             this.tpImport.Controls.Add(this.label1);
             this.tpImport.Controls.Add(this.panel1);
-            this.tpImport.Location = new System.Drawing.Point(4, 34);
+            this.tpImport.Location = new System.Drawing.Point(4, 29);
             this.tpImport.Name = "tpImport";
             this.tpImport.Padding = new System.Windows.Forms.Padding(3);
-            this.tpImport.Size = new System.Drawing.Size(1020, 576);
+            this.tpImport.Size = new System.Drawing.Size(1020, 581);
             this.tpImport.TabIndex = 0;
             this.tpImport.Text = "資料匯入";
             // 
             // butClear
             // 
-            this.butClear.Location = new System.Drawing.Point(779, 20);
+            this.butClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.butClear.Location = new System.Drawing.Point(780, 18);
             this.butClear.Name = "butClear";
             this.butClear.Size = new System.Drawing.Size(130, 36);
             this.butClear.TabIndex = 12;
@@ -547,15 +551,18 @@
             this.cboTeamNo.FormattingEnabled = true;
             this.cboTeamNo.Location = new System.Drawing.Point(174, 8);
             this.cboTeamNo.Name = "cboTeamNo";
-            this.cboTeamNo.Size = new System.Drawing.Size(121, 33);
+            this.cboTeamNo.Size = new System.Drawing.Size(121, 28);
             this.cboTeamNo.TabIndex = 11;
             this.cboTeamNo.SelectionChangeCommitted += new System.EventHandler(this.comboBoxCase_SelectionChangeCommitted);
             // 
             // buttonClear
             // 
+            this.buttonClear.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonClear.Location = new System.Drawing.Point(643, 22);
             this.buttonClear.Name = "buttonClear";
-            this.buttonClear.Size = new System.Drawing.Size(120, 28);
+            this.buttonClear.Size = new System.Drawing.Size(122, 25);
             this.buttonClear.TabIndex = 10;
             this.buttonClear.Text = "重新選擇小組";
             this.buttonClear.UseVisualStyleBackColor = true;
@@ -574,12 +581,15 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.dbPrintMsg);
             this.panel1.Controls.Add(this.buttonSaveToDB);
             this.panel1.Controls.Add(this.gbDataImport);
             this.panel1.Controls.Add(this.buttonBrowser);
             this.panel1.Controls.Add(this.textBoxFilePath);
-            this.panel1.Location = new System.Drawing.Point(10, 56);
+            this.panel1.Location = new System.Drawing.Point(11, 54);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(928, 511);
             this.panel1.TabIndex = 7;
@@ -587,13 +597,16 @@
             // 
             // dbPrintMsg
             // 
+            this.dbPrintMsg.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dbPrintMsg.Controls.Add(this.buttonPass);
             this.dbPrintMsg.Controls.Add(this.dgvShowMsg);
             this.dbPrintMsg.Controls.Add(this.buttonPrintLabNo);
             this.dbPrintMsg.Controls.Add(this.buttonPrint);
             this.dbPrintMsg.Font = new System.Drawing.Font("微軟正黑體", 10F);
             this.dbPrintMsg.ForeColor = System.Drawing.Color.Red;
-            this.dbPrintMsg.Location = new System.Drawing.Point(19, 285);
+            this.dbPrintMsg.Location = new System.Drawing.Point(19, 283);
             this.dbPrintMsg.Name = "dbPrintMsg";
             this.dbPrintMsg.Size = new System.Drawing.Size(886, 217);
             this.dbPrintMsg.TabIndex = 16;
@@ -602,6 +615,9 @@
             // 
             // buttonPass
             // 
+            this.buttonPass.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonPass.Location = new System.Drawing.Point(498, 180);
             this.buttonPass.Name = "buttonPass";
             this.buttonPass.Size = new System.Drawing.Size(120, 28);
@@ -615,6 +631,9 @@
             // 
             this.dgvShowMsg.AllowUserToAddRows = false;
             this.dgvShowMsg.AllowUserToDeleteRows = false;
+            this.dgvShowMsg.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvShowMsg.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvShowMsg.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
             this.dgvShowMsg.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
@@ -628,6 +647,9 @@
             // 
             // buttonPrintLabNo
             // 
+            this.buttonPrintLabNo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonPrintLabNo.Location = new System.Drawing.Point(624, 183);
             this.buttonPrintLabNo.Name = "buttonPrintLabNo";
             this.buttonPrintLabNo.Size = new System.Drawing.Size(120, 28);
@@ -639,6 +661,9 @@
             // 
             // buttonPrint
             // 
+            this.buttonPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonPrint.Location = new System.Drawing.Point(750, 183);
             this.buttonPrint.Name = "buttonPrint";
             this.buttonPrint.Size = new System.Drawing.Size(120, 28);
@@ -650,6 +675,9 @@
             // 
             // buttonSaveToDB
             // 
+            this.buttonSaveToDB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonSaveToDB.Location = new System.Drawing.Point(769, 6);
             this.buttonSaveToDB.Name = "buttonSaveToDB";
             this.buttonSaveToDB.Size = new System.Drawing.Size(120, 28);
@@ -661,6 +689,9 @@
             // 
             // gbDataImport
             // 
+            this.gbDataImport.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gbDataImport.Controls.Add(this.dgvShowExcel);
             this.gbDataImport.Font = new System.Drawing.Font("微軟正黑體", 10F);
             this.gbDataImport.Location = new System.Drawing.Point(19, 40);
@@ -676,10 +707,11 @@
             this.dgvShowExcel.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvShowExcel.BackgroundColor = System.Drawing.Color.PowderBlue;
             this.dgvShowExcel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvShowExcel.Location = new System.Drawing.Point(16, 24);
+            this.dgvShowExcel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvShowExcel.Location = new System.Drawing.Point(3, 21);
             this.dgvShowExcel.Name = "dgvShowExcel";
             this.dgvShowExcel.RowTemplate.Height = 24;
-            this.dgvShowExcel.Size = new System.Drawing.Size(854, 198);
+            this.dgvShowExcel.Size = new System.Drawing.Size(880, 213);
             this.dgvShowExcel.TabIndex = 18;
             // 
             // textBoxFilePath
@@ -688,7 +720,7 @@
             this.textBoxFilePath.Location = new System.Drawing.Point(152, 8);
             this.textBoxFilePath.Name = "textBoxFilePath";
             this.textBoxFilePath.ReadOnly = true;
-            this.textBoxFilePath.Size = new System.Drawing.Size(402, 34);
+            this.textBoxFilePath.Size = new System.Drawing.Size(402, 29);
             this.textBoxFilePath.TabIndex = 4;
             this.textBoxFilePath.TextChanged += new System.EventHandler(this.textBoxFilePath_TextChanged);
             // 
@@ -702,10 +734,10 @@
             this.tpImportRecord.Controls.Add(this.label4);
             this.tpImportRecord.Controls.Add(this.label2);
             this.tpImportRecord.Controls.Add(this.dgvStorageTime);
-            this.tpImportRecord.Location = new System.Drawing.Point(4, 34);
+            this.tpImportRecord.Location = new System.Drawing.Point(4, 29);
             this.tpImportRecord.Name = "tpImportRecord";
             this.tpImportRecord.Padding = new System.Windows.Forms.Padding(3);
-            this.tpImportRecord.Size = new System.Drawing.Size(1020, 576);
+            this.tpImportRecord.Size = new System.Drawing.Size(1020, 581);
             this.tpImportRecord.TabIndex = 1;
             this.tpImportRecord.Text = "匯入紀錄";
             // 
@@ -721,6 +753,7 @@
             // 
             // buttonRecordPrint
             // 
+            this.buttonRecordPrint.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonRecordPrint.Location = new System.Drawing.Point(801, 6);
             this.buttonRecordPrint.Name = "buttonRecordPrint";
             this.buttonRecordPrint.Size = new System.Drawing.Size(120, 28);
@@ -734,7 +767,7 @@
             this.StorageCount.AutoSize = true;
             this.StorageCount.Location = new System.Drawing.Point(251, 514);
             this.StorageCount.Name = "StorageCount";
-            this.StorageCount.Size = new System.Drawing.Size(17, 25);
+            this.StorageCount.Size = new System.Drawing.Size(13, 20);
             this.StorageCount.TabIndex = 3;
             this.StorageCount.Text = " ";
             // 
@@ -742,6 +775,9 @@
             // 
             this.dgvStorageRecord.AllowUserToAddRows = false;
             this.dgvStorageRecord.AllowUserToDeleteRows = false;
+            this.dgvStorageRecord.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvStorageRecord.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvStorageRecord.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStorageRecord.Location = new System.Drawing.Point(332, 40);
@@ -758,7 +794,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(328, 17);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(92, 25);
+            this.label4.Size = new System.Drawing.Size(73, 20);
             this.label4.TabIndex = 1;
             this.label4.Text = "入庫紀錄";
             // 
@@ -767,7 +803,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(11, 17);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 25);
+            this.label2.Size = new System.Drawing.Size(73, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "入庫時間";
             // 
@@ -775,6 +811,9 @@
             // 
             this.dgvStorageTime.AllowUserToAddRows = false;
             this.dgvStorageTime.AllowUserToDeleteRows = false;
+            this.dgvStorageTime.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvStorageTime.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgvStorageTime.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvStorageTime.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -816,9 +855,9 @@
             this.tpSelect.Controls.Add(this.label13);
             this.tpSelect.Controls.Add(this.label8);
             this.tpSelect.Controls.Add(this.label5);
-            this.tpSelect.Location = new System.Drawing.Point(4, 34);
+            this.tpSelect.Location = new System.Drawing.Point(4, 29);
             this.tpSelect.Name = "tpSelect";
-            this.tpSelect.Size = new System.Drawing.Size(1020, 576);
+            this.tpSelect.Size = new System.Drawing.Size(1020, 581);
             this.tpSelect.TabIndex = 3;
             this.tpSelect.Text = "篩選";
             // 
@@ -840,9 +879,8 @@
             "or"});
             this.comboBoxRel2.Location = new System.Drawing.Point(613, 149);
             this.comboBoxRel2.Name = "comboBoxRel2";
-            this.comboBoxRel2.Size = new System.Drawing.Size(64, 33);
+            this.comboBoxRel2.Size = new System.Drawing.Size(64, 28);
             this.comboBoxRel2.TabIndex = 15;
-            this.comboBoxRel2.Text = "and";
             // 
             // comboBoxRel1
             // 
@@ -852,7 +890,7 @@
             "or"});
             this.comboBoxRel1.Location = new System.Drawing.Point(329, 148);
             this.comboBoxRel1.Name = "comboBoxRel1";
-            this.comboBoxRel1.Size = new System.Drawing.Size(64, 33);
+            this.comboBoxRel1.Size = new System.Drawing.Size(64, 28);
             this.comboBoxRel1.TabIndex = 15;
             this.comboBoxRel1.Text = "and";
             // 
@@ -882,7 +920,7 @@
             this.checkBoxF.AutoSize = true;
             this.checkBoxF.Location = new System.Drawing.Point(779, 59);
             this.checkBoxF.Name = "checkBoxF";
-            this.checkBoxF.Size = new System.Drawing.Size(125, 29);
+            this.checkBoxF.Size = new System.Drawing.Size(100, 24);
             this.checkBoxF.TabIndex = 6;
             this.checkBoxF.Text = "F其他體液";
             this.checkBoxF.UseVisualStyleBackColor = true;
@@ -892,7 +930,7 @@
             this.checkBoxN.AutoSize = true;
             this.checkBoxN.Location = new System.Drawing.Point(88, 29);
             this.checkBoxN.Name = "checkBoxN";
-            this.checkBoxN.Size = new System.Drawing.Size(130, 29);
+            this.checkBoxN.Size = new System.Drawing.Size(105, 24);
             this.checkBoxN.TabIndex = 6;
             this.checkBoxN.Text = "N正常組織";
             this.checkBoxN.UseVisualStyleBackColor = true;
@@ -902,7 +940,7 @@
             this.checkBoxT.AutoSize = true;
             this.checkBoxT.Location = new System.Drawing.Point(209, 29);
             this.checkBoxT.Name = "checkBoxT";
-            this.checkBoxT.Size = new System.Drawing.Size(125, 29);
+            this.checkBoxT.Size = new System.Drawing.Size(101, 24);
             this.checkBoxT.TabIndex = 6;
             this.checkBoxT.Text = "T腫瘤組織";
             this.checkBoxT.UseVisualStyleBackColor = true;
@@ -912,7 +950,7 @@
             this.checkBoxM.AutoSize = true;
             this.checkBoxM.Location = new System.Drawing.Point(362, 29);
             this.checkBoxM.Name = "checkBoxM";
-            this.checkBoxM.Size = new System.Drawing.Size(193, 29);
+            this.checkBoxM.Size = new System.Drawing.Size(155, 24);
             this.checkBoxM.TabIndex = 6;
             this.checkBoxM.Text = "M轉移之腫瘤組織";
             this.checkBoxM.UseVisualStyleBackColor = true;
@@ -922,7 +960,7 @@
             this.checkBoxP.AutoSize = true;
             this.checkBoxP.Location = new System.Drawing.Point(540, 29);
             this.checkBoxP.Name = "checkBoxP";
-            this.checkBoxP.Size = new System.Drawing.Size(86, 29);
+            this.checkBoxP.Size = new System.Drawing.Size(70, 24);
             this.checkBoxP.TabIndex = 6;
             this.checkBoxP.Text = "P血漿";
             this.checkBoxP.UseVisualStyleBackColor = true;
@@ -932,7 +970,7 @@
             this.checkBoxA.AutoSize = true;
             this.checkBoxA.Location = new System.Drawing.Point(362, 59);
             this.checkBoxA.Name = "checkBoxA";
-            this.checkBoxA.Size = new System.Drawing.Size(88, 29);
+            this.checkBoxA.Size = new System.Drawing.Size(71, 24);
             this.checkBoxA.TabIndex = 6;
             this.checkBoxA.Text = "A腹水";
             this.checkBoxA.UseVisualStyleBackColor = true;
@@ -942,7 +980,7 @@
             this.checkBoxB.AutoSize = true;
             this.checkBoxB.Location = new System.Drawing.Point(650, 29);
             this.checkBoxB.Name = "checkBoxB";
-            this.checkBoxB.Size = new System.Drawing.Size(106, 29);
+            this.checkBoxB.Size = new System.Drawing.Size(86, 24);
             this.checkBoxB.TabIndex = 6;
             this.checkBoxB.Text = "B血棕層";
             this.checkBoxB.UseVisualStyleBackColor = true;
@@ -952,7 +990,7 @@
             this.checkBoxS.AutoSize = true;
             this.checkBoxS.Location = new System.Drawing.Point(88, 59);
             this.checkBoxS.Name = "checkBoxS";
-            this.checkBoxS.Size = new System.Drawing.Size(85, 29);
+            this.checkBoxS.Size = new System.Drawing.Size(69, 24);
             this.checkBoxS.TabIndex = 6;
             this.checkBoxS.Text = "S血清";
             this.checkBoxS.UseVisualStyleBackColor = true;
@@ -962,7 +1000,7 @@
             this.checkBoxC.AutoSize = true;
             this.checkBoxC.Location = new System.Drawing.Point(540, 59);
             this.checkBoxC.Name = "checkBoxC";
-            this.checkBoxC.Size = new System.Drawing.Size(87, 29);
+            this.checkBoxC.Size = new System.Drawing.Size(71, 24);
             this.checkBoxC.TabIndex = 6;
             this.checkBoxC.Text = "C胸水";
             this.checkBoxC.UseVisualStyleBackColor = true;
@@ -972,7 +1010,7 @@
             this.checkBoxW.AutoSize = true;
             this.checkBoxW.Location = new System.Drawing.Point(209, 59);
             this.checkBoxW.Name = "checkBoxW";
-            this.checkBoxW.Size = new System.Drawing.Size(114, 29);
+            this.checkBoxW.Size = new System.Drawing.Size(92, 24);
             this.checkBoxW.TabIndex = 6;
             this.checkBoxW.Text = "W子宮刷";
             this.checkBoxW.UseVisualStyleBackColor = true;
@@ -982,7 +1020,7 @@
             this.checkBoxH.AutoSize = true;
             this.checkBoxH.Location = new System.Drawing.Point(779, 29);
             this.checkBoxH.Name = "checkBoxH";
-            this.checkBoxH.Size = new System.Drawing.Size(89, 29);
+            this.checkBoxH.Size = new System.Drawing.Size(72, 24);
             this.checkBoxH.TabIndex = 6;
             this.checkBoxH.Text = "H全血";
             this.checkBoxH.UseVisualStyleBackColor = true;
@@ -992,7 +1030,7 @@
             this.checkBoxU.AutoSize = true;
             this.checkBoxU.Location = new System.Drawing.Point(650, 59);
             this.checkBoxU.Name = "checkBoxU";
-            this.checkBoxU.Size = new System.Drawing.Size(89, 29);
+            this.checkBoxU.Size = new System.Drawing.Size(72, 24);
             this.checkBoxU.TabIndex = 6;
             this.checkBoxU.Text = "U尿液";
             this.checkBoxU.UseVisualStyleBackColor = true;
@@ -1002,7 +1040,7 @@
             this.checkBoxSexF.AutoSize = true;
             this.checkBoxSexF.Location = new System.Drawing.Point(162, 18);
             this.checkBoxSexF.Name = "checkBoxSexF";
-            this.checkBoxSexF.Size = new System.Drawing.Size(54, 29);
+            this.checkBoxSexF.Size = new System.Drawing.Size(44, 24);
             this.checkBoxSexF.TabIndex = 13;
             this.checkBoxSexF.Text = "女";
             this.checkBoxSexF.UseVisualStyleBackColor = true;
@@ -1012,7 +1050,7 @@
             this.checkBoxSexM.AutoSize = true;
             this.checkBoxSexM.Location = new System.Drawing.Point(112, 18);
             this.checkBoxSexM.Name = "checkBoxSexM";
-            this.checkBoxSexM.Size = new System.Drawing.Size(54, 29);
+            this.checkBoxSexM.Size = new System.Drawing.Size(44, 24);
             this.checkBoxSexM.TabIndex = 13;
             this.checkBoxSexM.Text = "男";
             this.checkBoxSexM.UseVisualStyleBackColor = true;
@@ -1021,7 +1059,7 @@
             // 
             this.textBoxCaseSearch.Location = new System.Drawing.Point(390, 191);
             this.textBoxCaseSearch.Name = "textBoxCaseSearch";
-            this.textBoxCaseSearch.Size = new System.Drawing.Size(139, 34);
+            this.textBoxCaseSearch.Size = new System.Drawing.Size(139, 29);
             this.textBoxCaseSearch.TabIndex = 12;
             // 
             // comboBoxColumn
@@ -1029,7 +1067,7 @@
             this.comboBoxColumn.FormattingEnabled = true;
             this.comboBoxColumn.Location = new System.Drawing.Point(252, 191);
             this.comboBoxColumn.Name = "comboBoxColumn";
-            this.comboBoxColumn.Size = new System.Drawing.Size(121, 33);
+            this.comboBoxColumn.Size = new System.Drawing.Size(121, 28);
             this.comboBoxColumn.TabIndex = 11;
             // 
             // comboBoxCase2
@@ -1037,7 +1075,7 @@
             this.comboBoxCase2.FormattingEnabled = true;
             this.comboBoxCase2.Location = new System.Drawing.Point(116, 191);
             this.comboBoxCase2.Name = "comboBoxCase2";
-            this.comboBoxCase2.Size = new System.Drawing.Size(121, 33);
+            this.comboBoxCase2.Size = new System.Drawing.Size(121, 28);
             this.comboBoxCase2.TabIndex = 10;
             this.comboBoxCase2.SelectedIndexChanged += new System.EventHandler(this.comboBoxCase2_SelectedIndexChanged);
             // 
@@ -1045,14 +1083,14 @@
             // 
             this.textBoxDiag2.Location = new System.Drawing.Point(399, 148);
             this.textBoxDiag2.Name = "textBoxDiag2";
-            this.textBoxDiag2.Size = new System.Drawing.Size(208, 34);
+            this.textBoxDiag2.Size = new System.Drawing.Size(208, 29);
             this.textBoxDiag2.TabIndex = 9;
             // 
             // textBoxDiag3
             // 
             this.textBoxDiag3.Location = new System.Drawing.Point(683, 149);
             this.textBoxDiag3.Name = "textBoxDiag3";
-            this.textBoxDiag3.Size = new System.Drawing.Size(208, 34);
+            this.textBoxDiag3.Size = new System.Drawing.Size(208, 29);
             this.textBoxDiag3.TabIndex = 9;
             // 
             // buttonSearch
@@ -1069,6 +1107,9 @@
             // 
             this.dgvSearchData.AllowUserToAddRows = false;
             this.dgvSearchData.AllowUserToDeleteRows = false;
+            this.dgvSearchData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvSearchData.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvSearchData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSearchData.Location = new System.Drawing.Point(13, 230);
@@ -1082,28 +1123,28 @@
             // 
             this.textBoxDiag1.Location = new System.Drawing.Point(114, 149);
             this.textBoxDiag1.Name = "textBoxDiag1";
-            this.textBoxDiag1.Size = new System.Drawing.Size(208, 34);
+            this.textBoxDiag1.Size = new System.Drawing.Size(208, 29);
             this.textBoxDiag1.TabIndex = 4;
             // 
             // textBoxchAdoptPortion
             // 
             this.textBoxchAdoptPortion.Location = new System.Drawing.Point(674, 16);
             this.textBoxchAdoptPortion.Name = "textBoxchAdoptPortion";
-            this.textBoxchAdoptPortion.Size = new System.Drawing.Size(240, 34);
+            this.textBoxchAdoptPortion.Size = new System.Drawing.Size(240, 29);
             this.textBoxchAdoptPortion.TabIndex = 4;
             // 
             // textBoxAge1
             // 
             this.textBoxAge1.Location = new System.Drawing.Point(308, 13);
             this.textBoxAge1.Name = "textBoxAge1";
-            this.textBoxAge1.Size = new System.Drawing.Size(100, 34);
+            this.textBoxAge1.Size = new System.Drawing.Size(100, 29);
             this.textBoxAge1.TabIndex = 3;
             // 
             // textBoxAge2
             // 
             this.textBoxAge2.Location = new System.Drawing.Point(441, 13);
             this.textBoxAge2.Name = "textBoxAge2";
-            this.textBoxAge2.Size = new System.Drawing.Size(100, 34);
+            this.textBoxAge2.Size = new System.Drawing.Size(100, 29);
             this.textBoxAge2.TabIndex = 3;
             // 
             // label11
@@ -1111,7 +1152,7 @@
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(414, 13);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(27, 25);
+            this.label11.Size = new System.Drawing.Size(21, 20);
             this.label11.TabIndex = 0;
             this.label11.Text = "~";
             // 
@@ -1120,7 +1161,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(261, 19);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(52, 25);
+            this.label6.Size = new System.Drawing.Size(41, 20);
             this.label6.TabIndex = 0;
             this.label6.Text = "年齡";
             // 
@@ -1129,7 +1170,7 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(595, 19);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(92, 25);
+            this.label10.Size = new System.Drawing.Size(73, 20);
             this.label10.TabIndex = 0;
             this.label10.Text = "檢體部位";
             // 
@@ -1138,7 +1179,7 @@
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(20, 191);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(92, 25);
+            this.label13.Size = new System.Drawing.Size(73, 20);
             this.label13.TabIndex = 0;
             this.label13.Text = "小組欄位";
             // 
@@ -1147,7 +1188,7 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(22, 152);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(52, 25);
+            this.label8.Size = new System.Drawing.Size(41, 20);
             this.label8.TabIndex = 0;
             this.label8.Text = "診斷";
             // 
@@ -1156,7 +1197,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(20, 16);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(52, 25);
+            this.label5.Size = new System.Drawing.Size(41, 20);
             this.label5.TabIndex = 0;
             this.label5.Text = "性別";
             // 
@@ -1169,10 +1210,10 @@
             this.tpQry.Controls.Add(this.label12);
             this.tpQry.Controls.Add(this.btn2Out);
             this.tpQry.Controls.Add(this.txtModLReqNo);
-            this.tpQry.Location = new System.Drawing.Point(4, 34);
+            this.tpQry.Location = new System.Drawing.Point(4, 29);
             this.tpQry.Name = "tpQry";
             this.tpQry.Padding = new System.Windows.Forms.Padding(3);
-            this.tpQry.Size = new System.Drawing.Size(1020, 576);
+            this.tpQry.Size = new System.Drawing.Size(1020, 581);
             this.tpQry.TabIndex = 2;
             this.tpQry.Text = "查詢/修改";
             // 
@@ -1181,13 +1222,16 @@
             this.chkSelectAll.AutoSize = true;
             this.chkSelectAll.Location = new System.Drawing.Point(66, 75);
             this.chkSelectAll.Name = "chkSelectAll";
-            this.chkSelectAll.Size = new System.Drawing.Size(18, 17);
+            this.chkSelectAll.Size = new System.Drawing.Size(15, 14);
             this.chkSelectAll.TabIndex = 14;
             this.chkSelectAll.UseVisualStyleBackColor = true;
             this.chkSelectAll.CheckedChanged += new System.EventHandler(this.chkSelectAll_CheckedChanged);
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.btnModLReqNo);
             this.groupBox2.Controls.Add(this.dgvShowLReqNo);
             this.groupBox2.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -1200,10 +1244,12 @@
             // 
             // btnModLReqNo
             // 
+            this.btnModLReqNo.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnModLReqNo.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnModLReqNo.Font = new System.Drawing.Font("微軟正黑體", 12F);
-            this.btnModLReqNo.Location = new System.Drawing.Point(809, 112);
+            this.btnModLReqNo.Location = new System.Drawing.Point(3, 116);
             this.btnModLReqNo.Name = "btnModLReqNo";
-            this.btnModLReqNo.Size = new System.Drawing.Size(90, 29);
+            this.btnModLReqNo.Size = new System.Drawing.Size(909, 29);
             this.btnModLReqNo.TabIndex = 8;
             this.btnModLReqNo.Text = "確認修改";
             this.btnModLReqNo.UseVisualStyleBackColor = true;
@@ -1213,6 +1259,9 @@
             // 
             this.dgvShowLReqNo.AllowUserToAddRows = false;
             this.dgvShowLReqNo.AllowUserToDeleteRows = false;
+            this.dgvShowLReqNo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvShowLReqNo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvShowLReqNo.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgvShowLReqNo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -1264,17 +1313,20 @@
             // dgvQryLReqNo
             // 
             this.dgvQryLReqNo.AllowUserToAddRows = false;
+            this.dgvQryLReqNo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvQryLReqNo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvQryLReqNo.BackgroundColor = System.Drawing.Color.PowderBlue;
             this.dgvQryLReqNo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvQryLReqNo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle39.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle39.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            dataGridViewCellStyle39.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle39.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle39.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle39.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvQryLReqNo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle39;
             this.dgvQryLReqNo.ColumnHeadersHeight = 26;
             this.dgvQryLReqNo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewCheckBoxColumn1,
@@ -1323,193 +1375,193 @@
             this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
             this.dataGridViewCheckBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewCheckBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewCheckBoxColumn1.Width = 107;
+            this.dataGridViewCheckBoxColumn1.Width = 90;
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.HeaderText = "檢體編號";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 117;
+            this.dataGridViewTextBoxColumn1.Width = 98;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.HeaderText = "新檢體位置";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 137;
+            this.dataGridViewTextBoxColumn2.Width = 114;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.HeaderText = "性別";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 77;
+            this.dataGridViewTextBoxColumn3.Width = 66;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.HeaderText = "採集當時年齡";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 157;
+            this.dataGridViewTextBoxColumn4.Width = 130;
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.HeaderText = "檢體種類";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Width = 117;
+            this.dataGridViewTextBoxColumn5.Width = 98;
             // 
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.HeaderText = "檢體採集日期";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.Width = 157;
+            this.dataGridViewTextBoxColumn6.Width = 130;
             // 
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.HeaderText = "檢體採集部位";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.Width = 157;
+            this.dataGridViewTextBoxColumn7.Width = 130;
             // 
             // dataGridViewTextBoxColumn8
             // 
             this.dataGridViewTextBoxColumn8.HeaderText = "保存方式";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.Width = 117;
+            this.dataGridViewTextBoxColumn8.Width = 98;
             // 
             // dataGridViewTextBoxColumn9
             // 
             this.dataGridViewTextBoxColumn9.HeaderText = "檢體離體時刻";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.Width = 157;
+            this.dataGridViewTextBoxColumn9.Width = 130;
             // 
             // dataGridViewTextBoxColumn10
             // 
             this.dataGridViewTextBoxColumn10.HeaderText = "檢體處理時刻";
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.Width = 157;
+            this.dataGridViewTextBoxColumn10.Width = 130;
             // 
             // dataGridViewTextBoxColumn11
             // 
             this.dataGridViewTextBoxColumn11.HeaderText = "離體後環境";
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.Width = 137;
+            this.dataGridViewTextBoxColumn11.Width = 114;
             // 
             // dataGridViewTextBoxColumn12
             // 
             this.dataGridViewTextBoxColumn12.HeaderText = "離體後時間";
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            this.dataGridViewTextBoxColumn12.Width = 137;
+            this.dataGridViewTextBoxColumn12.Width = 114;
             // 
             // dataGridViewTextBoxColumn13
             // 
             this.dataGridViewTextBoxColumn13.HeaderText = "分庫";
             this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            this.dataGridViewTextBoxColumn13.Width = 77;
+            this.dataGridViewTextBoxColumn13.Width = 66;
             // 
             // dataGridViewTextBoxColumn14
             // 
             this.dataGridViewTextBoxColumn14.HeaderText = "罹病部位";
             this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            this.dataGridViewTextBoxColumn14.Width = 117;
+            this.dataGridViewTextBoxColumn14.Width = 98;
             // 
             // dataGridViewTextBoxColumn15
             // 
             this.dataGridViewTextBoxColumn15.HeaderText = "診斷名稱1";
             this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
-            this.dataGridViewTextBoxColumn15.Width = 129;
+            this.dataGridViewTextBoxColumn15.Width = 107;
             // 
             // dataGridViewTextBoxColumn16
             // 
             this.dataGridViewTextBoxColumn16.HeaderText = "診斷名稱2";
             this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
-            this.dataGridViewTextBoxColumn16.Width = 129;
+            this.dataGridViewTextBoxColumn16.Width = 107;
             // 
             // dataGridViewTextBoxColumn17
             // 
             this.dataGridViewTextBoxColumn17.HeaderText = "診斷名稱3";
             this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
-            this.dataGridViewTextBoxColumn17.Width = 129;
+            this.dataGridViewTextBoxColumn17.Width = 107;
             // 
             // dataGridViewTextBoxColumn18
             // 
             this.dataGridViewTextBoxColumn18.HeaderText = "檔案登錄人";
             this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
-            this.dataGridViewTextBoxColumn18.Width = 137;
+            this.dataGridViewTextBoxColumn18.Width = 114;
             // 
             // dataGridViewTextBoxColumn19
             // 
             this.dataGridViewTextBoxColumn19.HeaderText = "研究簽署日期";
             this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
-            this.dataGridViewTextBoxColumn19.Width = 157;
+            this.dataGridViewTextBoxColumn19.Width = 130;
             // 
             // dataGridViewTextBoxColumn20
             // 
             this.dataGridViewTextBoxColumn20.HeaderText = "同意書簽署日期";
             this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
-            this.dataGridViewTextBoxColumn20.Width = 177;
+            this.dataGridViewTextBoxColumn20.Width = 146;
             // 
             // dataGridViewTextBoxColumn21
             // 
             this.dataGridViewTextBoxColumn21.HeaderText = "使用年限";
             this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
-            this.dataGridViewTextBoxColumn21.Width = 117;
+            this.dataGridViewTextBoxColumn21.Width = 98;
             // 
             // dataGridViewTextBoxColumn22
             // 
             this.dataGridViewTextBoxColumn22.HeaderText = "變更範圍";
             this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
-            this.dataGridViewTextBoxColumn22.Width = 117;
+            this.dataGridViewTextBoxColumn22.Width = 98;
             // 
             // dataGridViewTextBoxColumn23
             // 
             this.dataGridViewTextBoxColumn23.HeaderText = "狀態";
             this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
-            this.dataGridViewTextBoxColumn23.Width = 77;
+            this.dataGridViewTextBoxColumn23.Width = 66;
             // 
             // dataGridViewTextBoxColumn24
             // 
             this.dataGridViewTextBoxColumn24.HeaderText = "備註";
             this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
-            this.dataGridViewTextBoxColumn24.Width = 77;
+            this.dataGridViewTextBoxColumn24.Width = 66;
             // 
             // Column103
             // 
             this.Column103.HeaderText = "出庫人";
             this.Column103.Name = "Column103";
-            this.Column103.Width = 97;
+            this.Column103.Width = 82;
             // 
             // dataGridViewTextBoxColumn25
             // 
             this.dataGridViewTextBoxColumn25.HeaderText = "出庫日期";
             this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
-            this.dataGridViewTextBoxColumn25.Width = 117;
+            this.dataGridViewTextBoxColumn25.Width = 98;
             // 
             // dataGridViewTextBoxColumn26
             // 
             this.dataGridViewTextBoxColumn26.HeaderText = "申請人";
             this.dataGridViewTextBoxColumn26.Name = "dataGridViewTextBoxColumn26";
-            this.dataGridViewTextBoxColumn26.Width = 97;
+            this.dataGridViewTextBoxColumn26.Width = 82;
             // 
             // dataGridViewTextBoxColumn27
             // 
             this.dataGridViewTextBoxColumn27.HeaderText = "計畫編號";
             this.dataGridViewTextBoxColumn27.Name = "dataGridViewTextBoxColumn27";
-            this.dataGridViewTextBoxColumn27.Width = 117;
+            this.dataGridViewTextBoxColumn27.Width = 98;
             // 
             // dataGridViewTextBoxColumn28
             // 
             this.dataGridViewTextBoxColumn28.HeaderText = "出庫備註";
             this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
-            this.dataGridViewTextBoxColumn28.Width = 117;
+            this.dataGridViewTextBoxColumn28.Width = 98;
             // 
             // dataGridViewTextBoxColumn29
             // 
             this.dataGridViewTextBoxColumn29.HeaderText = "入庫日期";
             this.dataGridViewTextBoxColumn29.Name = "dataGridViewTextBoxColumn29";
-            this.dataGridViewTextBoxColumn29.Width = 117;
+            this.dataGridViewTextBoxColumn29.Width = 98;
             // 
             // dataGridViewTextBoxColumn30
             // 
             this.dataGridViewTextBoxColumn30.HeaderText = "列印次數";
             this.dataGridViewTextBoxColumn30.Name = "dataGridViewTextBoxColumn30";
-            this.dataGridViewTextBoxColumn30.Width = 117;
+            this.dataGridViewTextBoxColumn30.Width = 98;
             // 
             // label12
             // 
@@ -1537,7 +1589,7 @@
             // 
             this.txtModLReqNo.Location = new System.Drawing.Point(98, 27);
             this.txtModLReqNo.Name = "txtModLReqNo";
-            this.txtModLReqNo.Size = new System.Drawing.Size(169, 34);
+            this.txtModLReqNo.Size = new System.Drawing.Size(169, 29);
             this.txtModLReqNo.TabIndex = 1;
             this.txtModLReqNo.TextChanged += new System.EventHandler(this.txtModLReqNo_TextChanged);
             // 
@@ -1551,9 +1603,9 @@
             this.tpOut.Controls.Add(this.label9);
             this.tpOut.Controls.Add(this.dgvOutLReqNo);
             this.tpOut.Controls.Add(this.richtxtMsg);
-            this.tpOut.Location = new System.Drawing.Point(4, 34);
+            this.tpOut.Location = new System.Drawing.Point(4, 29);
             this.tpOut.Name = "tpOut";
-            this.tpOut.Size = new System.Drawing.Size(1020, 576);
+            this.tpOut.Size = new System.Drawing.Size(1020, 581);
             this.tpOut.TabIndex = 4;
             this.tpOut.Text = "出庫";
             // 
@@ -1562,13 +1614,15 @@
             this.chkSelectAllOut.AutoSize = true;
             this.chkSelectAllOut.Location = new System.Drawing.Point(65, 72);
             this.chkSelectAllOut.Name = "chkSelectAllOut";
-            this.chkSelectAllOut.Size = new System.Drawing.Size(18, 17);
+            this.chkSelectAllOut.Size = new System.Drawing.Size(15, 14);
             this.chkSelectAllOut.TabIndex = 15;
             this.chkSelectAllOut.UseVisualStyleBackColor = true;
             this.chkSelectAllOut.CheckedChanged += new System.EventHandler(this.chkSelectAllOut_CheckedChanged);
             // 
             // gbOutDetail
             // 
+            this.gbOutDetail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gbOutDetail.Controls.Add(this.dgvOutDetail3);
             this.gbOutDetail.Controls.Add(this.dgvOutDetail2);
             this.gbOutDetail.Controls.Add(this.dgvOutDetail1);
@@ -1583,17 +1637,19 @@
             // dgvOutDetail3
             // 
             this.dgvOutDetail3.AllowUserToAddRows = false;
+            this.dgvOutDetail3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvOutDetail3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvOutDetail3.BackgroundColor = System.Drawing.Color.LightYellow;
             this.dgvOutDetail3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("微軟正黑體", 10F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvOutDetail3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle40.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle40.Font = new System.Drawing.Font("微軟正黑體", 10F);
+            dataGridViewCellStyle40.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle40.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle40.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle40.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvOutDetail3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle40;
             this.dgvOutDetail3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOutDetail3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column51,
@@ -1607,14 +1663,14 @@
             this.Column58,
             this.Column59,
             this.Column60});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightYellow;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("微軟正黑體", 10F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvOutDetail3.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle41.BackColor = System.Drawing.Color.LightYellow;
+            dataGridViewCellStyle41.Font = new System.Drawing.Font("微軟正黑體", 10F);
+            dataGridViewCellStyle41.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle41.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle41.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle41.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvOutDetail3.DefaultCellStyle = dataGridViewCellStyle41;
             this.dgvOutDetail3.EnableHeadersVisualStyles = false;
             this.dgvOutDetail3.Location = new System.Drawing.Point(17, 164);
             this.dgvOutDetail3.Name = "dgvOutDetail3";
@@ -1626,82 +1682,84 @@
             // 
             this.Column51.HeaderText = "使用年限";
             this.Column51.Name = "Column51";
-            this.Column51.Width = 103;
+            this.Column51.Width = 89;
             // 
             // Column52
             // 
             this.Column52.HeaderText = "變更範圍";
             this.Column52.Name = "Column52";
-            this.Column52.Width = 103;
+            this.Column52.Width = 89;
             // 
             // Column53
             // 
             this.Column53.HeaderText = "狀態";
             this.Column53.Name = "Column53";
-            this.Column53.Width = 69;
+            this.Column53.Width = 61;
             // 
             // Column54
             // 
             this.Column54.HeaderText = "備註";
             this.Column54.Name = "Column54";
-            this.Column54.Width = 69;
+            this.Column54.Width = 61;
             // 
             // Column105
             // 
             this.Column105.HeaderText = "出庫人";
             this.Column105.Name = "Column105";
-            this.Column105.Width = 86;
+            this.Column105.Width = 75;
             // 
             // Column55
             // 
             this.Column55.HeaderText = "出庫日期";
             this.Column55.Name = "Column55";
-            this.Column55.Width = 103;
+            this.Column55.Width = 89;
             // 
             // Column56
             // 
             this.Column56.HeaderText = "使用者(申請人)";
             this.Column56.Name = "Column56";
-            this.Column56.Width = 147;
+            this.Column56.Width = 125;
             // 
             // Column57
             // 
             this.Column57.HeaderText = "計畫編號";
             this.Column57.Name = "Column57";
-            this.Column57.Width = 103;
+            this.Column57.Width = 89;
             // 
             // Column58
             // 
             this.Column58.HeaderText = "出庫備註";
             this.Column58.Name = "Column58";
-            this.Column58.Width = 103;
+            this.Column58.Width = 89;
             // 
             // Column59
             // 
             this.Column59.HeaderText = "入庫日期";
             this.Column59.Name = "Column59";
-            this.Column59.Width = 103;
+            this.Column59.Width = 89;
             // 
             // Column60
             // 
             this.Column60.HeaderText = "列印次數";
             this.Column60.Name = "Column60";
-            this.Column60.Width = 103;
+            this.Column60.Width = 89;
             // 
             // dgvOutDetail2
             // 
             this.dgvOutDetail2.AllowUserToAddRows = false;
+            this.dgvOutDetail2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvOutDetail2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvOutDetail2.BackgroundColor = System.Drawing.Color.LightYellow;
             this.dgvOutDetail2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("微軟正黑體", 10F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvOutDetail2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle42.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle42.Font = new System.Drawing.Font("微軟正黑體", 10F);
+            dataGridViewCellStyle42.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle42.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle42.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle42.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvOutDetail2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle42;
             this.dgvOutDetail2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOutDetail2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column41,
@@ -1714,14 +1772,14 @@
             this.Column48,
             this.Column49,
             this.Column50});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.LightYellow;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("微軟正黑體", 10F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvOutDetail2.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle43.BackColor = System.Drawing.Color.LightYellow;
+            dataGridViewCellStyle43.Font = new System.Drawing.Font("微軟正黑體", 10F);
+            dataGridViewCellStyle43.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle43.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle43.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle43.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvOutDetail2.DefaultCellStyle = dataGridViewCellStyle43;
             this.dgvOutDetail2.EnableHeadersVisualStyles = false;
             this.dgvOutDetail2.Location = new System.Drawing.Point(17, 94);
             this.dgvOutDetail2.Name = "dgvOutDetail2";
@@ -1734,76 +1792,78 @@
             // 
             this.Column41.HeaderText = "離體後環境";
             this.Column41.Name = "Column41";
-            this.Column41.Width = 120;
+            this.Column41.Width = 103;
             // 
             // Column42
             // 
             this.Column42.HeaderText = "離體後時間";
             this.Column42.Name = "Column42";
-            this.Column42.Width = 120;
+            this.Column42.Width = 103;
             // 
             // Column43
             // 
             this.Column43.HeaderText = "分庫";
             this.Column43.Name = "Column43";
-            this.Column43.Width = 69;
+            this.Column43.Width = 61;
             // 
             // Column44
             // 
             this.Column44.HeaderText = "罹病部位";
             this.Column44.Name = "Column44";
-            this.Column44.Width = 103;
+            this.Column44.Width = 89;
             // 
             // Column45
             // 
             this.Column45.HeaderText = "診斷名稱1";
             this.Column45.Name = "Column45";
-            this.Column45.Width = 113;
+            this.Column45.Width = 97;
             // 
             // Column46
             // 
             this.Column46.HeaderText = "診斷名稱2";
             this.Column46.Name = "Column46";
-            this.Column46.Width = 113;
+            this.Column46.Width = 97;
             // 
             // Column47
             // 
             this.Column47.HeaderText = "診斷名稱3";
             this.Column47.Name = "Column47";
-            this.Column47.Width = 113;
+            this.Column47.Width = 97;
             // 
             // Column48
             // 
             this.Column48.HeaderText = "檔案登錄人";
             this.Column48.Name = "Column48";
-            this.Column48.Width = 120;
+            this.Column48.Width = 103;
             // 
             // Column49
             // 
             this.Column49.HeaderText = "研究簽署日期";
             this.Column49.Name = "Column49";
-            this.Column49.Width = 137;
+            this.Column49.Width = 117;
             // 
             // Column50
             // 
             this.Column50.HeaderText = "同意簽署日期";
             this.Column50.Name = "Column50";
-            this.Column50.Width = 137;
+            this.Column50.Width = 117;
             // 
             // dgvOutDetail1
             // 
             this.dgvOutDetail1.AllowUserToAddRows = false;
+            this.dgvOutDetail1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvOutDetail1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvOutDetail1.BackgroundColor = System.Drawing.Color.LightYellow;
             this.dgvOutDetail1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("微軟正黑體", 10F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvOutDetail1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle44.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle44.Font = new System.Drawing.Font("微軟正黑體", 10F);
+            dataGridViewCellStyle44.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle44.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle44.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle44.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvOutDetail1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle44;
             this.dgvOutDetail1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column31,
             this.Column32,
@@ -1815,14 +1875,14 @@
             this.Column38,
             this.Column39,
             this.Column40});
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.LightYellow;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("微軟正黑體", 10F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvOutDetail1.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle45.BackColor = System.Drawing.Color.LightYellow;
+            dataGridViewCellStyle45.Font = new System.Drawing.Font("微軟正黑體", 10F);
+            dataGridViewCellStyle45.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle45.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle45.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle45.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvOutDetail1.DefaultCellStyle = dataGridViewCellStyle45;
             this.dgvOutDetail1.EnableHeadersVisualStyles = false;
             this.dgvOutDetail1.Location = new System.Drawing.Point(17, 24);
             this.dgvOutDetail1.Name = "dgvOutDetail1";
@@ -1834,61 +1894,61 @@
             // 
             this.Column31.HeaderText = "檢體編號";
             this.Column31.Name = "Column31";
-            this.Column31.Width = 103;
+            this.Column31.Width = 89;
             // 
             // Column32
             // 
             this.Column32.HeaderText = "新檢體位置";
             this.Column32.Name = "Column32";
-            this.Column32.Width = 120;
+            this.Column32.Width = 103;
             // 
             // Column33
             // 
             this.Column33.HeaderText = "性別";
             this.Column33.Name = "Column33";
-            this.Column33.Width = 69;
+            this.Column33.Width = 61;
             // 
             // Column34
             // 
             this.Column34.HeaderText = "檢體採集當時年齡";
             this.Column34.Name = "Column34";
-            this.Column34.Width = 171;
+            this.Column34.Width = 145;
             // 
             // Column35
             // 
             this.Column35.HeaderText = "檢體種類";
             this.Column35.Name = "Column35";
-            this.Column35.Width = 103;
+            this.Column35.Width = 89;
             // 
             // Column36
             // 
             this.Column36.HeaderText = "檢體採集日期";
             this.Column36.Name = "Column36";
-            this.Column36.Width = 137;
+            this.Column36.Width = 117;
             // 
             // Column37
             // 
             this.Column37.HeaderText = "檢體採集部位";
             this.Column37.Name = "Column37";
-            this.Column37.Width = 137;
+            this.Column37.Width = 117;
             // 
             // Column38
             // 
             this.Column38.HeaderText = "保存方式";
             this.Column38.Name = "Column38";
-            this.Column38.Width = 103;
+            this.Column38.Width = 89;
             // 
             // Column39
             // 
             this.Column39.HeaderText = "檢體離體時刻";
             this.Column39.Name = "Column39";
-            this.Column39.Width = 137;
+            this.Column39.Width = 117;
             // 
             // Column40
             // 
             this.Column40.HeaderText = "檢體處理時刻";
             this.Column40.Name = "Column40";
-            this.Column40.Width = 137;
+            this.Column40.Width = 117;
             // 
             // btnOutLReqNo
             // 
@@ -1904,7 +1964,7 @@
             // 
             this.txtOutLReqNo.Location = new System.Drawing.Point(96, 20);
             this.txtOutLReqNo.Name = "txtOutLReqNo";
-            this.txtOutLReqNo.Size = new System.Drawing.Size(169, 34);
+            this.txtOutLReqNo.Size = new System.Drawing.Size(169, 29);
             this.txtOutLReqNo.TabIndex = 1;
             this.txtOutLReqNo.TextChanged += new System.EventHandler(this.txtOutLReqNo_TextChanged);
             // 
@@ -1923,17 +1983,19 @@
             // dgvOutLReqNo
             // 
             this.dgvOutLReqNo.AllowUserToAddRows = false;
+            this.dgvOutLReqNo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.dgvOutLReqNo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvOutLReqNo.BackgroundColor = System.Drawing.Color.PowderBlue;
             this.dgvOutLReqNo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvOutLReqNo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle46.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle46.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle46.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            dataGridViewCellStyle46.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle46.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle46.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle46.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvOutLReqNo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle46;
             this.dgvOutLReqNo.ColumnHeadersHeight = 32;
             this.dgvOutLReqNo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColOutLReqNo,
@@ -1983,196 +2045,199 @@
             this.ColOutLReqNo.Name = "ColOutLReqNo";
             this.ColOutLReqNo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.ColOutLReqNo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.ColOutLReqNo.Width = 127;
+            this.ColOutLReqNo.Width = 106;
             // 
             // Column1
             // 
             this.Column1.HeaderText = "檢體編號";
             this.Column1.Name = "Column1";
-            this.Column1.Width = 117;
+            this.Column1.Width = 98;
             // 
             // Column2
             // 
             this.Column2.HeaderText = "新檢體位置";
             this.Column2.Name = "Column2";
-            this.Column2.Width = 137;
+            this.Column2.Width = 114;
             // 
             // Column3
             // 
             this.Column3.HeaderText = "性別";
             this.Column3.Name = "Column3";
-            this.Column3.Width = 77;
+            this.Column3.Width = 66;
             // 
             // Column4
             // 
             this.Column4.HeaderText = "採集當時年齡";
             this.Column4.Name = "Column4";
-            this.Column4.Width = 157;
+            this.Column4.Width = 130;
             // 
             // Column5
             // 
             this.Column5.HeaderText = "檢體種類";
             this.Column5.Name = "Column5";
-            this.Column5.Width = 117;
+            this.Column5.Width = 98;
             // 
             // Column6
             // 
             this.Column6.HeaderText = "檢體採集日期";
             this.Column6.Name = "Column6";
-            this.Column6.Width = 157;
+            this.Column6.Width = 130;
             // 
             // Column7
             // 
             this.Column7.HeaderText = "檢體採集部位";
             this.Column7.Name = "Column7";
-            this.Column7.Width = 157;
+            this.Column7.Width = 130;
             // 
             // Column8
             // 
             this.Column8.HeaderText = "保存方式";
             this.Column8.Name = "Column8";
-            this.Column8.Width = 117;
+            this.Column8.Width = 98;
             // 
             // Column9
             // 
             this.Column9.HeaderText = "檢體離體時刻";
             this.Column9.Name = "Column9";
-            this.Column9.Width = 157;
+            this.Column9.Width = 130;
             // 
             // Column10
             // 
             this.Column10.HeaderText = "檢體處理時刻";
             this.Column10.Name = "Column10";
-            this.Column10.Width = 157;
+            this.Column10.Width = 130;
             // 
             // Column11
             // 
             this.Column11.HeaderText = "離體後環境";
             this.Column11.Name = "Column11";
-            this.Column11.Width = 137;
+            this.Column11.Width = 114;
             // 
             // Column12
             // 
             this.Column12.HeaderText = "離體後時間";
             this.Column12.Name = "Column12";
-            this.Column12.Width = 137;
+            this.Column12.Width = 114;
             // 
             // Column13
             // 
             this.Column13.HeaderText = "分庫";
             this.Column13.Name = "Column13";
-            this.Column13.Width = 77;
+            this.Column13.Width = 66;
             // 
             // Column14
             // 
             this.Column14.HeaderText = "罹病部位";
             this.Column14.Name = "Column14";
-            this.Column14.Width = 117;
+            this.Column14.Width = 98;
             // 
             // Column15
             // 
             this.Column15.HeaderText = "診斷名稱1";
             this.Column15.Name = "Column15";
-            this.Column15.Width = 129;
+            this.Column15.Width = 107;
             // 
             // Column16
             // 
             this.Column16.HeaderText = "診斷名稱2";
             this.Column16.Name = "Column16";
-            this.Column16.Width = 129;
+            this.Column16.Width = 107;
             // 
             // Column17
             // 
             this.Column17.HeaderText = "診斷名稱3";
             this.Column17.Name = "Column17";
-            this.Column17.Width = 129;
+            this.Column17.Width = 107;
             // 
             // Column18
             // 
             this.Column18.HeaderText = "檔案登錄人";
             this.Column18.Name = "Column18";
-            this.Column18.Width = 137;
+            this.Column18.Width = 114;
             // 
             // Column19
             // 
             this.Column19.HeaderText = "研究簽署日期";
             this.Column19.Name = "Column19";
-            this.Column19.Width = 157;
+            this.Column19.Width = 130;
             // 
             // Column20
             // 
             this.Column20.HeaderText = "同意書簽署日期";
             this.Column20.Name = "Column20";
-            this.Column20.Width = 177;
+            this.Column20.Width = 146;
             // 
             // Column21
             // 
             this.Column21.HeaderText = "使用年限";
             this.Column21.Name = "Column21";
-            this.Column21.Width = 117;
+            this.Column21.Width = 98;
             // 
             // Column22
             // 
             this.Column22.HeaderText = "變更範圍";
             this.Column22.Name = "Column22";
-            this.Column22.Width = 117;
+            this.Column22.Width = 98;
             // 
             // Column23
             // 
             this.Column23.HeaderText = "狀態";
             this.Column23.Name = "Column23";
-            this.Column23.Width = 77;
+            this.Column23.Width = 66;
             // 
             // Column24
             // 
             this.Column24.HeaderText = "備註";
             this.Column24.Name = "Column24";
-            this.Column24.Width = 77;
+            this.Column24.Width = 66;
             // 
             // Column104
             // 
             this.Column104.HeaderText = "出庫人";
             this.Column104.Name = "Column104";
-            this.Column104.Width = 97;
+            this.Column104.Width = 82;
             // 
             // Column25
             // 
             this.Column25.HeaderText = "出庫日期";
             this.Column25.Name = "Column25";
-            this.Column25.Width = 117;
+            this.Column25.Width = 98;
             // 
             // Column26
             // 
             this.Column26.HeaderText = "申請人";
             this.Column26.Name = "Column26";
-            this.Column26.Width = 97;
+            this.Column26.Width = 82;
             // 
             // Column27
             // 
             this.Column27.HeaderText = "計畫編號";
             this.Column27.Name = "Column27";
-            this.Column27.Width = 117;
+            this.Column27.Width = 98;
             // 
             // Column28
             // 
             this.Column28.HeaderText = "出庫備註";
             this.Column28.Name = "Column28";
-            this.Column28.Width = 117;
+            this.Column28.Width = 98;
             // 
             // Column29
             // 
             this.Column29.HeaderText = "入庫日期";
             this.Column29.Name = "Column29";
-            this.Column29.Width = 117;
+            this.Column29.Width = 98;
             // 
             // Column30
             // 
             this.Column30.HeaderText = "列印次數";
             this.Column30.Name = "Column30";
-            this.Column30.Width = 117;
+            this.Column30.Width = 98;
             // 
             // richtxtMsg
             // 
+            this.richtxtMsg.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.richtxtMsg.BackColor = System.Drawing.Color.PowderBlue;
             this.richtxtMsg.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.richtxtMsg.Location = new System.Drawing.Point(689, 64);
@@ -2186,14 +2251,17 @@
             this.tpOutRecord.BackColor = System.Drawing.Color.PowderBlue;
             this.tpOutRecord.Controls.Add(this.gbOutRecord);
             this.tpOutRecord.Controls.Add(this.gbOutTime);
-            this.tpOutRecord.Location = new System.Drawing.Point(4, 34);
+            this.tpOutRecord.Location = new System.Drawing.Point(4, 29);
             this.tpOutRecord.Name = "tpOutRecord";
-            this.tpOutRecord.Size = new System.Drawing.Size(1020, 576);
+            this.tpOutRecord.Size = new System.Drawing.Size(1020, 581);
             this.tpOutRecord.TabIndex = 9;
             this.tpOutRecord.Text = "出庫紀錄";
             // 
             // gbOutRecord
             // 
+            this.gbOutRecord.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gbOutRecord.Controls.Add(this.dgvOutRecord);
             this.gbOutRecord.Location = new System.Drawing.Point(321, 18);
             this.gbOutRecord.Name = "gbOutRecord";
@@ -2205,17 +2273,20 @@
             // dgvOutRecord
             // 
             this.dgvOutRecord.AllowUserToAddRows = false;
+            this.dgvOutRecord.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvOutRecord.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvOutRecord.BackgroundColor = System.Drawing.Color.PowderBlue;
             this.dgvOutRecord.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvOutRecord.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle47.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle47.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            dataGridViewCellStyle47.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle47.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle47.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle47.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvOutRecord.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle47;
             this.dgvOutRecord.ColumnHeadersHeight = 26;
             this.dgvOutRecord.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn31,
@@ -2259,190 +2330,192 @@
             // 
             this.dataGridViewTextBoxColumn31.HeaderText = "檢體編號";
             this.dataGridViewTextBoxColumn31.Name = "dataGridViewTextBoxColumn31";
-            this.dataGridViewTextBoxColumn31.Width = 117;
+            this.dataGridViewTextBoxColumn31.Width = 98;
             // 
             // dataGridViewTextBoxColumn32
             // 
             this.dataGridViewTextBoxColumn32.HeaderText = "新檢體位置";
             this.dataGridViewTextBoxColumn32.Name = "dataGridViewTextBoxColumn32";
-            this.dataGridViewTextBoxColumn32.Width = 137;
+            this.dataGridViewTextBoxColumn32.Width = 114;
             // 
             // dataGridViewTextBoxColumn33
             // 
             this.dataGridViewTextBoxColumn33.HeaderText = "性別";
             this.dataGridViewTextBoxColumn33.Name = "dataGridViewTextBoxColumn33";
-            this.dataGridViewTextBoxColumn33.Width = 77;
+            this.dataGridViewTextBoxColumn33.Width = 66;
             // 
             // dataGridViewTextBoxColumn34
             // 
             this.dataGridViewTextBoxColumn34.HeaderText = "採集當時年齡";
             this.dataGridViewTextBoxColumn34.Name = "dataGridViewTextBoxColumn34";
-            this.dataGridViewTextBoxColumn34.Width = 157;
+            this.dataGridViewTextBoxColumn34.Width = 130;
             // 
             // dataGridViewTextBoxColumn35
             // 
             this.dataGridViewTextBoxColumn35.HeaderText = "檢體種類";
             this.dataGridViewTextBoxColumn35.Name = "dataGridViewTextBoxColumn35";
-            this.dataGridViewTextBoxColumn35.Width = 117;
+            this.dataGridViewTextBoxColumn35.Width = 98;
             // 
             // dataGridViewTextBoxColumn36
             // 
             this.dataGridViewTextBoxColumn36.HeaderText = "檢體採集日期";
             this.dataGridViewTextBoxColumn36.Name = "dataGridViewTextBoxColumn36";
-            this.dataGridViewTextBoxColumn36.Width = 157;
+            this.dataGridViewTextBoxColumn36.Width = 130;
             // 
             // dataGridViewTextBoxColumn37
             // 
             this.dataGridViewTextBoxColumn37.HeaderText = "檢體採集部位";
             this.dataGridViewTextBoxColumn37.Name = "dataGridViewTextBoxColumn37";
-            this.dataGridViewTextBoxColumn37.Width = 157;
+            this.dataGridViewTextBoxColumn37.Width = 130;
             // 
             // dataGridViewTextBoxColumn38
             // 
             this.dataGridViewTextBoxColumn38.HeaderText = "保存方式";
             this.dataGridViewTextBoxColumn38.Name = "dataGridViewTextBoxColumn38";
-            this.dataGridViewTextBoxColumn38.Width = 117;
+            this.dataGridViewTextBoxColumn38.Width = 98;
             // 
             // dataGridViewTextBoxColumn39
             // 
             this.dataGridViewTextBoxColumn39.HeaderText = "檢體離體時刻";
             this.dataGridViewTextBoxColumn39.Name = "dataGridViewTextBoxColumn39";
-            this.dataGridViewTextBoxColumn39.Width = 157;
+            this.dataGridViewTextBoxColumn39.Width = 130;
             // 
             // dataGridViewTextBoxColumn40
             // 
             this.dataGridViewTextBoxColumn40.HeaderText = "檢體處理時刻";
             this.dataGridViewTextBoxColumn40.Name = "dataGridViewTextBoxColumn40";
-            this.dataGridViewTextBoxColumn40.Width = 157;
+            this.dataGridViewTextBoxColumn40.Width = 130;
             // 
             // dataGridViewTextBoxColumn41
             // 
             this.dataGridViewTextBoxColumn41.HeaderText = "離體後環境";
             this.dataGridViewTextBoxColumn41.Name = "dataGridViewTextBoxColumn41";
-            this.dataGridViewTextBoxColumn41.Width = 137;
+            this.dataGridViewTextBoxColumn41.Width = 114;
             // 
             // dataGridViewTextBoxColumn42
             // 
             this.dataGridViewTextBoxColumn42.HeaderText = "離體後時間";
             this.dataGridViewTextBoxColumn42.Name = "dataGridViewTextBoxColumn42";
-            this.dataGridViewTextBoxColumn42.Width = 137;
+            this.dataGridViewTextBoxColumn42.Width = 114;
             // 
             // dataGridViewTextBoxColumn43
             // 
             this.dataGridViewTextBoxColumn43.HeaderText = "分庫";
             this.dataGridViewTextBoxColumn43.Name = "dataGridViewTextBoxColumn43";
-            this.dataGridViewTextBoxColumn43.Width = 77;
+            this.dataGridViewTextBoxColumn43.Width = 66;
             // 
             // dataGridViewTextBoxColumn44
             // 
             this.dataGridViewTextBoxColumn44.HeaderText = "罹病部位";
             this.dataGridViewTextBoxColumn44.Name = "dataGridViewTextBoxColumn44";
-            this.dataGridViewTextBoxColumn44.Width = 117;
+            this.dataGridViewTextBoxColumn44.Width = 98;
             // 
             // dataGridViewTextBoxColumn45
             // 
             this.dataGridViewTextBoxColumn45.HeaderText = "診斷名稱1";
             this.dataGridViewTextBoxColumn45.Name = "dataGridViewTextBoxColumn45";
-            this.dataGridViewTextBoxColumn45.Width = 129;
+            this.dataGridViewTextBoxColumn45.Width = 107;
             // 
             // dataGridViewTextBoxColumn46
             // 
             this.dataGridViewTextBoxColumn46.HeaderText = "診斷名稱2";
             this.dataGridViewTextBoxColumn46.Name = "dataGridViewTextBoxColumn46";
-            this.dataGridViewTextBoxColumn46.Width = 129;
+            this.dataGridViewTextBoxColumn46.Width = 107;
             // 
             // dataGridViewTextBoxColumn47
             // 
             this.dataGridViewTextBoxColumn47.HeaderText = "診斷名稱3";
             this.dataGridViewTextBoxColumn47.Name = "dataGridViewTextBoxColumn47";
-            this.dataGridViewTextBoxColumn47.Width = 129;
+            this.dataGridViewTextBoxColumn47.Width = 107;
             // 
             // dataGridViewTextBoxColumn48
             // 
             this.dataGridViewTextBoxColumn48.HeaderText = "檔案登錄人";
             this.dataGridViewTextBoxColumn48.Name = "dataGridViewTextBoxColumn48";
-            this.dataGridViewTextBoxColumn48.Width = 137;
+            this.dataGridViewTextBoxColumn48.Width = 114;
             // 
             // dataGridViewTextBoxColumn49
             // 
             this.dataGridViewTextBoxColumn49.HeaderText = "研究簽署日期";
             this.dataGridViewTextBoxColumn49.Name = "dataGridViewTextBoxColumn49";
-            this.dataGridViewTextBoxColumn49.Width = 157;
+            this.dataGridViewTextBoxColumn49.Width = 130;
             // 
             // dataGridViewTextBoxColumn50
             // 
             this.dataGridViewTextBoxColumn50.HeaderText = "同意書簽署日期";
             this.dataGridViewTextBoxColumn50.Name = "dataGridViewTextBoxColumn50";
-            this.dataGridViewTextBoxColumn50.Width = 177;
+            this.dataGridViewTextBoxColumn50.Width = 146;
             // 
             // dataGridViewTextBoxColumn51
             // 
             this.dataGridViewTextBoxColumn51.HeaderText = "使用年限";
             this.dataGridViewTextBoxColumn51.Name = "dataGridViewTextBoxColumn51";
-            this.dataGridViewTextBoxColumn51.Width = 117;
+            this.dataGridViewTextBoxColumn51.Width = 98;
             // 
             // dataGridViewTextBoxColumn52
             // 
             this.dataGridViewTextBoxColumn52.HeaderText = "變更範圍";
             this.dataGridViewTextBoxColumn52.Name = "dataGridViewTextBoxColumn52";
-            this.dataGridViewTextBoxColumn52.Width = 117;
+            this.dataGridViewTextBoxColumn52.Width = 98;
             // 
             // dataGridViewTextBoxColumn53
             // 
             this.dataGridViewTextBoxColumn53.HeaderText = "狀態";
             this.dataGridViewTextBoxColumn53.Name = "dataGridViewTextBoxColumn53";
-            this.dataGridViewTextBoxColumn53.Width = 77;
+            this.dataGridViewTextBoxColumn53.Width = 66;
             // 
             // dataGridViewTextBoxColumn54
             // 
             this.dataGridViewTextBoxColumn54.HeaderText = "備註";
             this.dataGridViewTextBoxColumn54.Name = "dataGridViewTextBoxColumn54";
-            this.dataGridViewTextBoxColumn54.Width = 77;
+            this.dataGridViewTextBoxColumn54.Width = 66;
             // 
             // Column106
             // 
             this.Column106.HeaderText = "出庫人";
             this.Column106.Name = "Column106";
-            this.Column106.Width = 97;
+            this.Column106.Width = 82;
             // 
             // dataGridViewTextBoxColumn55
             // 
             this.dataGridViewTextBoxColumn55.HeaderText = "出庫日期";
             this.dataGridViewTextBoxColumn55.Name = "dataGridViewTextBoxColumn55";
-            this.dataGridViewTextBoxColumn55.Width = 117;
+            this.dataGridViewTextBoxColumn55.Width = 98;
             // 
             // dataGridViewTextBoxColumn56
             // 
             this.dataGridViewTextBoxColumn56.HeaderText = "申請人";
             this.dataGridViewTextBoxColumn56.Name = "dataGridViewTextBoxColumn56";
-            this.dataGridViewTextBoxColumn56.Width = 97;
+            this.dataGridViewTextBoxColumn56.Width = 82;
             // 
             // dataGridViewTextBoxColumn57
             // 
             this.dataGridViewTextBoxColumn57.HeaderText = "計畫編號";
             this.dataGridViewTextBoxColumn57.Name = "dataGridViewTextBoxColumn57";
-            this.dataGridViewTextBoxColumn57.Width = 117;
+            this.dataGridViewTextBoxColumn57.Width = 98;
             // 
             // dataGridViewTextBoxColumn58
             // 
             this.dataGridViewTextBoxColumn58.HeaderText = "出庫備註";
             this.dataGridViewTextBoxColumn58.Name = "dataGridViewTextBoxColumn58";
-            this.dataGridViewTextBoxColumn58.Width = 117;
+            this.dataGridViewTextBoxColumn58.Width = 98;
             // 
             // dataGridViewTextBoxColumn59
             // 
             this.dataGridViewTextBoxColumn59.HeaderText = "入庫日期";
             this.dataGridViewTextBoxColumn59.Name = "dataGridViewTextBoxColumn59";
-            this.dataGridViewTextBoxColumn59.Width = 117;
+            this.dataGridViewTextBoxColumn59.Width = 98;
             // 
             // dataGridViewTextBoxColumn60
             // 
             this.dataGridViewTextBoxColumn60.HeaderText = "列印次數";
             this.dataGridViewTextBoxColumn60.Name = "dataGridViewTextBoxColumn60";
-            this.dataGridViewTextBoxColumn60.Width = 117;
+            this.dataGridViewTextBoxColumn60.Width = 98;
             // 
             // gbOutTime
             // 
+            this.gbOutTime.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.gbOutTime.Controls.Add(this.dgvOutTime);
             this.gbOutTime.Location = new System.Drawing.Point(10, 18);
             this.gbOutTime.Name = "gbOutTime";
@@ -2454,6 +2527,8 @@
             // dgvOutTime
             // 
             this.dgvOutTime.AllowUserToAddRows = false;
+            this.dgvOutTime.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.dgvOutTime.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvOutTime.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgvOutTime.ColumnHeadersHeight = 26;
@@ -2473,33 +2548,36 @@
             // 
             this.Column100.HeaderText = "出庫日期";
             this.Column100.Name = "Column100";
-            this.Column100.Width = 117;
+            this.Column100.Width = 98;
             // 
             // Column101
             // 
             this.Column101.HeaderText = "組別";
             this.Column101.Name = "Column101";
-            this.Column101.Width = 77;
+            this.Column101.Width = 66;
             // 
             // Column102
             // 
             this.Column102.HeaderText = "筆數";
             this.Column102.Name = "Column102";
-            this.Column102.Width = 77;
+            this.Column102.Width = 66;
             // 
             // tpAuothority
             // 
             this.tpAuothority.BackColor = System.Drawing.Color.White;
             this.tpAuothority.Controls.Add(this.pnlAdmin);
             this.tpAuothority.Controls.Add(this.pnlKey);
-            this.tpAuothority.Location = new System.Drawing.Point(4, 34);
+            this.tpAuothority.Location = new System.Drawing.Point(4, 29);
             this.tpAuothority.Name = "tpAuothority";
-            this.tpAuothority.Size = new System.Drawing.Size(1020, 576);
+            this.tpAuothority.Size = new System.Drawing.Size(1020, 581);
             this.tpAuothority.TabIndex = 7;
             this.tpAuothority.Text = "主管維護";
             // 
             // pnlAdmin
             // 
+            this.pnlAdmin.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlAdmin.BackColor = System.Drawing.Color.LightBlue;
             this.pnlAdmin.Controls.Add(this.gbModEnableFlg);
             this.pnlAdmin.Controls.Add(this.label17);
@@ -2510,6 +2588,9 @@
             // 
             // gbModEnableFlg
             // 
+            this.gbModEnableFlg.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gbModEnableFlg.Controls.Add(this.dgvInfo_Admin);
             this.gbModEnableFlg.Controls.Add(this.label16);
             this.gbModEnableFlg.Controls.Add(this.cboInterface);
@@ -2534,6 +2615,8 @@
             // dgvInfo_Admin
             // 
             this.dgvInfo_Admin.AllowUserToAddRows = false;
+            this.dgvInfo_Admin.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvInfo_Admin.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvInfo_Admin.BackgroundColor = System.Drawing.Color.LightBlue;
             this.dgvInfo_Admin.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -2556,31 +2639,31 @@
             // 
             this.ColID_Admin.HeaderText = "帳號";
             this.ColID_Admin.Name = "ColID_Admin";
-            this.ColID_Admin.Width = 77;
+            this.ColID_Admin.Width = 66;
             // 
             // ColName_Admin
             // 
             this.ColName_Admin.HeaderText = "姓名";
             this.ColName_Admin.Name = "ColName_Admin";
-            this.ColName_Admin.Width = 77;
+            this.ColName_Admin.Width = 66;
             // 
             // ColEnable_Admin
             // 
             this.ColEnable_Admin.HeaderText = "是否啟用";
             this.ColEnable_Admin.Name = "ColEnable_Admin";
-            this.ColEnable_Admin.Width = 117;
+            this.ColEnable_Admin.Width = 98;
             // 
             // ColDepartment_Admin
             // 
             this.ColDepartment_Admin.HeaderText = "成員所屬部門";
             this.ColDepartment_Admin.Name = "ColDepartment_Admin";
-            this.ColDepartment_Admin.Width = 157;
+            this.ColDepartment_Admin.Width = 130;
             // 
             // ColPwd_Admin
             // 
             this.ColPwd_Admin.HeaderText = "密碼";
             this.ColPwd_Admin.Name = "ColPwd_Admin";
-            this.ColPwd_Admin.Width = 77;
+            this.ColPwd_Admin.Width = 66;
             // 
             // label16
             // 
@@ -2603,7 +2686,7 @@
             "修改(密碼)"});
             this.cboInterface.Location = new System.Drawing.Point(116, 28);
             this.cboInterface.Name = "cboInterface";
-            this.cboInterface.Size = new System.Drawing.Size(138, 33);
+            this.cboInterface.Size = new System.Drawing.Size(138, 28);
             this.cboInterface.TabIndex = 20;
             this.cboInterface.SelectedIndexChanged += new System.EventHandler(this.cboInterface_SelectedIndexChanged);
             // 
@@ -2628,7 +2711,7 @@
             "N"});
             this.cboEnableFlg_Admin.Location = new System.Drawing.Point(116, 427);
             this.cboEnableFlg_Admin.Name = "cboEnableFlg_Admin";
-            this.cboEnableFlg_Admin.Size = new System.Drawing.Size(138, 33);
+            this.cboEnableFlg_Admin.Size = new System.Drawing.Size(138, 28);
             this.cboEnableFlg_Admin.TabIndex = 5;
             this.cboEnableFlg_Admin.Text = "N";
             // 
@@ -2637,7 +2720,7 @@
             this.txtPwdVer_Admin.Font = new System.Drawing.Font("微軟正黑體", 12F);
             this.txtPwdVer_Admin.Location = new System.Drawing.Point(385, 398);
             this.txtPwdVer_Admin.Name = "txtPwdVer_Admin";
-            this.txtPwdVer_Admin.Size = new System.Drawing.Size(139, 34);
+            this.txtPwdVer_Admin.Size = new System.Drawing.Size(139, 29);
             this.txtPwdVer_Admin.TabIndex = 4;
             this.txtPwdVer_Admin.UseSystemPasswordChar = true;
             this.txtPwdVer_Admin.Visible = false;
@@ -2688,7 +2771,7 @@
             this.txtID_Admin.Font = new System.Drawing.Font("微軟正黑體", 12F);
             this.txtID_Admin.Location = new System.Drawing.Point(116, 369);
             this.txtID_Admin.Name = "txtID_Admin";
-            this.txtID_Admin.Size = new System.Drawing.Size(139, 34);
+            this.txtID_Admin.Size = new System.Drawing.Size(139, 29);
             this.txtID_Admin.TabIndex = 1;
             this.txtID_Admin.TextChanged += new System.EventHandler(this.txtID_Admin_TextChanged);
             // 
@@ -2710,7 +2793,7 @@
             this.txtName_Admin.Font = new System.Drawing.Font("微軟正黑體", 12F);
             this.txtName_Admin.Location = new System.Drawing.Point(116, 398);
             this.txtName_Admin.Name = "txtName_Admin";
-            this.txtName_Admin.Size = new System.Drawing.Size(138, 34);
+            this.txtName_Admin.Size = new System.Drawing.Size(138, 29);
             this.txtName_Admin.TabIndex = 2;
             // 
             // lblPwd_Admin
@@ -2732,7 +2815,7 @@
             this.txtPwd_Admin.Font = new System.Drawing.Font("微軟正黑體", 12F);
             this.txtPwd_Admin.Location = new System.Drawing.Point(385, 369);
             this.txtPwd_Admin.Name = "txtPwd_Admin";
-            this.txtPwd_Admin.Size = new System.Drawing.Size(139, 34);
+            this.txtPwd_Admin.Size = new System.Drawing.Size(139, 29);
             this.txtPwd_Admin.TabIndex = 3;
             this.txtPwd_Admin.UseSystemPasswordChar = true;
             this.txtPwd_Admin.Visible = false;
@@ -2746,12 +2829,14 @@
             this.label17.ForeColor = System.Drawing.Color.White;
             this.label17.Location = new System.Drawing.Point(239, 16);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(112, 33);
+            this.label17.Size = new System.Drawing.Size(88, 26);
             this.label17.TabIndex = 2;
             this.label17.Text = "帳號管理";
             // 
             // pnlKey
             // 
+            this.pnlKey.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.pnlKey.BackColor = System.Drawing.Color.Cornsilk;
             this.pnlKey.Controls.Add(this.btnAddKey);
             this.pnlKey.Controls.Add(this.groupBox1);
@@ -2763,6 +2848,7 @@
             // 
             // btnAddKey
             // 
+            this.btnAddKey.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnAddKey.Location = new System.Drawing.Point(224, 451);
             this.btnAddKey.Name = "btnAddKey";
             this.btnAddKey.Size = new System.Drawing.Size(72, 36);
@@ -2784,6 +2870,8 @@
             // dgvKey
             // 
             this.dgvKey.AllowUserToAddRows = false;
+            this.dgvKey.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.dgvKey.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvKey.BackgroundColor = System.Drawing.Color.Cornsilk;
             this.dgvKey.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -2802,13 +2890,13 @@
             // 
             this.ColYear_Admin.HeaderText = "年度";
             this.ColYear_Admin.Name = "ColYear_Admin";
-            this.ColYear_Admin.Width = 77;
+            this.ColYear_Admin.Width = 66;
             // 
             // ColGenerate_Admin
             // 
             this.ColGenerate_Admin.HeaderText = "是否已產生";
             this.ColGenerate_Admin.Name = "ColGenerate_Admin";
-            this.ColGenerate_Admin.Width = 137;
+            this.ColGenerate_Admin.Width = 114;
             // 
             // label7
             // 
@@ -2819,33 +2907,39 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(112, 16);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(112, 33);
+            this.label7.Size = new System.Drawing.Size(88, 26);
             this.label7.TabIndex = 0;
             this.label7.Text = "金鑰管理";
             // 
             // tpInfoManage
             // 
             this.tpInfoManage.Controls.Add(this.pnlInform);
-            this.tpInfoManage.Location = new System.Drawing.Point(4, 34);
+            this.tpInfoManage.Location = new System.Drawing.Point(4, 29);
             this.tpInfoManage.Name = "tpInfoManage";
-            this.tpInfoManage.Size = new System.Drawing.Size(1020, 576);
+            this.tpInfoManage.Size = new System.Drawing.Size(1020, 581);
             this.tpInfoManage.TabIndex = 6;
             this.tpInfoManage.Text = "資訊室維護";
             this.tpInfoManage.UseVisualStyleBackColor = true;
             // 
             // pnlInform
             // 
+            this.pnlInform.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlInform.BackColor = System.Drawing.Color.WhiteSmoke;
             this.pnlInform.Controls.Add(this.gbPwd);
             this.pnlInform.Controls.Add(this.gbQryMember);
             this.pnlInform.Controls.Add(this.gbInfo);
-            this.pnlInform.Location = new System.Drawing.Point(1, 2);
+            this.pnlInform.Location = new System.Drawing.Point(0, 3);
             this.pnlInform.Name = "pnlInform";
             this.pnlInform.Size = new System.Drawing.Size(940, 554);
             this.pnlInform.TabIndex = 13;
             // 
             // gbPwd
             // 
+            this.gbPwd.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gbPwd.BackColor = System.Drawing.Color.WhiteSmoke;
             this.gbPwd.Controls.Add(this.dgvKey_Inform);
             this.gbPwd.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -2859,6 +2953,9 @@
             // dgvKey_Inform
             // 
             this.dgvKey_Inform.AllowUserToAddRows = false;
+            this.dgvKey_Inform.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvKey_Inform.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvKey_Inform.BackgroundColor = System.Drawing.Color.LightGray;
             this.dgvKey_Inform.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -2877,16 +2974,18 @@
             // 
             this.ColYear_MIS.HeaderText = "年度";
             this.ColYear_MIS.Name = "ColYear_MIS";
-            this.ColYear_MIS.Width = 69;
+            this.ColYear_MIS.Width = 59;
             // 
             // ColGernerate
             // 
             this.ColGernerate.HeaderText = "是否已產生";
             this.ColGernerate.Name = "ColGernerate";
-            this.ColGernerate.Width = 120;
+            this.ColGernerate.Width = 98;
             // 
             // gbQryMember
             // 
+            this.gbQryMember.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gbQryMember.BackColor = System.Drawing.Color.WhiteSmoke;
             this.gbQryMember.Controls.Add(this.dgvInfo);
             this.gbQryMember.Font = new System.Drawing.Font("微軟正黑體", 10F);
@@ -2900,6 +2999,8 @@
             // dgvInfo
             // 
             this.dgvInfo.AllowUserToAddRows = false;
+            this.dgvInfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvInfo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvInfo.BackgroundColor = System.Drawing.Color.LightGray;
             this.dgvInfo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -2922,34 +3023,36 @@
             // 
             this.ColID.HeaderText = "帳號";
             this.ColID.Name = "ColID";
-            this.ColID.Width = 69;
+            this.ColID.Width = 61;
             // 
             // ColName
             // 
             this.ColName.HeaderText = "姓名";
             this.ColName.Name = "ColName";
-            this.ColName.Width = 69;
+            this.ColName.Width = 61;
             // 
             // ColEnable
             // 
             this.ColEnable.HeaderText = "是否啟用";
             this.ColEnable.Name = "ColEnable";
-            this.ColEnable.Width = 103;
+            this.ColEnable.Width = 89;
             // 
             // ColDepartment
             // 
             this.ColDepartment.HeaderText = "成員所屬部門";
             this.ColDepartment.Name = "ColDepartment";
-            this.ColDepartment.Width = 137;
+            this.ColDepartment.Width = 117;
             // 
             // ColPwd
             // 
             this.ColPwd.HeaderText = "密碼";
             this.ColPwd.Name = "ColPwd";
-            this.ColPwd.Width = 69;
+            this.ColPwd.Width = 61;
             // 
             // gbInfo
             // 
+            this.gbInfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.gbInfo.BackColor = System.Drawing.Color.WhiteSmoke;
             this.gbInfo.Controls.Add(this.btnCancel);
             this.gbInfo.Controls.Add(this.txtEnableFlg);
@@ -2976,6 +3079,7 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Font = new System.Drawing.Font("微軟正黑體", 12F);
             this.btnCancel.Location = new System.Drawing.Point(191, 431);
             this.btnCancel.Name = "btnCancel";
@@ -2988,22 +3092,26 @@
             // 
             // txtEnableFlg
             // 
+            this.txtEnableFlg.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtEnableFlg.Enabled = false;
             this.txtEnableFlg.Location = new System.Drawing.Point(145, 377);
             this.txtEnableFlg.Name = "txtEnableFlg";
-            this.txtEnableFlg.Size = new System.Drawing.Size(156, 39);
+            this.txtEnableFlg.Size = new System.Drawing.Size(156, 33);
             this.txtEnableFlg.TabIndex = 22;
             this.txtEnableFlg.Visible = false;
             // 
             // cboDepartment
             // 
+            this.cboDepartment.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cboDepartment.FormattingEnabled = true;
             this.cboDepartment.Items.AddRange(new object[] {
             "B",
             "M"});
             this.cboDepartment.Location = new System.Drawing.Point(145, 184);
             this.cboDepartment.Name = "cboDepartment";
-            this.cboDepartment.Size = new System.Drawing.Size(156, 39);
+            this.cboDepartment.Size = new System.Drawing.Size(156, 32);
             this.cboDepartment.TabIndex = 21;
             this.cboDepartment.Text = "B";
             // 
@@ -3026,7 +3134,7 @@
             this.lnklblAddMember.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lnklblAddMember.Location = new System.Drawing.Point(243, 261);
             this.lnklblAddMember.Name = "lnklblAddMember";
-            this.lnklblAddMember.Size = new System.Drawing.Size(78, 22);
+            this.lnklblAddMember.Size = new System.Drawing.Size(60, 17);
             this.lnklblAddMember.TabIndex = 8;
             this.lnklblAddMember.TabStop = true;
             this.lnklblAddMember.Text = "新增成員";
@@ -3034,18 +3142,22 @@
             // 
             // txtPwdVer
             // 
+            this.txtPwdVer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPwdVer.Location = new System.Drawing.Point(145, 309);
             this.txtPwdVer.Name = "txtPwdVer";
-            this.txtPwdVer.Size = new System.Drawing.Size(156, 39);
+            this.txtPwdVer.Size = new System.Drawing.Size(156, 33);
             this.txtPwdVer.TabIndex = 4;
             this.txtPwdVer.UseSystemPasswordChar = true;
             this.txtPwdVer.Visible = false;
             // 
             // txtPwd
             // 
+            this.txtPwd.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPwd.Location = new System.Drawing.Point(145, 245);
             this.txtPwd.Name = "txtPwd";
-            this.txtPwd.Size = new System.Drawing.Size(156, 39);
+            this.txtPwd.Size = new System.Drawing.Size(156, 33);
             this.txtPwd.TabIndex = 3;
             this.txtPwd.UseSystemPasswordChar = true;
             this.txtPwd.Visible = false;
@@ -3106,6 +3218,7 @@
             // 
             // btnAdd
             // 
+            this.btnAdd.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnAdd.Font = new System.Drawing.Font("微軟正黑體", 12F);
             this.btnAdd.Location = new System.Drawing.Point(45, 431);
             this.btnAdd.Name = "btnAdd";
@@ -3118,18 +3231,22 @@
             // 
             // txtName
             // 
+            this.txtName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtName.Location = new System.Drawing.Point(145, 118);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(156, 39);
+            this.txtName.Size = new System.Drawing.Size(156, 33);
             this.txtName.TabIndex = 2;
             // 
             // txtID
             // 
+            this.txtID.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtID.Enabled = false;
             this.txtID.Location = new System.Drawing.Point(145, 57);
             this.txtID.MaxLength = 10;
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(156, 39);
+            this.txtID.Size = new System.Drawing.Size(156, 33);
             this.txtID.TabIndex = 1;
             // 
             // lblName
@@ -3163,15 +3280,18 @@
             this.tpSpAuth.BackColor = System.Drawing.Color.LightBlue;
             this.tpSpAuth.Controls.Add(this.gbLReqNo2All);
             this.tpSpAuth.Controls.Add(this.gbID2LReqNo);
-            this.tpSpAuth.Location = new System.Drawing.Point(4, 34);
+            this.tpSpAuth.Location = new System.Drawing.Point(4, 29);
             this.tpSpAuth.Name = "tpSpAuth";
-            this.tpSpAuth.Size = new System.Drawing.Size(1020, 576);
+            this.tpSpAuth.Size = new System.Drawing.Size(1020, 581);
             this.tpSpAuth.TabIndex = 8;
             this.tpSpAuth.Text = "特殊權限作業";
             this.tpSpAuth.Click += new System.EventHandler(this.tpSpAuth_Click);
             // 
             // gbLReqNo2All
             // 
+            this.gbLReqNo2All.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gbLReqNo2All.BackColor = System.Drawing.Color.LightBlue;
             this.gbLReqNo2All.Controls.Add(this.dgvLReqNo2All4);
             this.gbLReqNo2All.Controls.Add(this.dgvLReqNo2All3);
@@ -3190,17 +3310,20 @@
             // dgvLReqNo2All4
             // 
             this.dgvLReqNo2All4.AllowUserToAddRows = false;
+            this.dgvLReqNo2All4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvLReqNo2All4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvLReqNo2All4.BackgroundColor = System.Drawing.Color.FloralWhite;
             this.dgvLReqNo2All4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.RosyBrown;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("微軟正黑體", 10F);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvLReqNo2All4.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle48.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle48.BackColor = System.Drawing.Color.RosyBrown;
+            dataGridViewCellStyle48.Font = new System.Drawing.Font("微軟正黑體", 10F);
+            dataGridViewCellStyle48.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle48.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle48.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle48.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvLReqNo2All4.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle48;
             this.dgvLReqNo2All4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLReqNo2All4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column92,
@@ -3212,14 +3335,14 @@
             this.Column97,
             this.Column98,
             this.Column99});
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FloralWhite;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("微軟正黑體", 10F);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvLReqNo2All4.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle49.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle49.BackColor = System.Drawing.Color.FloralWhite;
+            dataGridViewCellStyle49.Font = new System.Drawing.Font("微軟正黑體", 10F);
+            dataGridViewCellStyle49.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle49.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle49.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle49.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvLReqNo2All4.DefaultCellStyle = dataGridViewCellStyle49;
             this.dgvLReqNo2All4.EnableHeadersVisualStyles = false;
             this.dgvLReqNo2All4.Location = new System.Drawing.Point(15, 285);
             this.dgvLReqNo2All4.Name = "dgvLReqNo2All4";
@@ -3231,70 +3354,72 @@
             // 
             this.Column92.HeaderText = "狀態";
             this.Column92.Name = "Column92";
-            this.Column92.Width = 69;
+            this.Column92.Width = 61;
             // 
             // Column93
             // 
             this.Column93.HeaderText = "備註";
             this.Column93.Name = "Column93";
-            this.Column93.Width = 69;
+            this.Column93.Width = 61;
             // 
             // Column107
             // 
             this.Column107.HeaderText = "出庫人";
             this.Column107.Name = "Column107";
-            this.Column107.Width = 86;
+            this.Column107.Width = 75;
             // 
             // Column94
             // 
             this.Column94.HeaderText = "出庫日期";
             this.Column94.Name = "Column94";
-            this.Column94.Width = 103;
+            this.Column94.Width = 89;
             // 
             // Column95
             // 
             this.Column95.HeaderText = "使用者(申請人)";
             this.Column95.Name = "Column95";
-            this.Column95.Width = 147;
+            this.Column95.Width = 125;
             // 
             // Column96
             // 
             this.Column96.HeaderText = "計畫編號";
             this.Column96.Name = "Column96";
-            this.Column96.Width = 103;
+            this.Column96.Width = 89;
             // 
             // Column97
             // 
             this.Column97.HeaderText = "出庫備註";
             this.Column97.Name = "Column97";
-            this.Column97.Width = 103;
+            this.Column97.Width = 89;
             // 
             // Column98
             // 
             this.Column98.HeaderText = "入庫日期";
             this.Column98.Name = "Column98";
-            this.Column98.Width = 103;
+            this.Column98.Width = 89;
             // 
             // Column99
             // 
             this.Column99.HeaderText = "列印次數";
             this.Column99.Name = "Column99";
-            this.Column99.Width = 103;
+            this.Column99.Width = 89;
             // 
             // dgvLReqNo2All3
             // 
             this.dgvLReqNo2All3.AllowUserToAddRows = false;
+            this.dgvLReqNo2All3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvLReqNo2All3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvLReqNo2All3.BackgroundColor = System.Drawing.Color.FloralWhite;
             this.dgvLReqNo2All3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.RosyBrown;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("微軟正黑體", 10F);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvLReqNo2All3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle50.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle50.BackColor = System.Drawing.Color.RosyBrown;
+            dataGridViewCellStyle50.Font = new System.Drawing.Font("微軟正黑體", 10F);
+            dataGridViewCellStyle50.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle50.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle50.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle50.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvLReqNo2All3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle50;
             this.dgvLReqNo2All3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLReqNo2All3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column81,
@@ -3308,14 +3433,14 @@
             this.Column89,
             this.Column90,
             this.Column91});
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FloralWhite;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("微軟正黑體", 10F);
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvLReqNo2All3.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle51.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle51.BackColor = System.Drawing.Color.FloralWhite;
+            dataGridViewCellStyle51.Font = new System.Drawing.Font("微軟正黑體", 10F);
+            dataGridViewCellStyle51.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle51.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle51.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle51.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvLReqNo2All3.DefaultCellStyle = dataGridViewCellStyle51;
             this.dgvLReqNo2All3.EnableHeadersVisualStyles = false;
             this.dgvLReqNo2All3.Location = new System.Drawing.Point(15, 211);
             this.dgvLReqNo2All3.Name = "dgvLReqNo2All3";
@@ -3327,82 +3452,84 @@
             // 
             this.Column81.HeaderText = "罹病部位";
             this.Column81.Name = "Column81";
-            this.Column81.Width = 103;
+            this.Column81.Width = 89;
             // 
             // Column82
             // 
             this.Column82.HeaderText = "診斷名稱1";
             this.Column82.Name = "Column82";
-            this.Column82.Width = 113;
+            this.Column82.Width = 97;
             // 
             // Column83
             // 
             this.Column83.HeaderText = "診斷名稱2";
             this.Column83.Name = "Column83";
-            this.Column83.Width = 113;
+            this.Column83.Width = 97;
             // 
             // Column84
             // 
             this.Column84.HeaderText = "診斷名稱3";
             this.Column84.Name = "Column84";
-            this.Column84.Width = 113;
+            this.Column84.Width = 97;
             // 
             // Column85
             // 
             this.Column85.HeaderText = "檔案登錄人";
             this.Column85.Name = "Column85";
-            this.Column85.Width = 120;
+            this.Column85.Width = 103;
             // 
             // Column86
             // 
             this.Column86.HeaderText = "計畫同意書";
             this.Column86.Name = "Column86";
-            this.Column86.Width = 120;
+            this.Column86.Width = 103;
             // 
             // Column87
             // 
             this.Column87.HeaderText = "研究簽署日期";
             this.Column87.Name = "Column87";
-            this.Column87.Width = 137;
+            this.Column87.Width = 117;
             // 
             // Column88
             // 
             this.Column88.HeaderText = "同意書編號";
             this.Column88.Name = "Column88";
-            this.Column88.Width = 120;
+            this.Column88.Width = 103;
             // 
             // Column89
             // 
             this.Column89.HeaderText = "同意簽署日期";
             this.Column89.Name = "Column89";
-            this.Column89.Width = 137;
+            this.Column89.Width = 117;
             // 
             // Column90
             // 
             this.Column90.HeaderText = "使用年限";
             this.Column90.Name = "Column90";
-            this.Column90.Width = 103;
+            this.Column90.Width = 89;
             // 
             // Column91
             // 
             this.Column91.HeaderText = "變更範圍";
             this.Column91.Name = "Column91";
-            this.Column91.Width = 103;
+            this.Column91.Width = 89;
             // 
             // dgvLReqNo2All2
             // 
             this.dgvLReqNo2All2.AllowUserToAddRows = false;
+            this.dgvLReqNo2All2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvLReqNo2All2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvLReqNo2All2.BackgroundColor = System.Drawing.Color.FloralWhite;
             this.dgvLReqNo2All2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.RosyBrown;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("微軟正黑體", 10F);
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvLReqNo2All2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle52.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle52.BackColor = System.Drawing.Color.RosyBrown;
+            dataGridViewCellStyle52.Font = new System.Drawing.Font("微軟正黑體", 10F);
+            dataGridViewCellStyle52.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle52.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle52.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle52.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvLReqNo2All2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle52;
             this.dgvLReqNo2All2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column71,
             this.Column72,
@@ -3414,14 +3541,14 @@
             this.Column78,
             this.Column79,
             this.Column80});
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FloralWhite;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("微軟正黑體", 10F);
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvLReqNo2All2.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle53.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle53.BackColor = System.Drawing.Color.FloralWhite;
+            dataGridViewCellStyle53.Font = new System.Drawing.Font("微軟正黑體", 10F);
+            dataGridViewCellStyle53.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle53.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle53.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle53.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvLReqNo2All2.DefaultCellStyle = dataGridViewCellStyle53;
             this.dgvLReqNo2All2.EnableHeadersVisualStyles = false;
             this.dgvLReqNo2All2.Location = new System.Drawing.Point(15, 138);
             this.dgvLReqNo2All2.Name = "dgvLReqNo2All2";
@@ -3433,76 +3560,78 @@
             // 
             this.Column71.HeaderText = "檢體採集當時年齡";
             this.Column71.Name = "Column71";
-            this.Column71.Width = 171;
+            this.Column71.Width = 145;
             // 
             // Column72
             // 
             this.Column72.HeaderText = "檢體種類";
             this.Column72.Name = "Column72";
-            this.Column72.Width = 103;
+            this.Column72.Width = 89;
             // 
             // Column73
             // 
             this.Column73.HeaderText = "檢體採集日期";
             this.Column73.Name = "Column73";
-            this.Column73.Width = 137;
+            this.Column73.Width = 117;
             // 
             // Column74
             // 
             this.Column74.HeaderText = "檢體採集部位";
             this.Column74.Name = "Column74";
-            this.Column74.Width = 137;
+            this.Column74.Width = 117;
             // 
             // Column75
             // 
             this.Column75.HeaderText = "保存方式";
             this.Column75.Name = "Column75";
-            this.Column75.Width = 103;
+            this.Column75.Width = 89;
             // 
             // Column76
             // 
             this.Column76.HeaderText = "檢體離體時刻";
             this.Column76.Name = "Column76";
-            this.Column76.Width = 137;
+            this.Column76.Width = 117;
             // 
             // Column77
             // 
             this.Column77.HeaderText = "檢體處理時刻";
             this.Column77.Name = "Column77";
-            this.Column77.Width = 137;
+            this.Column77.Width = 117;
             // 
             // Column78
             // 
             this.Column78.HeaderText = "離體後環境";
             this.Column78.Name = "Column78";
-            this.Column78.Width = 120;
+            this.Column78.Width = 103;
             // 
             // Column79
             // 
             this.Column79.HeaderText = "離體後時間";
             this.Column79.Name = "Column79";
-            this.Column79.Width = 120;
+            this.Column79.Width = 103;
             // 
             // Column80
             // 
             this.Column80.HeaderText = "分庫";
             this.Column80.Name = "Column80";
-            this.Column80.Width = 69;
+            this.Column80.Width = 61;
             // 
             // dgvLReqNo2All1
             // 
             this.dgvLReqNo2All1.AllowUserToAddRows = false;
+            this.dgvLReqNo2All1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvLReqNo2All1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvLReqNo2All1.BackgroundColor = System.Drawing.Color.FloralWhite;
             this.dgvLReqNo2All1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.RosyBrown;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("微軟正黑體", 10F);
-            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvLReqNo2All1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle54.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle54.BackColor = System.Drawing.Color.RosyBrown;
+            dataGridViewCellStyle54.Font = new System.Drawing.Font("微軟正黑體", 10F);
+            dataGridViewCellStyle54.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle54.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle54.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle54.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvLReqNo2All1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle54;
             this.dgvLReqNo2All1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLReqNo2All1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column62,
@@ -3515,14 +3644,14 @@
             this.Column67,
             this.Column69,
             this.Column70});
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FloralWhite;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("微軟正黑體", 10F);
-            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvLReqNo2All1.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle55.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle55.BackColor = System.Drawing.Color.FloralWhite;
+            dataGridViewCellStyle55.Font = new System.Drawing.Font("微軟正黑體", 10F);
+            dataGridViewCellStyle55.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle55.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle55.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle55.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvLReqNo2All1.DefaultCellStyle = dataGridViewCellStyle55;
             this.dgvLReqNo2All1.EnableHeadersVisualStyles = false;
             this.dgvLReqNo2All1.Location = new System.Drawing.Point(15, 64);
             this.dgvLReqNo2All1.Name = "dgvLReqNo2All1";
@@ -3534,68 +3663,70 @@
             // 
             this.Column62.HeaderText = "舊檢體編號";
             this.Column62.Name = "Column62";
-            this.Column62.Width = 120;
+            this.Column62.Width = 103;
             // 
             // Column61
             // 
             this.Column61.HeaderText = "新檢體編號";
             this.Column61.Name = "Column61";
-            this.Column61.Width = 120;
+            this.Column61.Width = 103;
             // 
             // Column63
             // 
             this.Column63.HeaderText = "舊檢體位置";
             this.Column63.Name = "Column63";
-            this.Column63.Width = 120;
+            this.Column63.Width = 103;
             // 
             // Column64
             // 
             this.Column64.HeaderText = "新檢體位置";
             this.Column64.Name = "Column64";
-            this.Column64.Width = 120;
+            this.Column64.Width = 103;
             // 
             // Column65
             // 
             this.Column65.HeaderText = "個案碼";
             this.Column65.Name = "Column65";
-            this.Column65.Width = 86;
+            this.Column65.Width = 75;
             // 
             // Column68
             // 
             this.Column68.HeaderText = "舊病歷號";
             this.Column68.Name = "Column68";
-            this.Column68.Width = 103;
+            this.Column68.Width = 89;
             // 
             // Column66
             // 
             this.Column66.HeaderText = "病歷號";
             this.Column66.Name = "Column66";
-            this.Column66.Width = 86;
+            this.Column66.Width = 75;
             // 
             // Column67
             // 
             this.Column67.HeaderText = "病患姓名";
             this.Column67.Name = "Column67";
-            this.Column67.Width = 103;
+            this.Column67.Width = 89;
             // 
             // Column69
             // 
             this.Column69.HeaderText = "性別";
             this.Column69.Name = "Column69";
-            this.Column69.Width = 69;
+            this.Column69.Width = 61;
             // 
             // Column70
             // 
             this.Column70.HeaderText = "出生日期";
             this.Column70.Name = "Column70";
-            this.Column70.Width = 103;
+            this.Column70.Width = 89;
             // 
             // txtLReqNo2All
             // 
+            this.txtLReqNo2All.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtLReqNo2All.Font = new System.Drawing.Font("微軟正黑體", 10F);
             this.txtLReqNo2All.Location = new System.Drawing.Point(130, 32);
             this.txtLReqNo2All.Name = "txtLReqNo2All";
-            this.txtLReqNo2All.Size = new System.Drawing.Size(143, 30);
+            this.txtLReqNo2All.Size = new System.Drawing.Size(143, 25);
             this.txtLReqNo2All.TabIndex = 2;
             this.txtLReqNo2All.TextChanged += new System.EventHandler(this.txtLReqNo2All_TextChanged);
             this.txtLReqNo2All.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtLReqNo2All_KeyDown);
@@ -3615,6 +3746,8 @@
             // 
             // gbID2LReqNo
             // 
+            this.gbID2LReqNo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gbID2LReqNo.BackColor = System.Drawing.Color.LightBlue;
             this.gbID2LReqNo.Controls.Add(this.dgvID2LReqNo);
             this.gbID2LReqNo.Controls.Add(this.txtID2LReqNo);
@@ -3630,29 +3763,31 @@
             // dgvID2LReqNo
             // 
             this.dgvID2LReqNo.AllowUserToAddRows = false;
+            this.dgvID2LReqNo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvID2LReqNo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvID2LReqNo.BackgroundColor = System.Drawing.Color.FloralWhite;
             this.dgvID2LReqNo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.RosyBrown;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("微軟正黑體", 10F);
-            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvID2LReqNo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle56.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle56.BackColor = System.Drawing.Color.RosyBrown;
+            dataGridViewCellStyle56.Font = new System.Drawing.Font("微軟正黑體", 10F);
+            dataGridViewCellStyle56.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle56.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle56.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle56.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvID2LReqNo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle56;
             this.dgvID2LReqNo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvID2LReqNo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColMRNo,
             this.ColID2LReqNo});
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.BackColor = System.Drawing.Color.FloralWhite;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("微軟正黑體", 10F);
-            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvID2LReqNo.DefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle57.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle57.BackColor = System.Drawing.Color.FloralWhite;
+            dataGridViewCellStyle57.Font = new System.Drawing.Font("微軟正黑體", 10F);
+            dataGridViewCellStyle57.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle57.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle57.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle57.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvID2LReqNo.DefaultCellStyle = dataGridViewCellStyle57;
             this.dgvID2LReqNo.EnableHeadersVisualStyles = false;
             this.dgvID2LReqNo.Location = new System.Drawing.Point(280, 34);
             this.dgvID2LReqNo.Name = "dgvID2LReqNo";
@@ -3665,20 +3800,20 @@
             // 
             this.ColMRNo.HeaderText = "病歷號";
             this.ColMRNo.Name = "ColMRNo";
-            this.ColMRNo.Width = 86;
+            this.ColMRNo.Width = 75;
             // 
             // ColID2LReqNo
             // 
             this.ColID2LReqNo.HeaderText = "檢體編號";
             this.ColID2LReqNo.Name = "ColID2LReqNo";
-            this.ColID2LReqNo.Width = 103;
+            this.ColID2LReqNo.Width = 89;
             // 
             // txtID2LReqNo
             // 
             this.txtID2LReqNo.Font = new System.Drawing.Font("微軟正黑體", 10F);
             this.txtID2LReqNo.Location = new System.Drawing.Point(120, 34);
             this.txtID2LReqNo.Name = "txtID2LReqNo";
-            this.txtID2LReqNo.Size = new System.Drawing.Size(154, 30);
+            this.txtID2LReqNo.Size = new System.Drawing.Size(154, 25);
             this.txtID2LReqNo.TabIndex = 1;
             this.txtID2LReqNo.TextChanged += new System.EventHandler(this.txtID2LReqNo_TextChanged);
             this.txtID2LReqNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtID2LReqNo_KeyDown);
@@ -3701,16 +3836,19 @@
             this.tpBackup.BackColor = System.Drawing.Color.PowderBlue;
             this.tpBackup.Controls.Add(this.gbRemote);
             this.tpBackup.Controls.Add(this.gbLocal);
-            this.tpBackup.Location = new System.Drawing.Point(4, 34);
+            this.tpBackup.Location = new System.Drawing.Point(4, 29);
             this.tpBackup.Name = "tpBackup";
             this.tpBackup.Padding = new System.Windows.Forms.Padding(3);
-            this.tpBackup.Size = new System.Drawing.Size(1020, 576);
+            this.tpBackup.Size = new System.Drawing.Size(1020, 581);
             this.tpBackup.TabIndex = 10;
             this.tpBackup.Text = "備份";
             this.tpBackup.Click += new System.EventHandler(this.tpBackup_Click);
             // 
             // gbRemote
             // 
+            this.gbRemote.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gbRemote.BackColor = System.Drawing.Color.LightSteelBlue;
             this.gbRemote.Controls.Add(this.btnRestore);
             this.gbRemote.Controls.Add(this.txtRemoteUserName);
@@ -3745,7 +3883,7 @@
             this.txtRemoteUserName.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtRemoteUserName.Location = new System.Drawing.Point(127, 31);
             this.txtRemoteUserName.Name = "txtRemoteUserName";
-            this.txtRemoteUserName.Size = new System.Drawing.Size(155, 34);
+            this.txtRemoteUserName.Size = new System.Drawing.Size(155, 29);
             this.txtRemoteUserName.TabIndex = 8;
             // 
             // label22
@@ -3767,7 +3905,7 @@
             this.txtRemoteIP.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtRemoteIP.Location = new System.Drawing.Point(127, 183);
             this.txtRemoteIP.Name = "txtRemoteIP";
-            this.txtRemoteIP.Size = new System.Drawing.Size(155, 34);
+            this.txtRemoteIP.Size = new System.Drawing.Size(155, 29);
             this.txtRemoteIP.TabIndex = 3;
             // 
             // txtLocalSource
@@ -3776,7 +3914,7 @@
             this.txtLocalSource.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtLocalSource.Location = new System.Drawing.Point(127, 267);
             this.txtLocalSource.Name = "txtLocalSource";
-            this.txtLocalSource.Size = new System.Drawing.Size(318, 34);
+            this.txtLocalSource.Size = new System.Drawing.Size(318, 29);
             this.txtLocalSource.TabIndex = 5;
             // 
             // label15
@@ -3824,11 +3962,13 @@
             this.txtRemoteName.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtRemoteName.Location = new System.Drawing.Point(127, 109);
             this.txtRemoteName.Name = "txtRemoteName";
-            this.txtRemoteName.Size = new System.Drawing.Size(155, 34);
+            this.txtRemoteName.Size = new System.Drawing.Size(155, 29);
             this.txtRemoteName.TabIndex = 1;
             // 
             // gbLocal
             // 
+            this.gbLocal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.gbLocal.BackColor = System.Drawing.Color.Thistle;
             this.gbLocal.Controls.Add(this.chkSelfBackupOnly);
             this.gbLocal.Controls.Add(this.pbBackup);
@@ -3854,7 +3994,7 @@
             this.chkSelfBackupOnly.AutoSize = true;
             this.chkSelfBackupOnly.Location = new System.Drawing.Point(288, 115);
             this.chkSelfBackupOnly.Name = "chkSelfBackupOnly";
-            this.chkSelfBackupOnly.Size = new System.Drawing.Size(154, 29);
+            this.chkSelfBackupOnly.Size = new System.Drawing.Size(124, 24);
             this.chkSelfBackupOnly.TabIndex = 9;
             this.chkSelfBackupOnly.Text = "本機備份only";
             this.chkSelfBackupOnly.UseVisualStyleBackColor = true;
@@ -3882,7 +4022,7 @@
             this.txtUserName.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtUserName.Location = new System.Drawing.Point(129, 32);
             this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(155, 34);
+            this.txtUserName.Size = new System.Drawing.Size(155, 29);
             this.txtUserName.TabIndex = 7;
             this.txtUserName.TextChanged += new System.EventHandler(this.txtUserName_TextChanged);
             // 
@@ -3905,7 +4045,7 @@
             this.txtRemoteDestination.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtRemoteDestination.Location = new System.Drawing.Point(128, 269);
             this.txtRemoteDestination.Name = "txtRemoteDestination";
-            this.txtRemoteDestination.Size = new System.Drawing.Size(318, 34);
+            this.txtRemoteDestination.Size = new System.Drawing.Size(318, 29);
             this.txtRemoteDestination.TabIndex = 5;
             // 
             // label18
@@ -3927,7 +4067,7 @@
             this.txtLocalIP.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtLocalIP.Location = new System.Drawing.Point(127, 185);
             this.txtLocalIP.Name = "txtLocalIP";
-            this.txtLocalIP.Size = new System.Drawing.Size(155, 34);
+            this.txtLocalIP.Size = new System.Drawing.Size(155, 29);
             this.txtLocalIP.TabIndex = 3;
             // 
             // label14
@@ -3962,7 +4102,7 @@
             this.txtLocalName.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtLocalName.Location = new System.Drawing.Point(127, 110);
             this.txtLocalName.Name = "txtLocalName";
-            this.txtLocalName.Size = new System.Drawing.Size(155, 34);
+            this.txtLocalName.Size = new System.Drawing.Size(155, 29);
             this.txtLocalName.TabIndex = 1;
             // 
             // tpLog
@@ -3974,10 +4114,10 @@
             this.tpLog.Controls.Add(this.txtEventDate);
             this.tpLog.Controls.Add(this.Refresh);
             this.tpLog.Controls.Add(this.dgvEventLog);
-            this.tpLog.Location = new System.Drawing.Point(4, 34);
+            this.tpLog.Location = new System.Drawing.Point(4, 29);
             this.tpLog.Name = "tpLog";
             this.tpLog.Padding = new System.Windows.Forms.Padding(3);
-            this.tpLog.Size = new System.Drawing.Size(1020, 576);
+            this.tpLog.Size = new System.Drawing.Size(1020, 581);
             this.tpLog.TabIndex = 11;
             this.tpLog.Text = "Log";
             // 
@@ -3985,7 +4125,7 @@
             // 
             this.txtEventNo.Location = new System.Drawing.Point(569, 34);
             this.txtEventNo.Name = "txtEventNo";
-            this.txtEventNo.Size = new System.Drawing.Size(69, 34);
+            this.txtEventNo.Size = new System.Drawing.Size(69, 29);
             this.txtEventNo.TabIndex = 6;
             // 
             // label24
@@ -3993,7 +4133,7 @@
             this.label24.AutoSize = true;
             this.label24.Location = new System.Drawing.Point(466, 37);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(97, 25);
+            this.label24.Size = new System.Drawing.Size(78, 20);
             this.label24.TabIndex = 5;
             this.label24.Text = "EventNo:";
             // 
@@ -4002,7 +4142,7 @@
             this.lblDateTime.AutoSize = true;
             this.lblDateTime.Location = new System.Drawing.Point(83, 34);
             this.lblDateTime.Name = "lblDateTime";
-            this.lblDateTime.Size = new System.Drawing.Size(137, 25);
+            this.lblDateTime.Size = new System.Drawing.Size(109, 20);
             this.lblDateTime.TabIndex = 4;
             this.lblDateTime.Text = "查詢日期時間:";
             // 
@@ -4010,11 +4150,12 @@
             // 
             this.txtEventDate.Location = new System.Drawing.Point(221, 31);
             this.txtEventDate.Name = "txtEventDate";
-            this.txtEventDate.Size = new System.Drawing.Size(177, 34);
+            this.txtEventDate.Size = new System.Drawing.Size(177, 29);
             this.txtEventDate.TabIndex = 3;
             // 
             // Refresh
             // 
+            this.Refresh.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.Refresh.Location = new System.Drawing.Point(757, 29);
             this.Refresh.Name = "Refresh";
             this.Refresh.Size = new System.Drawing.Size(95, 41);
@@ -4026,6 +4167,9 @@
             // dgvEventLog
             // 
             this.dgvEventLog.AllowUserToAddRows = false;
+            this.dgvEventLog.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvEventLog.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvEventLog.BackgroundColor = System.Drawing.Color.LightGray;
             this.dgvEventLog.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -4048,37 +4192,37 @@
             // 
             this.dataGridViewTextBoxColumn61.HeaderText = "日期時間";
             this.dataGridViewTextBoxColumn61.Name = "dataGridViewTextBoxColumn61";
-            this.dataGridViewTextBoxColumn61.Width = 117;
+            this.dataGridViewTextBoxColumn61.Width = 98;
             // 
             // dataGridViewTextBoxColumn62
             // 
             this.dataGridViewTextBoxColumn62.HeaderText = "事件";
             this.dataGridViewTextBoxColumn62.Name = "dataGridViewTextBoxColumn62";
-            this.dataGridViewTextBoxColumn62.Width = 77;
+            this.dataGridViewTextBoxColumn62.Width = 66;
             // 
             // dataGridViewTextBoxColumn63
             // 
             this.dataGridViewTextBoxColumn63.HeaderText = "ClerkName";
             this.dataGridViewTextBoxColumn63.Name = "dataGridViewTextBoxColumn63";
-            this.dataGridViewTextBoxColumn63.Width = 141;
+            this.dataGridViewTextBoxColumn63.Width = 119;
             // 
             // dataGridViewTextBoxColumn64
             // 
             this.dataGridViewTextBoxColumn64.HeaderText = "檢體編號";
             this.dataGridViewTextBoxColumn64.Name = "dataGridViewTextBoxColumn64";
-            this.dataGridViewTextBoxColumn64.Width = 117;
+            this.dataGridViewTextBoxColumn64.Width = 98;
             // 
             // dataGridViewTextBoxColumn65
             // 
             this.dataGridViewTextBoxColumn65.HeaderText = "病歷號";
             this.dataGridViewTextBoxColumn65.Name = "dataGridViewTextBoxColumn65";
-            this.dataGridViewTextBoxColumn65.Width = 97;
+            this.dataGridViewTextBoxColumn65.Width = 82;
             // 
             // OtherValue
             // 
             this.OtherValue.HeaderText = "OtherValue";
             this.OtherValue.Name = "OtherValue";
-            this.OtherValue.Width = 142;
+            this.OtherValue.Width = 121;
             // 
             // printPreviewDialog1
             // 
@@ -4092,6 +4236,7 @@
             // 
             // buttonSignOut
             // 
+            this.buttonSignOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonSignOut.Location = new System.Drawing.Point(944, 0);
             this.buttonSignOut.Name = "buttonSignOut";
             this.buttonSignOut.Size = new System.Drawing.Size(75, 27);
@@ -4102,11 +4247,10 @@
             // 
             // BioBank
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(1026, 617);
-            this.ControlBox = false;
             this.Controls.Add(this.buttonSignOut);
             this.Controls.Add(this.tabForm);
             this.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -4114,6 +4258,7 @@
             this.Name = "BioBank";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "生物資料庫";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.BioBank_FormClosed);
             this.Load += new System.EventHandler(this.frmBioBank_Load);
             this.tabForm.ResumeLayout(false);
             this.tpImport.ResumeLayout(false);

@@ -19,8 +19,9 @@ namespace BioBank
         public LogIn()
         {
             InitializeComponent();
-           
-            
+
+            //LoginSuccess("Administrator (M)", "U121516074", "賴禹翰");
+
             txtID.Validating += new CancelEventHandler(txtID_Validating);
             txtPWD.Validating += new CancelEventHandler(txtPWD_Validating);
             txtNewPwd.Validating += new CancelEventHandler(txtNewPwd_Validating);
