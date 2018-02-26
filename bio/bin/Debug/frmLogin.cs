@@ -47,121 +47,7 @@ namespace BioBank
 
         private void buttonLogIn_Click(object sender, EventArgs e)
         {
-            string sID;
-            string sName;
-            string sPWD;
-            string sSQL;
-            string sCorrectPwd;
-            string sType = "";
-            sID = ""; sPWD = ""; sSQL = ""; sName = ""; sCorrectPwd = "";
-            //insert Event Log: 1.Try Login
-            ClsShareFunc.insEvenLogt("1", sName, "", "", "Try Login--" + txtID.Text);
-            try
-            {
-                sID = txtID.Text;
-                sPWD = txtPWD.Text;
-
-                /*1.check Administrator 中是否有帳號*/
-                //using (SqlConnection sCon = new SqlConnection(ClsShareFunc.DB_SECConnection()))
-                using (SqlConnection sCon = BioBank_Conn.Class_biobank_conn.DB_SEC_conn())
-                {
-                    sCon.Open();
-                    sSQL = " select * from BioAdministratorKeyTbl (nolock) where chUserID = '" + sID + "' ";
-                    SqlCommand sCmd = new SqlCommand(sSQL, sCon);
-                    SqlDataReader sRead = sCmd.ExecuteReader();
-
-                    if (sRead.HasRows == true)
-                    {
-                        while (sRead.Read())
-                        {
-                            sCorrectPwd = ClsShareFunc.gfunCheck(sRead["chAdministratorKey"]);
-                            sName = ClsShareFunc.gfunCheck(sRead["chUserName"]);
-                            sType = ClsShareFunc.gfunCheck(sRead["chBioEmpFlag"]);
-                        }
-                        sRead.Close();
-
-                        if (sCorrectPwd == GetMD5(sPWD))
-                        {
-                            //insert Event Log: 1-11. --Login successful (administrator)--
-                            ClsShareFunc.insEvenLogt("1-11", sName, "", "", "Login successful (administrator)--" + txtID.Text);
-                            LoginSuccess("Administrator (" + sType + ")", sID, sName);
-                        }
-                        else
-                        {
-                            //insert Event Log: 1-2. --Login fail--
-                            ClsShareFunc.insEvenLogt("1-2", sName, "", "",  "Login fail--" + txtID.Text );
-                            MessageBox.Show("密碼錯誤!");
-                            return;
-                        }
-                    }
-                    else /*2.Administrator中沒有就去Common中查*/
-                    {
-                        string sSQL2 = "";
-                        string sEnable = "";
-                        //using (SqlConnection sCon2 = new SqlConnection(ClsShareFunc.DB_SECConnection()))
-                        using (SqlConnection sCon2 = BioBank_Conn.Class_biobank_conn.DB_SEC_conn())
-                        {
-                            sCon2.Open();
-                            sSQL2 = " select * from BioCommonLoginTbl (nolock) where chUserID = '" + sID + "' ";
-                            SqlCommand sCmd2 = new SqlCommand(sSQL2, sCon2);
-                            SqlDataReader sRead2 = sCmd2.ExecuteReader();
-                            if (sRead2.HasRows == true)
-                            {
-                                while (sRead2.Read())
-                                {
-                                    sCorrectPwd = ClsShareFunc.gfunCheck(sRead2["chPassword"]);
-                                    sName = ClsShareFunc.gfunCheck(sRead2["chUserName"]);
-                                    sEnable = ClsShareFunc.gfunCheck(sRead2["chEnableFlag"]);
-                                    sType = ClsShareFunc.gfunCheck(sRead2["chBioEmpFlag"]);
-                                }
-                                sRead2.Close();
-
-                                /*enable = 'Y' -> 可使用 enable = 'N' -> 不可使用*/
-                                if (sEnable == "Y")
-                                {
-                                    if (sCorrectPwd == GetMD5(sPWD))
-                                    {
-                                        //insert Event Log: 1-12.--Login successful (common)--
-                                        ClsShareFunc.insEvenLogt("1-12", sName, "", "", "Login successful (common)--" + txtID.Text);
-                                        LoginSuccess("Common (" + sType + ")", sID, sName);
-                                    }
-                                    else
-                                    {
-                                        //insert Event Log: 1-2. --Login fail--
-                                        ClsShareFunc.insEvenLogt("1-2", sName, "", "", "Login fail--" + txtID.Text);
-                                        MessageBox.Show("密碼錯誤!");
-                                        return;
-                                    }
-                                }
-                                else
-                                {
-                                    {
-                                        //insert Event Log: 1-2. --Login fail--
-                                        ClsShareFunc.insEvenLogt("1-2", sName, "", "", "Login fail--" + txtID.Text );
-                                        MessageBox.Show("此帳號尚未Enable, 請洽生物醫學主管!");
-                                        return;//exit function
-                                    }
-                                }
-                            }
-                            else/*Administrator和Common中皆無此帳號*/
-                            {
-                                {
-                                    //insert Event Log: 1-2. --Login fail--
-                                    ClsShareFunc.insEvenLogt("1-2", sName, "", "", "Login fail--" + txtID.Text);
-                                    MessageBox.Show("查無此帳號!");
-                                    return;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("登入(buttonLogIn_Click) : " + ex.Message.ToString());
-                return;
-            }
-
+            checkLoginBefore();
         }
 
         private void lnklblModPwd_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -496,8 +382,136 @@ namespace BioBank
 
         }
 
+        //登入前認證
+        private void checkLoginBefore()
+        {
+            string sID;
+            string sName;
+            string sPWD;
+            string sSQL;
+            string sCorrectPwd;
+            string sType = "";
+            sID = ""; sPWD = ""; sSQL = ""; sName = ""; sCorrectPwd = "";
+            //insert Event Log: 1.Try Login
+            ClsShareFunc.insEvenLogt("1", sName, "", "", "Try Login--" + txtID.Text);
+            try
+            {
+                sID = txtID.Text;
+                sPWD = txtPWD.Text;
 
+                /*1.check Administrator 中是否有帳號*/
+                //using (SqlConnection sCon = new SqlConnection(ClsShareFunc.DB_SECConnection()))
+                using (SqlConnection sCon = BioBank_Conn.Class_biobank_conn.DB_SEC_conn())
+                {
+                    sCon.Open();
+                    sSQL = " select * from BioAdministratorKeyTbl (nolock) where chUserID = '" + sID + "' ";
+                    SqlCommand sCmd = new SqlCommand(sSQL, sCon);
+                    SqlDataReader sRead = sCmd.ExecuteReader();
 
+                    if (sRead.HasRows == true)
+                    {
+                        while (sRead.Read())
+                        {
+                            sCorrectPwd = ClsShareFunc.gfunCheck(sRead["chAdministratorKey"]);
+                            sName = ClsShareFunc.gfunCheck(sRead["chUserName"]);
+                            sType = ClsShareFunc.gfunCheck(sRead["chBioEmpFlag"]);
+                        }
+                        sRead.Close();
 
+                        if (sCorrectPwd == GetMD5(sPWD))
+                        {
+                            //insert Event Log: 1-11. --Login successful (administrator)--
+                            ClsShareFunc.insEvenLogt("1-11", sName, "", "", "Login successful (administrator)--" + txtID.Text);
+                            LoginSuccess("Administrator (" + sType + ")", sID, sName);
+                            MessageBox.Show("歡迎" +
+                                "\n使用者 : " + sName +
+                                "\n部門 : " + (ClsShareFunc.sLoginDepartment == "M" ? "資訊室" : (ClsShareFunc.sLoginDepartment == "M" ? "生物資料庫": "???")) +
+                                "\n身分 : " + (ClsShareFunc.sLoginIdentity == "Administrator" ? "主管" : (ClsShareFunc.sLoginIdentity == "Common" ? "一般職員": "???")));
+                        }
+                        else
+                        {
+                            //insert Event Log: 1-2. --Login fail--
+                            ClsShareFunc.insEvenLogt("1-2", sName, "", "", "Login fail--" + txtID.Text);
+                            MessageBox.Show("密碼錯誤!");
+                            return;
+                        }
+                    }
+                    else /*2.Administrator中沒有就去Common中查*/
+                    {
+                        string sSQL2 = "";
+                        string sEnable = "";
+                        //using (SqlConnection sCon2 = new SqlConnection(ClsShareFunc.DB_SECConnection()))
+                        using (SqlConnection sCon2 = BioBank_Conn.Class_biobank_conn.DB_SEC_conn())
+                        {
+                            sCon2.Open();
+                            sSQL2 = " select * from BioCommonLoginTbl (nolock) where chUserID = '" + sID + "' ";
+                            SqlCommand sCmd2 = new SqlCommand(sSQL2, sCon2);
+                            SqlDataReader sRead2 = sCmd2.ExecuteReader();
+                            if (sRead2.HasRows == true)
+                            {
+                                while (sRead2.Read())
+                                {
+                                    sCorrectPwd = ClsShareFunc.gfunCheck(sRead2["chPassword"]);
+                                    sName = ClsShareFunc.gfunCheck(sRead2["chUserName"]);
+                                    sEnable = ClsShareFunc.gfunCheck(sRead2["chEnableFlag"]);
+                                    sType = ClsShareFunc.gfunCheck(sRead2["chBioEmpFlag"]);
+                                }
+                                sRead2.Close();
+
+                                /*enable = 'Y' -> 可使用 enable = 'N' -> 不可使用*/
+                                if (sEnable == "Y")
+                                {
+                                    if (sCorrectPwd == GetMD5(sPWD))
+                                    {
+                                        //insert Event Log: 1-12.--Login successful (common)--
+                                        ClsShareFunc.insEvenLogt("1-12", sName, "", "", "Login successful (common)--" + txtID.Text);
+                                        LoginSuccess("Common (" + sType + ")", sID, sName);
+                                    }
+                                    else
+                                    {
+                                        //insert Event Log: 1-2. --Login fail--
+                                        ClsShareFunc.insEvenLogt("1-2", sName, "", "", "Login fail--" + txtID.Text);
+                                        MessageBox.Show("密碼錯誤!");
+                                        return;
+                                    }
+                                }
+                                else
+                                {
+                                    {
+                                        //insert Event Log: 1-2. --Login fail--
+                                        ClsShareFunc.insEvenLogt("1-2", sName, "", "", "Login fail--" + txtID.Text);
+                                        MessageBox.Show("此帳號尚未Enable, 請洽生物醫學主管!");
+                                        return;//exit function
+                                    }
+                                }
+                            }
+                            else/*Administrator和Common中皆無此帳號*/
+                            {
+                                {
+                                    //insert Event Log: 1-2. --Login fail--
+                                    ClsShareFunc.insEvenLogt("1-2", sName, "", "", "Login fail--" + txtID.Text);
+                                    MessageBox.Show("查無此帳號!");
+                                    return;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("登入(buttonLogIn_Click) : " + ex.Message.ToString());
+                return;
+            }
+        }
+
+        //密碼欄按下enter後做的事
+        private void txtPWD_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(13))
+            {
+                checkLoginBefore();
+            }
+        }
     }
 }

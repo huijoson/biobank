@@ -66,7 +66,6 @@ C:\HIS5\biobank\bio\obj\x86\Debug\BioBank.csprojResolveAssemblyReference.cache
 C:\biobank\bio\bin\Debug\BioBank.exe.config
 C:\biobank\bio\obj\x86\Debug\BioBank.exe
 C:\biobank\bio\obj\x86\Debug\BioBank.pdb
-C:\biobank\bio\obj\x86\Debug\BioBank.csprojResolveAssemblyReference.cache
 C:\biobank\bio\obj\x86\Debug\BioBank.BioBank.resources
 C:\biobank\bio\obj\x86\Debug\BioBank.LogIn.resources
 C:\biobank\bio\obj\x86\Debug\BioBank.frmVerPwd.resources

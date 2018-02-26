@@ -108,6 +108,7 @@
             this.txtPWD.TabIndex = 2;
             this.txtPWD.UseSystemPasswordChar = true;
             this.txtPWD.TextChanged += new System.EventHandler(this.txtPWD_TextChanged);
+            this.txtPWD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPWD_KeyPress);
             // 
             // txtID
             // 
@@ -254,7 +255,7 @@
             // txtNewPwd
             // 
             this.txtNewPwd.Font = new System.Drawing.Font("微軟正黑體", 12F);
-            this.txtNewPwd.Location = new System.Drawing.Point(114, 150);
+            this.txtNewPwd.Location = new System.Drawing.Point(114, 149);
             this.txtNewPwd.Name = "txtNewPwd";
             this.txtNewPwd.Size = new System.Drawing.Size(179, 29);
             this.txtNewPwd.TabIndex = 11;
