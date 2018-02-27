@@ -1026,7 +1026,7 @@ namespace BioBank
             //ClsPrint _ClsPrint = new ClsPrint(RecordTemp, "新檢體編號");
             //_ClsPrint.PrintForm();
 
-            TSCLIB_DLL.openport("TTP243E");
+            TSCLIB_DLL.openport("CAB MACH4/300");
             TSCLIB_DLL.setup("30", "10", "2", "12", "0", "-1", "5");
             TSCLIB_DLL.clearbuffer();
 
