@@ -26,7 +26,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>6</ApplicationRevision>
+    <ApplicationRevision>8</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -94,13 +94,16 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="zxing">
+      <HintPath>..\..\Users\hp\Downloads\ZXing.Net.0.16.2.0\net4.0\zxing.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AES.cs" />
     <Compile Include="ClsModule.cs" />
     <Compile Include="frmBioBank.cs">
-      <SubType>Form</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmBioBank.Designer.cs">
       <DependentUpon>frmBioBank.cs</DependentUpon>
@@ -122,13 +125,10 @@
     <Compile Include="InputPwd.Designer.cs">
       <DependentUpon>InputPwd.cs</DependentUpon>
     </Compile>
+    <Compile Include="printDocument.cs" />
+    <Compile Include="printFunction.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service References\cab\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
     <Compile Include="TSCLIB_DLL.cs" />
     <EmbeddedResource Include="frmBioBank.resx">
       <DependentUpon>frmBioBank.cs</DependentUpon>
@@ -163,19 +163,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Service References\cab\BioBank.cab.format.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\cab\BioBank.cab.job.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\cab\BioBank.cab.loadFormat.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\cab\BioBank.cab.objectType.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\cab\cabPrinterWebService.wsdl" />
     <None Include="TSCLIB.lib" />
   </ItemGroup>
   <ItemGroup>
@@ -201,21 +188,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\cab\configuration91.svcinfo" />
-    <None Include="Service References\cab\configuration.svcinfo" />
-    <None Include="Service References\cab\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
     <Content Include="TSCLIB.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadataStorage Include="Service References\cab\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

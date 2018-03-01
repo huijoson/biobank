@@ -90,3 +90,6 @@ C:\biobank\bio\obj\x86\Debug\BioBank.exe.manifest
 C:\biobank\bio\obj\x86\Debug\BioBank.application
 C:\biobank\bio\bin\Debug\BioBank_Conn.dll
 C:\biobank\bio\obj\x86\Debug\BioBank.csprojResolveAssemblyReference.cache
+C:\biobank\bio\bin\Debug\zxing.dll
+C:\biobank\bio\bin\Debug\zxing.pdb
+C:\biobank\bio\bin\Debug\zxing.xml

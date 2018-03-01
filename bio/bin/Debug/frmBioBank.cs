@@ -18,6 +18,7 @@ using System.Net;//dns
 using System.Diagnostics;// 開啟bat
 using System.Net.NetworkInformation; // Ping
 using BioBank_Conn;
+using System.Drawing.Printing;
 
 namespace BioBank
 {
@@ -28,6 +29,7 @@ namespace BioBank
         Boolean bolClear;
         Boolean bolKeyPass;//是否需再打密碼(true:是/false:否)
         string sExcelName;
+        string printNum = "";
         public static string pFunction8_AdminID = "";
 
         public BioBank()
@@ -3484,6 +3486,30 @@ namespace BioBank
         private void BioBank_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        public void cab_Button_Click(object sender, EventArgs e)
+        {
+            var PD = new PrintDocument();
+            
+            if (printFunction.IsPrinterExist("CAB MACH4/300"))
+            {
+                PD.PrinterSettings.PrinterName = "CAB MACH4/300";
+            }
+            for (int i = 0; i < dgvStorageRecord.Rows.Count; i++)
+            {
+                printNum = dgvStorageRecord.Rows[i].Cells["檢體管號碼"].Value.ToString();
+                PD.PrintPage += new PrintPageEventHandler(PD_PrintPage);
+                PD.Print();
+            }
+            //printNum = "U121516777";
+            //PD.PrintPage += new PrintPageEventHandler(PD_PrintPage);
+            //PD.Print();
+        }
+        public void PD_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            e.Graphics.DrawString(printNum,new Font("Free 3 of 9 Extended", 22, FontStyle.Regular), Brushes.Black, 0, 0);
+            e.Graphics.DrawString(printNum, new Font("新細明體", 10, FontStyle.Regular), Brushes.Black, 10, 25);
         }
     }
 }

@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BioBank.exe" size="176640">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BioBank.exe" size="178176">
       <assemblyIdentity name="BioBank" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>u0SPYEe0iWvIBjZ9rwHGlW6tFjU=</dsig:DigestValue>
+        <dsig:DigestValue>OSISdWnJ9cuJOJsdjkXMWdPsME0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -101,13 +101,25 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="BioBank.exe.config" size="144">
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="zxing.dll" size="450560">
+      <assemblyIdentity name="zxing" version="0.16.2.0" publicKeyToken="4E88037AC681FE60" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>p4dqorQGlhj6jrdx+7sKX95j1xQ=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="BioBank.exe.config" size="237">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>cpzNzlRjZspwKGLNlX6RAlU3880=</dsig:DigestValue>
+      <dsig:DigestValue>FTYiWy0hL23efPl1f++LIsYrP6Q=</dsig:DigestValue>
     </hash>
   </file>
   <file name="TSCLIB.dll" size="74240">
