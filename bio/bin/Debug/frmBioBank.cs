@@ -30,6 +30,10 @@ namespace BioBank
         Boolean bolKeyPass;//是否需再打密碼(true:是/false:否)
         string sExcelName;
         string printNum = "";
+        //string[] StorageRecordColumns = { "檢體管號碼", "舊檢體位置","新檢體位置", "性別", "檢體採集當時年齡", "檢體種類", "檢體採集日期", "檢體採集部位",
+        //                                    "保存方式", "檢體離體時刻","檢體處理時刻","離體後環境", "離體後時間", "分庫", "罹病部位", "診斷名稱1", "診斷名稱2", "診斷名稱3",
+        //                                    "檔案登錄人", "研究計劃同意書", "同意書編號", "截止日期", "變更範圍", "退出、停止變更、死亡", "變更備註","出庫人","出庫日期","使用者(申請人)","計畫編號","出庫備註","入庫日期"};
+        string[] StorageRecordColumns = { "檢體管號碼", "舊檢體位置","新檢體位置", "性別", "檢體採集當時年齡", "檢體種類", "檢體採集日期", "檢體採集部位"};
         public static string pFunction8_AdminID = "";
 
         public BioBank()
@@ -984,9 +988,7 @@ namespace BioBank
         {
             CheckFile(ExcelDt);
         }
-        string[] StorageRecordColumns = { "檢體管號碼", "舊檢體位置","新檢體位置", "性別", "檢體採集當時年齡", "檢體種類", "檢體採集日期", "檢體採集部位",
-                                            "保存方式", "檢體離體時刻","檢體處理時刻","離體後環境", "離體後時間", "分庫", "罹病部位", "診斷名稱1", "診斷名稱2", "診斷名稱3",
-                                            "檔案登錄人", "研究計劃同意書", "同意書編號", "截止日期", "變更範圍", "退出、停止變更、死亡", "變更備註","出庫人","出庫日期","使用者(申請人)","計畫編號","出庫備註","入庫日期"};
+        
         //查看-顯示入庫時間
         private void StorageTimeRecord()
         {
@@ -1050,34 +1052,10 @@ namespace BioBank
             ClsPrint _ClsPrint = new ClsPrint(RecordTemp, "對照表");
             _ClsPrint.PrintForm();
         }
-        //查看列印貼紙
-        private void buttonRecordPrintLabNo_Click(object sender, EventArgs e)
-        {
-            //DataGridView RecordTemp = new DataGridView();
-            //RecordTemp.Columns.Add("新檢體編號","新檢體編號");
-            //for(int i=0;i<dgvStorageRecord.Rows.Count;i++)
-            //    RecordTemp.Rows.Add( dgvStorageRecord.Rows[i].Cells["檢體管號碼"].Value);
-            //ClsPrint _ClsPrint = new ClsPrint(RecordTemp, "新檢體編號");
-            //_ClsPrint.PrintForm();
-
-            TSCLIB_DLL.openport("CAB MACH4/300");
-            TSCLIB_DLL.setup("30", "10", "2", "12", "0", "-1", "5");
-            TSCLIB_DLL.clearbuffer();
-
-            for (int i = 0; i < dgvStorageRecord.Rows.Count; i++)
-            {
-                //第一行：時間 & 性別 & 生日
-                TSCLIB_DLL.windowsfont(15, 5, 45, 0, 2, 0, "Times New Roman", dgvStorageRecord.Rows[i].Cells["檢體管號碼"].Value.ToString());
-                TSCLIB_DLL.printlabel("1", "1");
-                TSCLIB_DLL.clearbuffer();
-            }
-            //TSCLIB_DLL.printlabel("1", "1");
-            TSCLIB_DLL.closeport();          
-        }
         //查詢-搜尋按鈕 (小組欄未搜尋未完成)
         private void buttonSearch_Click(object sender, EventArgs e)
         {
-
+            dgvSearchData.Rows.Clear();
             string sql = "select * from BioPerMasterTbl  ";
 
             //小組欄位
@@ -1157,12 +1135,78 @@ namespace BioBank
             using (SqlConnection conn = BioBank_Conn.Class_biobank_conn.DB_BIO_conn())
             {
                 conn.Open();
-                SqlDataAdapter searchAdapter = new SqlDataAdapter(sql, conn);
-                DataTable dtDate = new DataTable();
-                searchAdapter.Fill(dtDate);
-                for (int i = 0; i < StorageRecordColumns.Length; i++)
-                    dtDate.Columns[i].ColumnName = StorageRecordColumns[i];
-                dgvSearchData.DataSource = dtDate;
+
+                string sSQL = "";
+                string sLabNo, sNewLabPositon, sSex, sAge, sLabType, sLabAdoptDate,sAdoptPortion,
+                    sStoreageMethod, sLabLeaveBodyDatetime, sLabDealDatetime, sLabLeaveBodyEnvir,
+                    sLabLeaveBodyHour, sSubStock, sSickPortion, sDiagName1, sDiagName2, sDiagName3,
+                    sClerkName, sPlanAgreeDate, sAgreeNoDate, sUseExpireDate, sChangeRange,
+                    sStatus, sNote, sTakeOutName,sTakeOutDate, sTakeOutApplicant, sTakeOutPlanNo, sTakeOutNote,
+                    sInComeDate, sPrintSeqNo;
+                 sLabNo=""; sNewLabPositon=""; sSex=""; sAge=""; sLabType=""; sLabAdoptDate="";sAdoptPortion="";
+                    sStoreageMethod=""; sLabLeaveBodyDatetime=""; sLabDealDatetime=""; sLabLeaveBodyEnvir="";
+                    sLabLeaveBodyHour=""; sSubStock=""; sSickPortion=""; sDiagName1=""; sDiagName2=""; sDiagName3="";
+                    sClerkName=""; sPlanAgreeDate=""; sAgreeNoDate=""; sUseExpireDate=""; sChangeRange="";
+                    sStatus = ""; sNote = ""; sTakeOutName = ""; sTakeOutDate = ""; sTakeOutApplicant = ""; sTakeOutPlanNo = ""; sTakeOutNote = "";
+                    sInComeDate = ""; sPrintSeqNo = "";
+
+                try
+                {
+                    using (SqlConnection sCon = BioBank_Conn.Class_biobank_conn.DB_BIO_conn())
+                    {
+                        sCon.Open();
+
+                        SqlCommand sCmd = new SqlCommand(sql, sCon);
+                        SqlDataReader sRead = sCmd.ExecuteReader();
+                        while(sRead.Read())
+                        {
+                                 sLabNo = ClsShareFunc.gfunCheck(sRead["chLabNo"].ToString());
+                                 sNewLabPositon = ClsShareFunc.gfunCheck(sRead["chNewLabPositon"].ToString());
+                                 sSex = ClsShareFunc.gfunCheck(sRead["chSex"].ToString());
+                                 sAge = ClsShareFunc.gfunCheck(sRead["intAge"].ToString());
+                                 sLabType = ClsShareFunc.gfunCheck(sRead["chLabType"].ToString());
+                                 sLabAdoptDate = ClsShareFunc.gfunCheck(sRead["chLabAdoptDate"].ToString());
+                                 sAdoptPortion = ClsShareFunc.gfunCheck(sRead["chAdoptPortion"].ToString());
+                                 //sStoreageMethod = ClsShareFunc.gfunCheck(sRead["chStoreageMethod"].ToString());
+                                 //sLabLeaveBodyDatetime = ClsShareFunc.gfunCheck(sRead["chLabLeaveBodyDatetime"].ToString());
+                                 //sLabDealDatetime = ClsShareFunc.gfunCheck(sRead["chLabDealDatetime"].ToString());
+                                 //sLabLeaveBodyEnvir= ClsShareFunc.gfunCheck(sRead["chLabLeaveBodyEnvir"].ToString());
+                                 //sLabLeaveBodyHour= ClsShareFunc.gfunCheck(sRead["chLabLeaveBodyHour"].ToString());
+                                 //sSubStock= ClsShareFunc.gfunCheck(sRead["chSubStock"].ToString());
+                                 //sSickPortion= ClsShareFunc.gfunCheck(sRead["chSickPortion"].ToString());
+                                 //sDiagName1= ClsShareFunc.gfunCheck(sRead["chDiagName1"].ToString());
+                                 //sDiagName2= ClsShareFunc.gfunCheck(sRead["chDiagName2"].ToString());
+                                 //sDiagName3= ClsShareFunc.gfunCheck(sRead["chDiagName3"].ToString());
+                                 //sClerkName = ClsShareFunc.gfunCheck(sRead["chClerkName"].ToString());
+                                 //sPlanAgreeDate = ClsShareFunc.gfunCheck(sRead["chPlanAgreeDate"].ToString());
+                                 //sAgreeNoDate = ClsShareFunc.gfunCheck(sRead["chAgreeNoDate"].ToString());
+                                 //sUseExpireDate = ClsShareFunc.gfunCheck(sRead["chUseExpireDate"].ToString());
+                                 //sChangeRange = ClsShareFunc.gfunCheck(sRead["chChangeRange"].ToString());
+                                 //sStatus = ClsShareFunc.gfunCheck(sRead["chStatus"].ToString());
+                                 //sNote = ClsShareFunc.gfunCheck(sRead["chNote"].ToString());
+                                 //sTakeOutName = ClsShareFunc.gfunCheck(sRead["chTakeOutName"].ToString());
+                                 //sTakeOutDate = ClsShareFunc.gfunCheck(sRead["chTakeOutDate"].ToString());
+                                 //sTakeOutApplicant = ClsShareFunc.gfunCheck(sRead["chTakeOutApplicant"].ToString());
+                                 //sTakeOutPlanNo = ClsShareFunc.gfunCheck(sRead["chTakeOutPlanNo"].ToString());
+                                 //sTakeOutNote = ClsShareFunc.gfunCheck(sRead["chTakeOutNote"].ToString());
+                                 //sInComeDate = ClsShareFunc.gfunCheck(sRead["chInComeDate"].ToString());
+                                 //sPrintSeqNo = ClsShareFunc.gfunCheck(sRead["intPrintSeqNo"].ToString());
+
+                                 //dgvSearchData.Rows.Add(false, sLabNo, sNewLabPositon, sSex, sAge, sLabType, sLabAdoptDate, sAdoptPortion,
+                                 //    sStoreageMethod, sLabLeaveBodyDatetime, sLabDealDatetime, sLabLeaveBodyEnvir,
+                                 //    sLabLeaveBodyHour, sSubStock, sSickPortion, sDiagName1, sDiagName2, sDiagName3,
+                                 //    sClerkName, sPlanAgreeDate, sAgreeNoDate, sUseExpireDate, sChangeRange,
+                                 //    sStatus, sNote,sTakeOutName, sTakeOutDate, sTakeOutApplicant, sTakeOutPlanNo, sTakeOutNote,
+                                 //    sInComeDate, sPrintSeqNo);
+                                 dgvSearchData.Rows.Add(false, sLabNo, sNewLabPositon, sSex, sAge, sLabType, sLabAdoptDate, sAdoptPortion);
+                        }
+                        sRead.Close();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("QryLReqNo: " + ex.Message.ToString());
+                }
             }
         }
         //查詢-選擇小組欄位
@@ -3528,21 +3572,134 @@ namespace BioBank
             {
                 PD.PrinterSettings.PrinterName = "CAB MACH4/300";
             }
-            //for (int i = 0; i < dgvStorageRecord.Rows.Count; i++)
-            //{
-            //    printNum = dgvStorageRecord.Rows[i].Cells["檢體管號碼"].Value.ToString();
-            //    PD.PrintPage += new PrintPageEventHandler(PD_PrintPage);
-            //    PD.Print();
-            //}
-            printNum = "U121516777";
-            PD.PrintPage += new PrintPageEventHandler(PD_PrintPage);
-            PD.Print();
+            for (int i = 0; i < dgvStorageRecord.Rows.Count; i++)
+                //for (int i = 0; i < 1; i++)
+            {
+                printNum = dgvStorageRecord.Rows[i].Cells["檢體管號碼"].Value.ToString();
+                PD.PrintPage += new PrintPageEventHandler(PD_PrintPage);
+                PD.Print();
+            }
+            //printNum = "U121516777";
+            //PD.PrintPage += new PrintPageEventHandler(PD_PrintPage);
+            //PD.Print();
         }
         public void PD_PrintPage(object sender, PrintPageEventArgs e)
         {
             e.Graphics.DrawString("*" + printNum + "*", new Font("Free 3 of 9 Extended", 14, FontStyle.Regular), Brushes.Black, 5, 0);
-            e.Graphics.DrawString("*" + printNum + "*", new Font("Free 3 of 9 Extended", 14, FontStyle.Regular), Brushes.Black, 5, 14);
-            e.Graphics.DrawString(printNum, new Font("新細明體", 8, FontStyle.Regular), Brushes.Black, 20, 28);
+            e.Graphics.DrawString("*" + printNum + "*", new Font("Free 3 of 9 Extended", 14, FontStyle.Regular), Brushes.Black, 5, 12);
+            e.Graphics.DrawString(printNum, new Font("新細明體", 8, FontStyle.Regular), Brushes.Black, 25, 26);
+        }
+
+        private void btnSearchOut_Click(object sender, EventArgs e)
+        {
+            tabForm.SelectedIndex = 4;
+            dgvOutLReqNo.Rows.Clear();
+            string[] aStr = new string[30];
+            for (int i = 0; i < dgvSearchData.Rows.Count; i++)
+            {
+                DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)dgvSearchData.Rows[i].Cells[0];
+                if (chk.Value.ToString() == "True")
+                {
+                    for (int j = 1; j < 8; j++)
+                    {https://www.techbang.com/
+                        aStr[j] = dgvSearchData.Rows[i].Cells[j].Value.ToString();
+                    }
+                    dgvOutLReqNo.Rows.Add(aStr);
+                }
+            }
+        }
+
+        private void btnOutExcel_Click(object sender, EventArgs e)
+        {
+            //引用EXCEL Application類別
+            Excel._Application myExcel = null;
+
+            //引用活頁簿類別
+            Excel._Workbook myBook = null;
+
+            //引用工作表類別
+            Excel._Worksheet mySheet = null;
+
+            //引用範圍類別
+            Excel.Range myRange = null;
+
+            //設定EXCEL檔案名稱
+            string OpenName = "Bioreport.xls";
+
+            //開啟一個新的應用程式
+            myExcel = new Excel.Application();
+
+            //設定EXCEL檔案路徑
+            try
+            {
+                if (System.IO.File.Exists(@"C:\Batch\" + OpenName))
+                {
+                    myBook = myExcel.Workbooks.Open(@"C:\Batch\" + OpenName);
+                }
+                else
+                {
+                    MessageBox.Show(@"請先建立空白Bioreport.xls檔案於C:\Batch\");
+                }
+            }
+            catch (Exception ex)
+            {
+                //throw ex;
+                throw new Exception(ex.Message.ToString());
+            }
+
+            //停用警告訊息
+            myExcel.DisplayAlerts = false;
+
+            //讓活頁簿可以看見
+            myExcel.Visible = true;
+
+            //引用第一個活頁簿
+            myBook = myExcel.Workbooks[1];
+
+            //設定活頁簿為焦點
+            myBook.Activate();
+
+            //引用一個工作表
+            mySheet = (Excel._Worksheet)myBook.Worksheets[1];
+
+            //設定工作表焦點
+            mySheet.Activate();
+
+            //生成Header
+            for (int i = 1; i < dgvSearchData.ColumnCount; i++)
+            {
+                mySheet.Cells[1, i] = dgvSearchData.Columns[i].HeaderText;
+            }
+
+            //迴圈加入內容
+            for (int i = 0; i < dgvSearchData.RowCount - 1; i++)
+            {
+                for (int j = 1; j < dgvSearchData.ColumnCount; j++)
+                {
+                    if (dgvSearchData[j, i].ValueType == typeof(string))
+                    {
+                        mySheet.Cells[i + 2, j] = "'" + dgvSearchData[j, i].Value.ToString();
+                    }
+                    else
+                    {
+                        mySheet.Cells[i + 2, j] = dgvSearchData[j, i].Value.ToString();
+                    }
+                }
+            }
+
+            //設定EXCEL範圍
+            myRange = mySheet.Range[mySheet.Cells[1, 1], mySheet.Cells[dgvSearchData.Rows.Count,
+
+            dgvSearchData.Columns.Count-1]];
+
+            //設定儲存格框線
+            myRange.Borders.Weight = Excel.XlBorderWeight.xlThin;
+
+            //column自動對齊
+            myRange.EntireColumn.AutoFit();
+
+            //row自動對齊
+            myRange.EntireRow.AutoFit();
         }
     }
 }
