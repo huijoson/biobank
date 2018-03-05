@@ -157,10 +157,30 @@ namespace BioBank
                 MessageBox.Show("Insert Event Log Error: " + ex.Message.ToString());
                 return false;
             }
+        }
 
+        /*== 隱藏身分證中間幾碼 ==*/
 
-
-
+        public static string replaceID(string id, int start, int len)
+        {
+            string tempStr = "";
+            try
+            {
+                if (!id.Equals(""))
+                {
+                    tempStr = id.Substring(0,start);
+                    for (int i = start; i <= len ; i++)
+                    {
+                        tempStr += "*";
+                    }
+                    tempStr += id.Substring((start + len), (id.Length-start-len));
+                }
+                return tempStr;
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
         }
 	}
 }

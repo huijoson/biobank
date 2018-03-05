@@ -37,10 +37,10 @@ namespace BioBank
         private void LoginSuccess(string sType,string sID, string sName)
         {
             string ID = "";
-            ID = sID;
+            ID = ClsShareFunc.replaceID(sID, 1, 4);
             Name = sName;
             BioBank NewFrm = new BioBank();
-            NewFrm.Text = "【" + sType + "】 ID: " + sID + " Name: " + sName;
+            NewFrm.Text = "【" + sType + "】 ID: " + ID + " Name: " + sName;
             NewFrm.Show();
             this.Hide();
         }

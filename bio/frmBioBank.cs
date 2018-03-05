@@ -37,7 +37,7 @@ namespace BioBank
             InitializeComponent();
             dgvShowMsg.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
         }
-        
+
 
         private void frmBioBank_Load(object sender, EventArgs e)
         {
@@ -47,13 +47,16 @@ namespace BioBank
             bolKeyPass = true;
 
             /*1.取出title字串,判斷登入者身分*/
-            string txt = ""; ClsShareFunc.sUserId = "";  ClsShareFunc.sLoginIdentity = ""; ClsShareFunc.sLoginDepartment = "";
+            string txt = ""; ClsShareFunc.sUserId = ""; ClsShareFunc.sLoginIdentity = ""; ClsShareFunc.sLoginDepartment = "";
             txt = this.Text.ToString();
             string[] splitTxt = txt.Split(new Char[] { ' ' });
             ClsShareFunc.sLoginIdentity = splitTxt[0].Replace("【", "").Trim();
             ClsShareFunc.sLoginDepartment = splitTxt[1].Replace("(", "").Replace(")", "").Replace("】", "").Trim();
             ClsShareFunc.sUserId = splitTxt[3].Trim();
             ClsShareFunc.sUserName = splitTxt[5].Trim();
+
+
+
 
             /*2.主管維護只有主管才能使用
             switch (ClsShareFunc.sLoginIdentity)
@@ -84,7 +87,36 @@ namespace BioBank
             };*/
 
             LoadCase(cboTeamNo);
+            LoadPart(cboAdoptPortion);
+        }
 
+        /* 預設檢體部位combobox的值*/
+        private void LoadPart(ComboBox comboPart)
+        {
+            string strSQL = "";
+            try
+            {
+                using (SqlConnection sCon = BioBank_Conn.Class_biobank_conn.DB_BIO_conn())
+                {
+                    sCon.Open();
+                    strSQL = "SELECT DISTINCT chAdoptPortion from dbo.BioPerMasterTbl";
+                    SqlCommand sCmd = new SqlCommand(strSQL, sCon);
+                    SqlDataReader sRead = sCmd.ExecuteReader();
+                    if (sRead.HasRows)
+                    {
+                        while (sRead.Read())
+                        {
+                            comboPart.Items.Add(ClsShareFunc.gfunCheck(sRead["chAdoptPortion"]).ToString().Trim());
+                        }
+                    }
+                    sRead.Close();
+                    sRead.Dispose();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("LoadCase: " + ex.Message.ToString());
+            }
         }
 
         /*cbo載入收案小組*/
@@ -1075,9 +1107,9 @@ namespace BioBank
             else if (textBoxAge1.Text.Trim() == "" && textBoxAge2.Text.Trim() != "")
                 sql += " intAge=" + textBoxAge2.Text + " and ";
             //檢體部位
-            if (textBoxchAdoptPortion.Text.Trim() != "")
+            if (cboAdoptPortion.Text.Trim() != "")
             {
-                sql += "chAdoptPortion like'$" + textBoxchAdoptPortion.Text + "$' and ";
+                sql += "chAdoptPortion like'%" + cboAdoptPortion.Text + "%' and ";
             }
             //檢體種類
             int typeCount = 0;
@@ -3496,20 +3528,21 @@ namespace BioBank
             {
                 PD.PrinterSettings.PrinterName = "CAB MACH4/300";
             }
-            for (int i = 0; i < dgvStorageRecord.Rows.Count; i++)
-            {
-                printNum = dgvStorageRecord.Rows[i].Cells["檢體管號碼"].Value.ToString();
-                PD.PrintPage += new PrintPageEventHandler(PD_PrintPage);
-                PD.Print();
-            }
-            //printNum = "U121516777";
-            //PD.PrintPage += new PrintPageEventHandler(PD_PrintPage);
-            //PD.Print();
+            //for (int i = 0; i < dgvStorageRecord.Rows.Count; i++)
+            //{
+            //    printNum = dgvStorageRecord.Rows[i].Cells["檢體管號碼"].Value.ToString();
+            //    PD.PrintPage += new PrintPageEventHandler(PD_PrintPage);
+            //    PD.Print();
+            //}
+            printNum = "U121516777";
+            PD.PrintPage += new PrintPageEventHandler(PD_PrintPage);
+            PD.Print();
         }
         public void PD_PrintPage(object sender, PrintPageEventArgs e)
         {
-            e.Graphics.DrawString(printNum,new Font("Free 3 of 9 Extended", 22, FontStyle.Regular), Brushes.Black, 0, 0);
-            e.Graphics.DrawString(printNum, new Font("新細明體", 10, FontStyle.Regular), Brushes.Black, 10, 25);
+            e.Graphics.DrawString("*" + printNum + "*", new Font("Free 3 of 9 Extended", 14, FontStyle.Regular), Brushes.Black, 5, 0);
+            e.Graphics.DrawString("*" + printNum + "*", new Font("Free 3 of 9 Extended", 14, FontStyle.Regular), Brushes.Black, 5, 14);
+            e.Graphics.DrawString(printNum, new Font("新細明體", 8, FontStyle.Regular), Brushes.Black, 20, 28);
         }
     }
 }
