@@ -12,6 +12,7 @@ using System.IO;
 using System.Threading;
 using System.Data.SqlClient;
 using System.Security.Cryptography;
+using System.Runtime.InteropServices;
 
 namespace BioBank
 {
@@ -184,5 +185,175 @@ namespace BioBank
                 return ex.Message;
             }
         }
+
+        /* start 匯出 Excel */
+        private static void ReleaseExcelCOM(Excel.Worksheet sheet = null, Excel.Workbook workbook = null, Excel.Application app = null)
+        {
+            if (sheet != null)
+                Marshal.ReleaseComObject(sheet);
+            if (workbook != null)
+                Marshal.ReleaseComObject(workbook);
+            if (app != null)
+                Marshal.ReleaseComObject(app);
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+        }
+
+        public static void OutPutExcel(DataGridView dgv)
+        {
+            //確認datagridview的Name
+            string dgvName = dgv.Name.ToString();
+
+            //引用EXCEL Application類別
+            Excel.Application myExcel = null;
+
+            //引用活頁簿類別
+            Excel.Workbook myBook = null;
+
+            //引用工作表類別
+            Excel.Worksheet mySheet = null;
+
+            //引用範圍類別
+            Excel.Range myRange = null;
+
+            //設定EXCEL檔案名稱
+            string OpenName = "BioReport.xls";
+
+            //開啟一個新的應用程式
+            myExcel = new Excel.Application();
+
+            //暫存檔案路徑
+            string tmpPath = "";
+
+            //設定EXCEL檔案路徑
+            try
+            {
+                FolderBrowserDialog dlg = new FolderBrowserDialog();
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    tmpPath = dlg.SelectedPath;
+                }
+                // 儲存路徑
+                string path = tmpPath;
+                // 新增Excel物件
+                myExcel = new Microsoft.Office.Interop.Excel.Application();
+                // 新增workbook
+                myBook = myExcel.Application.Workbooks.Add(true);
+
+                //停用警告訊息
+                myExcel.DisplayAlerts = false;
+
+                //讓活頁簿可以看見
+                myExcel.Visible = false;
+
+                //引用第一個活頁簿
+                myBook = myExcel.Workbooks[1];
+
+                //設定活頁簿為焦點
+                myBook.Activate();
+
+                //引用一個工作表
+                mySheet = (Excel.Worksheet)myBook.Worksheets[1];
+
+                mySheet.Cells.Clear();
+
+                //設定工作表焦點
+                mySheet.Activate();
+
+                switch (dgvName)
+                {
+                    case "dgvSearchData":
+                        //生成Header
+                        for (int i = 1; i < dgv.ColumnCount; i++)
+                        {
+                            mySheet.Cells[1, i] = dgv.Columns[i].HeaderText;
+                        }
+
+                        //迴圈加入內容
+                        for (int i = 0; i < dgv.RowCount; i++)
+                        {
+                            for (int j = 1; j < dgv.ColumnCount; j++)
+                            {
+                                if (dgv[j, i].ValueType == typeof(string))
+                                {
+                                    mySheet.Cells[i + 2, j] = "'" + dgv[j, i].Value.ToString();
+                                }
+                                else
+                                {
+                                    mySheet.Cells[i + 2, j] = dgv[j, i].Value.ToString();
+                                }
+                            }
+                        }
+
+                        //設定EXCEL範圍
+                        myRange = mySheet.Range[mySheet.Cells[1, 1], mySheet.Cells[dgv.Rows.Count + 1,
+
+                        dgv.Columns.Count - 1]];
+
+                        break;
+
+                    case "dgvOutRecord":
+                        //生成Header
+                        for (int i = 1; i < dgv.ColumnCount; i++)
+                        {
+                            mySheet.Cells[1, i] = dgv.Columns[i].HeaderText;
+                        }
+
+                        //迴圈加入內容
+                        for (int i = 0; i < dgv.RowCount; i++)
+                        {
+                            for (int j = 1; j < dgv.ColumnCount; j++)
+                            {
+                                if (dgv[j, i].ValueType == typeof(string))
+                                {
+                                    mySheet.Cells[i + 2, j + 1] = "'" + dgv[j, i].Value.ToString();
+                                }
+                                else
+                                {
+                                    mySheet.Cells[i + 2, j] = dgv[j, i].Value.ToString();
+                                }
+                            }
+                        }
+
+                        //設定EXCEL範圍
+                        myRange = mySheet.Range[mySheet.Cells[1, 1], mySheet.Cells[dgv.Rows.Count+1,
+
+                        dgv.Columns.Count-1]];
+                        break;
+                }
+
+                //設定儲存格框線
+                myRange.Borders.Weight = Excel.XlBorderWeight.xlThin;
+
+                //column自動對齊
+                myRange.EntireColumn.AutoFit();
+
+                //row自動對齊
+                myRange.EntireRow.AutoFit();
+
+                if (path.EndsWith("\\"))
+                {
+                    myBook.SaveCopyAs(path + "BioReport.xls");
+                }
+                else
+                {
+                    myBook.SaveCopyAs(path + "\\" + "BioReport.xls");
+                }
+
+
+                ReleaseExcelCOM(mySheet, myBook, myExcel);
+
+                MessageBox.Show("匯出成功!");
+                }
+            
+            catch (Exception ex)
+            {
+                //throw ex;
+                throw new Exception(ex.Message.ToString());
+            }
+        }
+        /* End 匯出 Excel */
 	}
 }

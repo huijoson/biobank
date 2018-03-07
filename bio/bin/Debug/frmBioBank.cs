@@ -1828,7 +1828,7 @@ namespace BioBank
                                 {
                                     modCon.Open();
                                     modSQL = "update BioCommonLoginTbl set chUserName = '" + sName + "',chPassword ='" + ClsShareFunc.GetMD5(sPwd)
-                                        + "',chEnableFlag = '" + sEnableFlg + "' where chUserID = '" + sId + "' ";
+                                        + "',chEnableFlag = '" + sEnableFlg + "',chLastModPwdDT = dbo.GetDateToDate13(getdate())" + " where chUserID = '" + sId + "' ";
                                     //sOtherValue為event log 的OtherValue
                                     sOtherValue = "update BioCommonLoginTbl set chUserName = " + sName + ",chPassword =" + "PWD"
                                         + ",chEnableFlag = " + sEnableFlg + " where chUserID = " + sId ;
@@ -3610,131 +3610,14 @@ namespace BioBank
             }
         }
 
-        private void ReleaseExcelCOM(Excel.Worksheet sheet = null, Excel.Workbook workbook = null, Excel.Application app = null)
-        {
-            if (sheet != null)
-                Marshal.ReleaseComObject(sheet);
-            if (workbook != null)
-                Marshal.ReleaseComObject(workbook);
-            if (app != null)
-                Marshal.ReleaseComObject(app);
-            GC.Collect();
-            GC.WaitForPendingFinalizers();
-            GC.Collect();
-            GC.WaitForPendingFinalizers();
-        }
-
         private void btnOutExcel_Click(object sender, EventArgs e)
         {
-            //引用EXCEL Application類別
-            Excel.Application myExcel = null;
+            ClsShareFunc.OutPutExcel(dgvSearchData);
+        }
 
-            //引用活頁簿類別
-            Excel.Workbook myBook = null;
-
-            //引用工作表類別
-            Excel.Worksheet mySheet = null;
-
-            //引用範圍類別
-            Excel.Range myRange = null;
-
-            //設定EXCEL檔案名稱
-            string OpenName = "BioReport.xls";
-
-            //開啟一個新的應用程式
-            myExcel = new Excel.Application();
-
-            //設定EXCEL檔案路徑
-            try
-            {
-                FolderBrowserDialog dlg = new FolderBrowserDialog();
-                if (dlg.ShowDialog() == DialogResult.OK)
-                {
-                    this.Text = dlg.SelectedPath;
-                }
-                // 儲存路徑
-                string path = this.Text;
-                // 新增Excel物件
-                myExcel = new Microsoft.Office.Interop.Excel.Application();
-                // 新增workbook
-                myBook = myExcel.Application.Workbooks.Add(true);
-                
-                //停用警告訊息
-                myExcel.DisplayAlerts = false;
-
-                //讓活頁簿可以看見
-                myExcel.Visible = false;
-
-                //引用第一個活頁簿
-                myBook = myExcel.Workbooks[1];
-
-                //設定活頁簿為焦點
-                myBook.Activate();
-
-                //引用一個工作表
-                mySheet = (Excel.Worksheet)myBook.Worksheets[1];
-
-                mySheet.Cells.Clear();
-
-                //設定工作表焦點
-                mySheet.Activate();
-
-                //生成Header
-                for (int i = 1; i < dgvSearchData.ColumnCount; i++)
-                {
-                    mySheet.Cells[1, i] = dgvSearchData.Columns[i].HeaderText;
-                }
-
-                //迴圈加入內容
-                for (int i = 0; i < dgvSearchData.RowCount; i++)
-                {
-                    for (int j = 1; j < dgvSearchData.ColumnCount; j++)
-                    {
-                        if (dgvSearchData[j, i].ValueType == typeof(string))
-                        {
-                            mySheet.Cells[i + 2, j] = "'" + dgvSearchData[j, i].Value.ToString();
-                        }
-                        else
-                        {
-                            mySheet.Cells[i + 2, j] = dgvSearchData[j, i].Value.ToString();
-                        }
-                    }
-                }
-
-                //設定EXCEL範圍
-                myRange = mySheet.Range[mySheet.Cells[1, 1], mySheet.Cells[dgvSearchData.Rows.Count + 1,
-
-                dgvSearchData.Columns.Count - 1]];
-
-                //設定儲存格框線
-                myRange.Borders.Weight = Excel.XlBorderWeight.xlThin;
-
-                //column自動對齊
-                myRange.EntireColumn.AutoFit();
-
-                //row自動對齊
-                myRange.EntireRow.AutoFit();
-
-                if (path.EndsWith("\\"))
-                {
-                    myBook.SaveCopyAs(path + "BioReport.xls");
-                }
-                else
-                {
-                    myBook.SaveCopyAs(path + "\\" + "BioReport.xls");
-                }
-
-                ReleaseExcelCOM(mySheet, myBook, myExcel);
-
-                MessageBox.Show("匯出成功!");
-            }
-            catch (Exception ex)
-            {
-                //throw ex;
-                throw new Exception(ex.Message.ToString());
-            }
-
-            
+        private void btnOPExcel_Click(object sender, EventArgs e)
+        {
+            ClsShareFunc.OutPutExcel(dgvOutRecord);
         }
     }
 }

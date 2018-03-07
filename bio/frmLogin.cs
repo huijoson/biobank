@@ -44,6 +44,7 @@ namespace BioBank
             NewFrm.Text = "【" + sType + "】 ID: " + ID + " Name: " + sName;
             NewFrm.Show();
             this.Hide();
+
         }
 
         private void buttonLogIn_Click(object sender, EventArgs e)
@@ -94,7 +95,7 @@ namespace BioBank
                                 {
                                     updateCon.Open();
                                     SqlCommand updateCmd = new SqlCommand("update BioAdministratorKeyTbl " +
-                                        "set chAdministratorKey = '" + GetMD5(sPwdVer) + "' where chUserId = '" + ID + "' ", updateCon);
+                                        "set chAdministratorKey = '" + GetMD5(sPwdVer) + "',chLastModPwdDT = dbo.GetDateToDate13(getdate())" + " where chUserId = '" + ID + "' ", updateCon);
                                     updateCmd.ExecuteNonQuery();
 
                                     MessageBox.Show("密碼修改成功!請重新登入。");
@@ -114,7 +115,7 @@ namespace BioBank
                                     {
                                         updateCon.Open();
                                         SqlCommand updateCmd = new SqlCommand("update BioCommonLoginTbl " +
-                                            "set chPassword = '" + GetMD5(sPwdVer) + "' where chUserId = '" + ID + "' ", updateCon);
+                                            "set chPassword = '" + GetMD5(sPwdVer) + "',chLastModPwdDT = dbo.GetDateToDate13(getdate())" + " where chUserId = '" + ID + "' ", updateCon);
                                         updateCmd.ExecuteNonQuery();
 
                                         MessageBox.Show("密碼修改成功!請重新登入。");
