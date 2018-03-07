@@ -19,6 +19,8 @@ namespace BioBank
     {
         public static string sUserId;
 
+        public static string sChkID;
+
         public static string sUserName;
 
         public static string sLoginIdentity; //主管or一般成員

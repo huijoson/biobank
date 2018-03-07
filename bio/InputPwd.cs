@@ -88,7 +88,7 @@ namespace BioBank
             PassVerPwd = false;
 
             sPwd = txtPWD.Text;
-            sID = ClsShareFunc.sUserId;
+            sID = ClsShareFunc.sChkID;
 
 
             if (sPwd == "")
