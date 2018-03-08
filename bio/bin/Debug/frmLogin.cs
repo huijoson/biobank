@@ -422,13 +422,22 @@ namespace BioBank
 
                         if (sCorrectPwd == GetMD5(sPWD))
                         {
-                            //insert Event Log: 1-11. --Login successful (administrator)--
-                            ClsShareFunc.insEvenLogt("1-11", sName, "", "", "Login successful (administrator)--" + txtID.Text);
-                            LoginSuccess("Administrator (" + sType + ")", sID, sName);
-                            MessageBox.Show("歡迎" +
-                                "\n使用者 : " + sName +
-                                "\n部門 : " + (ClsShareFunc.sLoginDepartment == "M" ? "資訊室" : (ClsShareFunc.sLoginDepartment == "M" ? "生物資料庫": "???")) +
-                                "\n身分 : " + (ClsShareFunc.sLoginIdentity == "Administrator" ? "主管" : (ClsShareFunc.sLoginIdentity == "Common" ? "一般職員": "???")));
+                            if (chkPwdDate(sID))
+                            {
+                                //insert Event Log: 1-11. --Login successful (administrator)--
+                                ClsShareFunc.insEvenLogt("1-11", sName, "", "", "Login successful (administrator)--" + txtID.Text);
+                                LoginSuccess("Administrator (" + sType + ")", sID, sName);
+                                MessageBox.Show("歡迎" +
+                                    "\n使用者 : " + sName +
+                                    "\n部門 : " + (ClsShareFunc.sLoginDepartment == "M" ? "資訊室" : (ClsShareFunc.sLoginDepartment == "M" ? "生物資料庫" : "???")) +
+                                    "\n身分 : " + (ClsShareFunc.sLoginIdentity == "Administrator" ? "主管" : (ClsShareFunc.sLoginIdentity == "Common" ? "一般職員" : "???")));
+                            }
+                            else 
+                            {
+                                MessageBox.Show("密碼已到期(半年)，請更新您的密碼!");
+                                lnklblModPwd_LinkClicked(this.lnklblModPwd,null);
+                                return;
+                            }
                         }
                         else
                         {
@@ -507,6 +516,49 @@ namespace BioBank
             }
         }
 
+        private bool chkPwdDate(string id)
+        {
+            using (SqlConnection sCon = BioBank_Conn.Class_biobank_conn.DB_SEC_conn())
+            {
+                string sSQL = "";
+                string tmpDate = "";
+                string tmpY = "";
+                string tmpM = "";
+                string tmpD = "";
+                DateTime cDate = new DateTime();
+                sCon.Open();
+                sSQL = "select chUserID, chLastModPwdDT from BioCommonLoginTbl where chUserID = '" + id + "' Union select chUserID, chLastModPwdDT from BioAdministratorKeyTbl where chUserID = '" + id + "'";
+                SqlCommand sCmd = new SqlCommand(sSQL, sCon);
+                SqlDataReader sRead = sCmd.ExecuteReader();
+
+                if (sRead.HasRows)
+                {
+                    while (sRead.Read())
+                    {
+                        tmpY = (Convert.ToInt32(ClsShareFunc.gfunCheck(sRead["chLastModPwdDT"]).Substring(0, 3)) + 1911).ToString();
+                        tmpM = ClsShareFunc.gfunCheck(sRead["chLastModPwdDT"]).Substring(3, 2);
+                        tmpD = ClsShareFunc.gfunCheck(sRead["chLastModPwdDT"]).Substring(5, 2);
+                        tmpDate = tmpY + "/" + tmpM + "/" + tmpD;
+                        cDate = Convert.ToDateTime(tmpDate);
+
+                        if (cDate.AddMonths(6) >= DateTime.Now)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    return false;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+
         //密碼欄按下enter後做的事
         private void txtPWD_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -514,6 +566,8 @@ namespace BioBank
             {
                 checkLoginBefore();
             }
+  
         }
+
     }
 }

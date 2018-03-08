@@ -23,7 +23,7 @@ using System.Runtime.InteropServices;
 
 namespace BioBank
 {
-
+    
     public partial class BioBank : Form
     {
         int ComColumn = 29;//共通欄位長度
@@ -31,6 +31,8 @@ namespace BioBank
         Boolean bolKeyPass;//是否需再打密碼(true:是/false:否)
         string sExcelName;
         string printNum = "";
+        private ContextMenuStrip menu = new ContextMenuStrip();
+        
         //string[] StorageRecordColumns = { "檢體管號碼", "舊檢體位置","新檢體位置", "性別", "檢體採集當時年齡", "檢體種類", "檢體採集日期", "檢體採集部位",
         //                                    "保存方式", "檢體離體時刻","檢體處理時刻","離體後環境", "離體後時間", "分庫", "罹病部位", "診斷名稱1", "診斷名稱2", "診斷名稱3",
         //                                    "檔案登錄人", "研究計劃同意書", "同意書編號", "截止日期", "變更範圍", "退出、停止變更、死亡", "變更備註","出庫人","出庫日期","使用者(申請人)","計畫編號","出庫備註","入庫日期"};
@@ -41,8 +43,9 @@ namespace BioBank
         {
             InitializeComponent();
             dgvShowMsg.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            menu.Items.Add("複製");
+            menu.ItemClicked += new ToolStripItemClickedEventHandler(contexMenuuu_ItemClicked);
         }
-
 
         private void frmBioBank_Load(object sender, EventArgs e)
         {
@@ -3609,7 +3612,7 @@ namespace BioBank
                 }
             }
         }
-
+        /* GridView 匯出Execel 事件 ---------- Start */
         private void btnOutExcel_Click(object sender, EventArgs e)
         {
             ClsShareFunc.OutPutExcel(dgvSearchData);
@@ -3619,5 +3622,31 @@ namespace BioBank
         {
             ClsShareFunc.OutPutExcel(dgvOutRecord);
         }
+        /* GridView 匯出Execel 事件 ---------- End */
+
+        /* GridView 右鍵複製功能 ---------- Start */
+        private void dgvStorageRecord_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                menu.Show(dgvStorageRecord, new Point(e.X, e.Y));//顯示右鍵選單
+            }
+        }
+
+        
+        private void contexMenuuu_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            ToolStripItem item = e.ClickedItem;
+            switch (item.Text)
+            {
+                case "複製":
+                    ClsShareFunc.sCopy = dgvStorageRecord.CurrentRow.Cells[0].ToString();
+                    break;
+            }
+            MessageBox.Show(ClsShareFunc.sCopy);
+        }
+        /* GridView 右鍵複製功能 ---------- End */
+
+
     }
 }

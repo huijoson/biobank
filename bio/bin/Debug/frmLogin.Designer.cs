@@ -258,7 +258,7 @@
             this.txtNewPwd.Location = new System.Drawing.Point(114, 149);
             this.txtNewPwd.Name = "txtNewPwd";
             this.txtNewPwd.Size = new System.Drawing.Size(179, 29);
-            this.txtNewPwd.TabIndex = 11;
+            this.txtNewPwd.TabIndex = 3;
             this.txtNewPwd.UseSystemPasswordChar = true;
             this.txtNewPwd.Visible = false;
             // 

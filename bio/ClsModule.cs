@@ -32,6 +32,7 @@ namespace BioBank
 
         public static string DbCom(){return "BioCommonLoginTbl";}
 
+        public static string sCopy;
         
 /*============密碼驗證: (1)長度大於8  (2)英數字============*/
         public  static Boolean gfunCheckPwd(string Pwd)
