@@ -3630,20 +3630,28 @@ namespace BioBank
             if (e.Button == MouseButtons.Right)
             {
                 menu.Show(dgvStorageRecord, new Point(e.X, e.Y));//顯示右鍵選單
+                ClsShareFunc.nowDGV = dgvStorageRecord;
             }
         }
 
-        
+        private void dgvSearchData_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                menu.Show(dgvSearchData, new Point(e.X, e.Y));//顯示右鍵選單
+                ClsShareFunc.nowDGV = dgvSearchData;
+            }
+        }
+
         private void contexMenuuu_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
             ToolStripItem item = e.ClickedItem;
             switch (item.Text)
             {
                 case "複製":
-                    ClsShareFunc.sCopy = dgvStorageRecord.CurrentRow.Cells[0].ToString();
+                    Clipboard.SetDataObject(ClsShareFunc.nowDGV.CurrentCell.Value.ToString(), false);
                     break;
             }
-            MessageBox.Show(ClsShareFunc.sCopy);
         }
         /* GridView 右鍵複製功能 ---------- End */
 

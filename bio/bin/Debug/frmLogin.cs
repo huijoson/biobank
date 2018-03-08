@@ -20,12 +20,12 @@ namespace BioBank
         {
             InitializeComponent();
 
-            LoginSuccess("Administrator (M)", "U121516074", "賴禹翰");
+            //LoginSuccess("Administrator (M)", "U121516074", "賴禹翰");
 
-            //txtID.Validating += new CancelEventHandler(txtID_Validating);
-            //txtPWD.Validating += new CancelEventHandler(txtPWD_Validating);
-            //txtNewPwd.Validating += new CancelEventHandler(txtNewPwd_Validating);
-            //txtNewPwdVer.Validating += new CancelEventHandler(txtNewPwdVer_Validating);
+            txtID.Validating += new CancelEventHandler(txtID_Validating);
+            txtPWD.Validating += new CancelEventHandler(txtPWD_Validating);
+            txtNewPwd.Validating += new CancelEventHandler(txtNewPwd_Validating);
+            txtNewPwdVer.Validating += new CancelEventHandler(txtNewPwdVer_Validating);
         }
         public static string GetMD5(string original)
         {
@@ -474,9 +474,18 @@ namespace BioBank
                                 {
                                     if (sCorrectPwd == GetMD5(sPWD))
                                     {
-                                        //insert Event Log: 1-12.--Login successful (common)--
-                                        ClsShareFunc.insEvenLogt("1-12", sName, "", "", "Login successful (common)--" + txtID.Text);
-                                        LoginSuccess("Common (" + sType + ")", sID, sName);
+                                        if (chkPwdDate(sID))
+                                        {
+                                            //insert Event Log: 1-12.--Login successful (common)--
+                                            ClsShareFunc.insEvenLogt("1-12", sName, "", "", "Login successful (common)--" + txtID.Text);
+                                            LoginSuccess("Common (" + sType + ")", sID, sName);
+                                        }
+                                        else
+                                        {
+                                            MessageBox.Show("密碼已到期(半年)，請更新您的密碼!");
+                                            lnklblModPwd_LinkClicked(this.lnklblModPwd, null);
+                                            return;
+                                        }
                                     }
                                     else
                                     {

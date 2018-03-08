@@ -13,6 +13,7 @@ using System.Threading;
 using System.Data.SqlClient;
 using System.Security.Cryptography;
 using System.Runtime.InteropServices;
+using System.Reflection;
 
 namespace BioBank
 {
@@ -32,7 +33,7 @@ namespace BioBank
 
         public static string DbCom(){return "BioCommonLoginTbl";}
 
-        public static string sCopy;
+        public static DataGridView nowDGV;
         
 /*============密碼驗證: (1)長度大於8  (2)英數字============*/
         public  static Boolean gfunCheckPwd(string Pwd)
@@ -163,7 +164,7 @@ namespace BioBank
             }
         }
 
-        /*== 隱藏身分證中間幾碼 ==*/
+        /*------- 隱藏身分證中間幾碼  start ------*/
 
         public static string replaceID(string id, int start, int len)
         {
@@ -187,6 +188,8 @@ namespace BioBank
             }
         }
 
+        /*------- 隱藏身分證中間幾碼  end ------*/
+
         /* start 匯出 Excel */
         private static void ReleaseExcelCOM(Excel.Worksheet sheet = null, Excel.Workbook workbook = null, Excel.Application app = null)
         {
@@ -196,10 +199,10 @@ namespace BioBank
                 Marshal.ReleaseComObject(workbook);
             if (app != null)
                 Marshal.ReleaseComObject(app);
+            sheet = null;
+            workbook = null;
+            app = null;
             GC.Collect();
-            GC.WaitForPendingFinalizers();
-            GC.Collect();
-            GC.WaitForPendingFinalizers();
         }
 
         public static void OutPutExcel(DataGridView dgv)
@@ -219,19 +222,18 @@ namespace BioBank
             //引用範圍類別
             Excel.Range myRange = null;
 
-            //設定EXCEL檔案名稱
-            string OpenName = "BioReport.xls";
-
             //開啟一個新的應用程式
             myExcel = new Excel.Application();
 
             //暫存檔案路徑
             string tmpPath = "";
 
+            FolderBrowserDialog dlg = new FolderBrowserDialog();
+
             //設定EXCEL檔案路徑
             try
             {
-                FolderBrowserDialog dlg = new FolderBrowserDialog();
+
                 if (dlg.ShowDialog() == DialogResult.OK)
                 {
                     tmpPath = dlg.SelectedPath;
@@ -319,9 +321,9 @@ namespace BioBank
                         }
 
                         //設定EXCEL範圍
-                        myRange = mySheet.Range[mySheet.Cells[1, 1], mySheet.Cells[dgv.Rows.Count+1,
+                        myRange = mySheet.Range[mySheet.Cells[1, 1], mySheet.Cells[dgv.Rows.Count + 1,
 
-                        dgv.Columns.Count-1]];
+                        dgv.Columns.Count - 1]];
                         break;
                 }
 
@@ -336,23 +338,35 @@ namespace BioBank
 
                 if (path.EndsWith("\\"))
                 {
-                    myBook.SaveCopyAs(path + "BioReport.xls");
+                    myBook.SaveAs(path + "BioReport.xlsx");
                 }
                 else
                 {
-                    myBook.SaveCopyAs(path + "\\" + "BioReport.xls");
+                    myBook.SaveAs(path + "\\" + "BioReport.xlsx");
                 }
-
-
-                ReleaseExcelCOM(mySheet, myBook, myExcel);
+                //ReleaseExcelCOM(mySheet, myBook, myExcel);
 
                 MessageBox.Show("匯出成功!");
-                }
-            
+            }
+
             catch (Exception ex)
             {
                 //throw ex;
                 throw new Exception(ex.Message.ToString());
+            }
+            finally
+            {
+                //釋放資源
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(myRange);
+                myRange = null;
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(mySheet);
+                mySheet = null;
+                myBook.Close(false, Missing.Value, Missing.Value);
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(myBook);
+                myBook = null;
+                myExcel.Quit();
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(myExcel);
+                myExcel = null;
             }
         }
         /* End 匯出 Excel */
