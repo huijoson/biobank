@@ -33,10 +33,10 @@ namespace BioBank
         string printNum = "";
         private ContextMenuStrip menu = new ContextMenuStrip();
         
-        //string[] StorageRecordColumns = { "檢體管號碼", "舊檢體位置","新檢體位置", "性別", "檢體採集當時年齡", "檢體種類", "檢體採集日期", "檢體採集部位",
-        //                                    "保存方式", "檢體離體時刻","檢體處理時刻","離體後環境", "離體後時間", "分庫", "罹病部位", "診斷名稱1", "診斷名稱2", "診斷名稱3",
-        //                                    "檔案登錄人", "研究計劃同意書", "同意書編號", "截止日期", "變更範圍", "退出、停止變更、死亡", "變更備註","出庫人","出庫日期","使用者(申請人)","計畫編號","出庫備註","入庫日期"};
-        string[] StorageRecordColumns = { "檢體管號碼", "舊檢體位置","新檢體位置", "性別", "檢體採集當時年齡", "檢體種類", "檢體採集日期", "檢體採集部位"};
+        string[] StorageRecordColumns = { "檢體管號碼", "舊檢體位置","新檢體位置", "性別", "檢體採集當時年齡", "檢體種類", "檢體採集日期", "檢體採集部位",
+                                          "保存方式", "檢體離體時刻","檢體處理時刻","離體後環境", "離體後時間", "分庫", "罹病部位", "診斷名稱1", "診斷名稱2", "診斷名稱3",
+                                          "檔案登錄人", "研究計劃同意書", "同意書編號", "截止日期", "變更範圍", "退出、停止變更、死亡", "變更備註","出庫人","出庫日期","使用者(申請人)","計畫編號","出庫備註","入庫日期"};
+        //string[] StorageRecordColumns = { "分庫", "檢體種類", "保存方式", "罹病部位", "診斷名稱" };
         public static string pFunction8_AdminID = "";
 
         public BioBank()
@@ -723,6 +723,7 @@ namespace BioBank
                     textBoxFilePath.Text = "";
                     cboTeamNo.Enabled = true;
                 }
+                LoadPart(cboAdoptPortion);
             }
             else if (myResult == DialogResult.No)
             {
