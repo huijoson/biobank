@@ -93,3 +93,4 @@ C:\biobank\bio\obj\x86\Debug\BioBank.csprojResolveAssemblyReference.cache
 C:\biobank\bio\bin\Debug\zxing.dll
 C:\biobank\bio\bin\Debug\zxing.pdb
 C:\biobank\bio\bin\Debug\zxing.xml
+C:\biobank\bio\obj\x86\Debug\BioBank.frmSaveFiles.resources

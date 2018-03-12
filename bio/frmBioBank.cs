@@ -3616,12 +3616,16 @@ namespace BioBank
         /* GridView 匯出Execel 事件 ---------- Start */
         private void btnOutExcel_Click(object sender, EventArgs e)
         {
-            ClsShareFunc.OutPutExcel(dgvSearchData);
+            frmSaveFiles frmExlExport = new frmSaveFiles();
+            frmExlExport.Show();
+            ClsShareFunc.nowDGV = dgvSearchData;
         }
 
         private void btnOPExcel_Click(object sender, EventArgs e)
         {
-            ClsShareFunc.OutPutExcel(dgvOutRecord);
+            frmSaveFiles frmExlExport = new frmSaveFiles();
+            frmExlExport.Show();
+            ClsShareFunc.nowDGV = dgvOutRecord;
         }
         /* GridView 匯出Execel 事件 ---------- End */
 

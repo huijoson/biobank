@@ -205,7 +205,7 @@ namespace BioBank
             GC.Collect();
         }
 
-        public static void OutPutExcel(DataGridView dgv)
+        public static void OutPutExcel(DataGridView dgv, string pathName, string fileName)
         {
             //確認datagridview的Name
             string dgvName = dgv.Name.ToString();
@@ -226,18 +226,18 @@ namespace BioBank
             myExcel = new Excel.Application();
 
             //暫存檔案路徑
-            string tmpPath = "";
+            string tmpPath = pathName;
 
-            FolderBrowserDialog dlg = new FolderBrowserDialog();
+            //FolderBrowserDialog dlg = new FolderBrowserDialog();
 
             //設定EXCEL檔案路徑
             try
             {
 
-                if (dlg.ShowDialog() == DialogResult.OK)
-                {
-                    tmpPath = dlg.SelectedPath;
-                }
+                //if (dlg.ShowDialog() == DialogResult.OK)
+                //{
+                //    tmpPath = dlg.SelectedPath;
+                //}
                 // 儲存路徑
                 string path = tmpPath;
                 // 新增Excel物件
@@ -338,14 +338,13 @@ namespace BioBank
 
                 if (path.EndsWith("\\"))
                 {
-                    myBook.SaveAs(path + "BioReport.xlsx");
+                    myBook.SaveAs(path + fileName + ".xlsx");
                 }
                 else
                 {
-                    myBook.SaveAs(path + "\\" + "BioReport.xlsx");
+                    myBook.SaveAs(path + "\\" + fileName + ".xlsx");
                 }
                 //ReleaseExcelCOM(mySheet, myBook, myExcel);
-
                 MessageBox.Show("匯出成功!");
             }
 

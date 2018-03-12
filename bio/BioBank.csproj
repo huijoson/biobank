@@ -119,6 +119,12 @@
       <DependentUpon>frmLogin.cs</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
+    <Compile Include="frmSaveFiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSaveFiles.Designer.cs">
+      <DependentUpon>frmSaveFiles.cs</DependentUpon>
+    </Compile>
     <Compile Include="InputPwd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,10 +138,14 @@
     <EmbeddedResource Include="frmBioBank.resx">
       <DependentUpon>frmBioBank.cs</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSaveFiles.resx">
+      <DependentUpon>frmSaveFiles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InputPwd.resx">
       <DependentUpon>InputPwd.cs</DependentUpon>
