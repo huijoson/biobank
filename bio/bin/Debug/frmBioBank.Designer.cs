@@ -28,25 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle47 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle49 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle50 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle51 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle52 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle53 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle54 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle55 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle56 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle57 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle77 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle78 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle79 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle80 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle81 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle82 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle83 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle84 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle85 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle86 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle87 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle88 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle89 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle90 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle91 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle92 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle93 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle94 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle95 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BioBank));
             this.buttonBrowser = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
@@ -105,14 +105,6 @@
             this.textBoxDiag3 = new System.Windows.Forms.TextBox();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.dgvSearchData = new System.Windows.Forms.DataGridView();
-            this.DGVSearchOutTable = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.DGVSearchOutCNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DGVSearchOutCPos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DGVSearchOutCSex = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DGVSearchOutCAge = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DGVSearchOutCClass = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DGVSearchOutCDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DGVSearchOutCPart = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textBoxDiag1 = new System.Windows.Forms.TextBox();
             this.textBoxchAdoptPortion = new System.Windows.Forms.TextBox();
             this.textBoxAge1 = new System.Windows.Forms.TextBox();
@@ -437,6 +429,30 @@
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.buttonSignOut = new System.Windows.Forms.Button();
             this.saveFileDialog2 = new System.Windows.Forms.SaveFileDialog();
+            this.DGVSearchOutTable = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.DGVSearchLabNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DGVSearchSubStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DGVSearchLabType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DGVSearchStoreageMethod = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DGVSearchSickPortion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DGVSearchDiagName1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DGVSearchDiagName2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DGVSearchDiagName3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DGVSearchNewLabPositon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DGVSearchSex = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DGVSearchAGE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DGVSearchDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DGVSearchAdoptPortion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DGVSearchLeaveBodyDatetime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DGVSearchDealDatetime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DGVSearchLeaveBodyEnvir = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DGVSearchLLeaveBodyHour = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DGVSearchClerkName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DGVSearchPlanAgreeDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DGVSearchAgreeNoDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DGVUseExpireDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DGVSearchStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DGVSearchNote = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabForm.SuspendLayout();
             this.tpImport.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -1156,64 +1172,35 @@
             this.dgvSearchData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSearchData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DGVSearchOutTable,
-            this.DGVSearchOutCNum,
-            this.DGVSearchOutCPos,
-            this.DGVSearchOutCSex,
-            this.DGVSearchOutCAge,
-            this.DGVSearchOutCClass,
-            this.DGVSearchOutCDate,
-            this.DGVSearchOutCPart});
+            this.DGVSearchLabNo,
+            this.DGVSearchSubStock,
+            this.DGVSearchLabType,
+            this.DGVSearchStoreageMethod,
+            this.DGVSearchSickPortion,
+            this.DGVSearchDiagName1,
+            this.DGVSearchDiagName2,
+            this.DGVSearchDiagName3,
+            this.DGVSearchNewLabPositon,
+            this.DGVSearchSex,
+            this.DGVSearchAGE,
+            this.DGVSearchDate,
+            this.DGVSearchAdoptPortion,
+            this.DGVSearchLeaveBodyDatetime,
+            this.DGVSearchDealDatetime,
+            this.DGVSearchLeaveBodyEnvir,
+            this.DGVSearchLLeaveBodyHour,
+            this.DGVSearchClerkName,
+            this.DGVSearchPlanAgreeDate,
+            this.DGVSearchAgreeNoDate,
+            this.DGVUseExpireDate,
+            this.DGVSearchStatus,
+            this.DGVSearchNote});
             this.dgvSearchData.Location = new System.Drawing.Point(13, 230);
             this.dgvSearchData.Name = "dgvSearchData";
             this.dgvSearchData.RowTemplate.Height = 24;
             this.dgvSearchData.Size = new System.Drawing.Size(912, 315);
             this.dgvSearchData.TabIndex = 5;
             this.dgvSearchData.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgvSearchData_MouseDown);
-            // 
-            // DGVSearchOutTable
-            // 
-            this.DGVSearchOutTable.HeaderText = " 預出庫";
-            this.DGVSearchOutTable.Name = "DGVSearchOutTable";
-            this.DGVSearchOutTable.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // DGVSearchOutCNum
-            // 
-            this.DGVSearchOutCNum.HeaderText = "檢體編號";
-            this.DGVSearchOutCNum.Name = "DGVSearchOutCNum";
-            // 
-            // DGVSearchOutCPos
-            // 
-            this.DGVSearchOutCPos.HeaderText = "新檢體位置";
-            this.DGVSearchOutCPos.Name = "DGVSearchOutCPos";
-            this.DGVSearchOutCPos.Width = 120;
-            // 
-            // DGVSearchOutCSex
-            // 
-            this.DGVSearchOutCSex.HeaderText = "性別";
-            this.DGVSearchOutCSex.Name = "DGVSearchOutCSex";
-            // 
-            // DGVSearchOutCAge
-            // 
-            this.DGVSearchOutCAge.HeaderText = "採集當時年齡";
-            this.DGVSearchOutCAge.Name = "DGVSearchOutCAge";
-            this.DGVSearchOutCAge.Width = 130;
-            // 
-            // DGVSearchOutCClass
-            // 
-            this.DGVSearchOutCClass.HeaderText = "檢體種類";
-            this.DGVSearchOutCClass.Name = "DGVSearchOutCClass";
-            // 
-            // DGVSearchOutCDate
-            // 
-            this.DGVSearchOutCDate.HeaderText = "檢體採集日期";
-            this.DGVSearchOutCDate.Name = "DGVSearchOutCDate";
-            this.DGVSearchOutCDate.Width = 130;
-            // 
-            // DGVSearchOutCPart
-            // 
-            this.DGVSearchOutCPart.HeaderText = "檢體採集部位";
-            this.DGVSearchOutCPart.Name = "DGVSearchOutCPart";
-            this.DGVSearchOutCPart.Width = 130;
             // 
             // textBoxDiag1
             // 
@@ -1416,14 +1403,14 @@
             this.dgvQryLReqNo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvQryLReqNo.BackgroundColor = System.Drawing.Color.PowderBlue;
             this.dgvQryLReqNo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle39.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle39.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            dataGridViewCellStyle39.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle39.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle39.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle39.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvQryLReqNo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle39;
+            dataGridViewCellStyle77.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle77.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle77.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            dataGridViewCellStyle77.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle77.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle77.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle77.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvQryLReqNo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle77;
             this.dgvQryLReqNo.ColumnHeadersHeight = 26;
             this.dgvQryLReqNo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewCheckBoxColumn1,
@@ -1740,14 +1727,14 @@
             this.dgvOutDetail3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvOutDetail3.BackgroundColor = System.Drawing.Color.LightYellow;
             this.dgvOutDetail3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle40.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle40.Font = new System.Drawing.Font("微軟正黑體", 10F);
-            dataGridViewCellStyle40.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle40.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle40.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle40.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvOutDetail3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle40;
+            dataGridViewCellStyle78.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle78.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle78.Font = new System.Drawing.Font("微軟正黑體", 10F);
+            dataGridViewCellStyle78.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle78.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle78.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle78.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvOutDetail3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle78;
             this.dgvOutDetail3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOutDetail3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column51,
@@ -1761,14 +1748,14 @@
             this.Column58,
             this.Column59,
             this.Column60});
-            dataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle41.BackColor = System.Drawing.Color.LightYellow;
-            dataGridViewCellStyle41.Font = new System.Drawing.Font("微軟正黑體", 10F);
-            dataGridViewCellStyle41.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle41.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle41.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle41.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvOutDetail3.DefaultCellStyle = dataGridViewCellStyle41;
+            dataGridViewCellStyle79.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle79.BackColor = System.Drawing.Color.LightYellow;
+            dataGridViewCellStyle79.Font = new System.Drawing.Font("微軟正黑體", 10F);
+            dataGridViewCellStyle79.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle79.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle79.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle79.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvOutDetail3.DefaultCellStyle = dataGridViewCellStyle79;
             this.dgvOutDetail3.EnableHeadersVisualStyles = false;
             this.dgvOutDetail3.Location = new System.Drawing.Point(17, 164);
             this.dgvOutDetail3.Name = "dgvOutDetail3";
@@ -1850,14 +1837,14 @@
             this.dgvOutDetail2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvOutDetail2.BackgroundColor = System.Drawing.Color.LightYellow;
             this.dgvOutDetail2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle42.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle42.Font = new System.Drawing.Font("微軟正黑體", 10F);
-            dataGridViewCellStyle42.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle42.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle42.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle42.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvOutDetail2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle42;
+            dataGridViewCellStyle80.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle80.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle80.Font = new System.Drawing.Font("微軟正黑體", 10F);
+            dataGridViewCellStyle80.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle80.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle80.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle80.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvOutDetail2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle80;
             this.dgvOutDetail2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOutDetail2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column41,
@@ -1870,14 +1857,14 @@
             this.Column48,
             this.Column49,
             this.Column50});
-            dataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle43.BackColor = System.Drawing.Color.LightYellow;
-            dataGridViewCellStyle43.Font = new System.Drawing.Font("微軟正黑體", 10F);
-            dataGridViewCellStyle43.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle43.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle43.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle43.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvOutDetail2.DefaultCellStyle = dataGridViewCellStyle43;
+            dataGridViewCellStyle81.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle81.BackColor = System.Drawing.Color.LightYellow;
+            dataGridViewCellStyle81.Font = new System.Drawing.Font("微軟正黑體", 10F);
+            dataGridViewCellStyle81.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle81.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle81.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle81.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvOutDetail2.DefaultCellStyle = dataGridViewCellStyle81;
             this.dgvOutDetail2.EnableHeadersVisualStyles = false;
             this.dgvOutDetail2.Location = new System.Drawing.Point(17, 94);
             this.dgvOutDetail2.Name = "dgvOutDetail2";
@@ -1954,14 +1941,14 @@
             this.dgvOutDetail1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvOutDetail1.BackgroundColor = System.Drawing.Color.LightYellow;
             this.dgvOutDetail1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle44.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle44.Font = new System.Drawing.Font("微軟正黑體", 10F);
-            dataGridViewCellStyle44.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle44.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle44.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle44.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvOutDetail1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle44;
+            dataGridViewCellStyle82.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle82.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle82.Font = new System.Drawing.Font("微軟正黑體", 10F);
+            dataGridViewCellStyle82.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle82.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle82.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle82.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvOutDetail1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle82;
             this.dgvOutDetail1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column31,
             this.Column32,
@@ -1973,14 +1960,14 @@
             this.Column38,
             this.Column39,
             this.Column40});
-            dataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle45.BackColor = System.Drawing.Color.LightYellow;
-            dataGridViewCellStyle45.Font = new System.Drawing.Font("微軟正黑體", 10F);
-            dataGridViewCellStyle45.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle45.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle45.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle45.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvOutDetail1.DefaultCellStyle = dataGridViewCellStyle45;
+            dataGridViewCellStyle83.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle83.BackColor = System.Drawing.Color.LightYellow;
+            dataGridViewCellStyle83.Font = new System.Drawing.Font("微軟正黑體", 10F);
+            dataGridViewCellStyle83.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle83.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle83.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle83.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvOutDetail1.DefaultCellStyle = dataGridViewCellStyle83;
             this.dgvOutDetail1.EnableHeadersVisualStyles = false;
             this.dgvOutDetail1.Location = new System.Drawing.Point(17, 24);
             this.dgvOutDetail1.Name = "dgvOutDetail1";
@@ -2086,14 +2073,14 @@
             this.dgvOutLReqNo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvOutLReqNo.BackgroundColor = System.Drawing.Color.PowderBlue;
             this.dgvOutLReqNo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle46.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle46.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle46.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            dataGridViewCellStyle46.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle46.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle46.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle46.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvOutLReqNo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle46;
+            dataGridViewCellStyle84.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle84.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle84.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            dataGridViewCellStyle84.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle84.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle84.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle84.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvOutLReqNo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle84;
             this.dgvOutLReqNo.ColumnHeadersHeight = 32;
             this.dgvOutLReqNo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColOutLReqNo,
@@ -2388,14 +2375,14 @@
             this.dgvOutRecord.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvOutRecord.BackgroundColor = System.Drawing.Color.PowderBlue;
             this.dgvOutRecord.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle47.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle47.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            dataGridViewCellStyle47.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle47.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle47.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle47.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvOutRecord.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle47;
+            dataGridViewCellStyle85.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle85.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle85.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            dataGridViewCellStyle85.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle85.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle85.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle85.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvOutRecord.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle85;
             this.dgvOutRecord.ColumnHeadersHeight = 26;
             this.dgvOutRecord.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn31,
@@ -3425,14 +3412,14 @@
             this.dgvLReqNo2All4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvLReqNo2All4.BackgroundColor = System.Drawing.Color.FloralWhite;
             this.dgvLReqNo2All4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle48.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle48.BackColor = System.Drawing.Color.RosyBrown;
-            dataGridViewCellStyle48.Font = new System.Drawing.Font("微軟正黑體", 10F);
-            dataGridViewCellStyle48.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle48.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle48.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle48.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvLReqNo2All4.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle48;
+            dataGridViewCellStyle86.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle86.BackColor = System.Drawing.Color.RosyBrown;
+            dataGridViewCellStyle86.Font = new System.Drawing.Font("微軟正黑體", 10F);
+            dataGridViewCellStyle86.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle86.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle86.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle86.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvLReqNo2All4.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle86;
             this.dgvLReqNo2All4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLReqNo2All4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column92,
@@ -3444,14 +3431,14 @@
             this.Column97,
             this.Column98,
             this.Column99});
-            dataGridViewCellStyle49.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle49.BackColor = System.Drawing.Color.FloralWhite;
-            dataGridViewCellStyle49.Font = new System.Drawing.Font("微軟正黑體", 10F);
-            dataGridViewCellStyle49.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle49.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle49.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle49.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvLReqNo2All4.DefaultCellStyle = dataGridViewCellStyle49;
+            dataGridViewCellStyle87.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle87.BackColor = System.Drawing.Color.FloralWhite;
+            dataGridViewCellStyle87.Font = new System.Drawing.Font("微軟正黑體", 10F);
+            dataGridViewCellStyle87.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle87.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle87.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle87.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvLReqNo2All4.DefaultCellStyle = dataGridViewCellStyle87;
             this.dgvLReqNo2All4.EnableHeadersVisualStyles = false;
             this.dgvLReqNo2All4.Location = new System.Drawing.Point(15, 285);
             this.dgvLReqNo2All4.Name = "dgvLReqNo2All4";
@@ -3521,14 +3508,14 @@
             this.dgvLReqNo2All3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvLReqNo2All3.BackgroundColor = System.Drawing.Color.FloralWhite;
             this.dgvLReqNo2All3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle50.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle50.BackColor = System.Drawing.Color.RosyBrown;
-            dataGridViewCellStyle50.Font = new System.Drawing.Font("微軟正黑體", 10F);
-            dataGridViewCellStyle50.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle50.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle50.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle50.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvLReqNo2All3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle50;
+            dataGridViewCellStyle88.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle88.BackColor = System.Drawing.Color.RosyBrown;
+            dataGridViewCellStyle88.Font = new System.Drawing.Font("微軟正黑體", 10F);
+            dataGridViewCellStyle88.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle88.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle88.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle88.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvLReqNo2All3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle88;
             this.dgvLReqNo2All3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLReqNo2All3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column81,
@@ -3542,14 +3529,14 @@
             this.Column89,
             this.Column90,
             this.Column91});
-            dataGridViewCellStyle51.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle51.BackColor = System.Drawing.Color.FloralWhite;
-            dataGridViewCellStyle51.Font = new System.Drawing.Font("微軟正黑體", 10F);
-            dataGridViewCellStyle51.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle51.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle51.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle51.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvLReqNo2All3.DefaultCellStyle = dataGridViewCellStyle51;
+            dataGridViewCellStyle89.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle89.BackColor = System.Drawing.Color.FloralWhite;
+            dataGridViewCellStyle89.Font = new System.Drawing.Font("微軟正黑體", 10F);
+            dataGridViewCellStyle89.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle89.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle89.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle89.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvLReqNo2All3.DefaultCellStyle = dataGridViewCellStyle89;
             this.dgvLReqNo2All3.EnableHeadersVisualStyles = false;
             this.dgvLReqNo2All3.Location = new System.Drawing.Point(15, 211);
             this.dgvLReqNo2All3.Name = "dgvLReqNo2All3";
@@ -3631,14 +3618,14 @@
             this.dgvLReqNo2All2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvLReqNo2All2.BackgroundColor = System.Drawing.Color.FloralWhite;
             this.dgvLReqNo2All2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle52.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle52.BackColor = System.Drawing.Color.RosyBrown;
-            dataGridViewCellStyle52.Font = new System.Drawing.Font("微軟正黑體", 10F);
-            dataGridViewCellStyle52.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle52.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle52.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle52.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvLReqNo2All2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle52;
+            dataGridViewCellStyle90.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle90.BackColor = System.Drawing.Color.RosyBrown;
+            dataGridViewCellStyle90.Font = new System.Drawing.Font("微軟正黑體", 10F);
+            dataGridViewCellStyle90.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle90.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle90.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle90.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvLReqNo2All2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle90;
             this.dgvLReqNo2All2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column71,
             this.Column72,
@@ -3650,14 +3637,14 @@
             this.Column78,
             this.Column79,
             this.Column80});
-            dataGridViewCellStyle53.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle53.BackColor = System.Drawing.Color.FloralWhite;
-            dataGridViewCellStyle53.Font = new System.Drawing.Font("微軟正黑體", 10F);
-            dataGridViewCellStyle53.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle53.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle53.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle53.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvLReqNo2All2.DefaultCellStyle = dataGridViewCellStyle53;
+            dataGridViewCellStyle91.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle91.BackColor = System.Drawing.Color.FloralWhite;
+            dataGridViewCellStyle91.Font = new System.Drawing.Font("微軟正黑體", 10F);
+            dataGridViewCellStyle91.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle91.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle91.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle91.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvLReqNo2All2.DefaultCellStyle = dataGridViewCellStyle91;
             this.dgvLReqNo2All2.EnableHeadersVisualStyles = false;
             this.dgvLReqNo2All2.Location = new System.Drawing.Point(15, 138);
             this.dgvLReqNo2All2.Name = "dgvLReqNo2All2";
@@ -3733,14 +3720,14 @@
             this.dgvLReqNo2All1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvLReqNo2All1.BackgroundColor = System.Drawing.Color.FloralWhite;
             this.dgvLReqNo2All1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle54.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle54.BackColor = System.Drawing.Color.RosyBrown;
-            dataGridViewCellStyle54.Font = new System.Drawing.Font("微軟正黑體", 10F);
-            dataGridViewCellStyle54.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle54.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle54.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle54.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvLReqNo2All1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle54;
+            dataGridViewCellStyle92.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle92.BackColor = System.Drawing.Color.RosyBrown;
+            dataGridViewCellStyle92.Font = new System.Drawing.Font("微軟正黑體", 10F);
+            dataGridViewCellStyle92.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle92.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle92.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle92.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvLReqNo2All1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle92;
             this.dgvLReqNo2All1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLReqNo2All1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column62,
@@ -3753,14 +3740,14 @@
             this.Column67,
             this.Column69,
             this.Column70});
-            dataGridViewCellStyle55.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle55.BackColor = System.Drawing.Color.FloralWhite;
-            dataGridViewCellStyle55.Font = new System.Drawing.Font("微軟正黑體", 10F);
-            dataGridViewCellStyle55.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle55.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle55.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle55.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvLReqNo2All1.DefaultCellStyle = dataGridViewCellStyle55;
+            dataGridViewCellStyle93.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle93.BackColor = System.Drawing.Color.FloralWhite;
+            dataGridViewCellStyle93.Font = new System.Drawing.Font("微軟正黑體", 10F);
+            dataGridViewCellStyle93.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle93.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle93.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle93.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvLReqNo2All1.DefaultCellStyle = dataGridViewCellStyle93;
             this.dgvLReqNo2All1.EnableHeadersVisualStyles = false;
             this.dgvLReqNo2All1.Location = new System.Drawing.Point(15, 64);
             this.dgvLReqNo2All1.Name = "dgvLReqNo2All1";
@@ -3877,26 +3864,26 @@
             this.dgvID2LReqNo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvID2LReqNo.BackgroundColor = System.Drawing.Color.FloralWhite;
             this.dgvID2LReqNo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle56.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle56.BackColor = System.Drawing.Color.RosyBrown;
-            dataGridViewCellStyle56.Font = new System.Drawing.Font("微軟正黑體", 10F);
-            dataGridViewCellStyle56.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle56.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle56.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle56.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvID2LReqNo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle56;
+            dataGridViewCellStyle94.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle94.BackColor = System.Drawing.Color.RosyBrown;
+            dataGridViewCellStyle94.Font = new System.Drawing.Font("微軟正黑體", 10F);
+            dataGridViewCellStyle94.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle94.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle94.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle94.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvID2LReqNo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle94;
             this.dgvID2LReqNo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvID2LReqNo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColMRNo,
             this.ColID2LReqNo});
-            dataGridViewCellStyle57.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle57.BackColor = System.Drawing.Color.FloralWhite;
-            dataGridViewCellStyle57.Font = new System.Drawing.Font("微軟正黑體", 10F);
-            dataGridViewCellStyle57.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle57.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle57.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle57.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvID2LReqNo.DefaultCellStyle = dataGridViewCellStyle57;
+            dataGridViewCellStyle95.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle95.BackColor = System.Drawing.Color.FloralWhite;
+            dataGridViewCellStyle95.Font = new System.Drawing.Font("微軟正黑體", 10F);
+            dataGridViewCellStyle95.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle95.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle95.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle95.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvID2LReqNo.DefaultCellStyle = dataGridViewCellStyle95;
             this.dgvID2LReqNo.EnableHeadersVisualStyles = false;
             this.dgvID2LReqNo.Location = new System.Drawing.Point(280, 34);
             this.dgvID2LReqNo.Name = "dgvID2LReqNo";
@@ -4353,6 +4340,145 @@
             this.buttonSignOut.Text = "登出";
             this.buttonSignOut.UseVisualStyleBackColor = true;
             this.buttonSignOut.Click += new System.EventHandler(this.buttonSignOut_Click);
+            // 
+            // DGVSearchOutTable
+            // 
+            this.DGVSearchOutTable.HeaderText = " 預出庫";
+            this.DGVSearchOutTable.Name = "DGVSearchOutTable";
+            this.DGVSearchOutTable.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // DGVSearchLabNo
+            // 
+            this.DGVSearchLabNo.HeaderText = "檢體編號";
+            this.DGVSearchLabNo.Name = "DGVSearchLabNo";
+            // 
+            // DGVSearchSubStock
+            // 
+            this.DGVSearchSubStock.HeaderText = "分庫";
+            this.DGVSearchSubStock.Name = "DGVSearchSubStock";
+            // 
+            // DGVSearchLabType
+            // 
+            this.DGVSearchLabType.HeaderText = "檢體種類";
+            this.DGVSearchLabType.Name = "DGVSearchLabType";
+            // 
+            // DGVSearchStoreageMethod
+            // 
+            this.DGVSearchStoreageMethod.HeaderText = "保存方式";
+            this.DGVSearchStoreageMethod.Name = "DGVSearchStoreageMethod";
+            // 
+            // DGVSearchSickPortion
+            // 
+            this.DGVSearchSickPortion.HeaderText = "罹病部位";
+            this.DGVSearchSickPortion.Name = "DGVSearchSickPortion";
+            // 
+            // DGVSearchDiagName1
+            // 
+            this.DGVSearchDiagName1.HeaderText = "診斷名稱1";
+            this.DGVSearchDiagName1.Name = "DGVSearchDiagName1";
+            this.DGVSearchDiagName1.Width = 110;
+            // 
+            // DGVSearchDiagName2
+            // 
+            this.DGVSearchDiagName2.HeaderText = "診斷名稱2";
+            this.DGVSearchDiagName2.Name = "DGVSearchDiagName2";
+            this.DGVSearchDiagName2.Width = 110;
+            // 
+            // DGVSearchDiagName3
+            // 
+            this.DGVSearchDiagName3.HeaderText = "診斷名稱3";
+            this.DGVSearchDiagName3.Name = "DGVSearchDiagName3";
+            this.DGVSearchDiagName3.Width = 110;
+            // 
+            // DGVSearchNewLabPositon
+            // 
+            this.DGVSearchNewLabPositon.HeaderText = "新檢體位置";
+            this.DGVSearchNewLabPositon.Name = "DGVSearchNewLabPositon";
+            this.DGVSearchNewLabPositon.Visible = false;
+            // 
+            // DGVSearchSex
+            // 
+            this.DGVSearchSex.HeaderText = "性別";
+            this.DGVSearchSex.Name = "DGVSearchSex";
+            this.DGVSearchSex.Visible = false;
+            // 
+            // DGVSearchAGE
+            // 
+            this.DGVSearchAGE.HeaderText = "年齡";
+            this.DGVSearchAGE.Name = "DGVSearchAGE";
+            this.DGVSearchAGE.Visible = false;
+            // 
+            // DGVSearchDate
+            // 
+            this.DGVSearchDate.HeaderText = "檢體採集日期";
+            this.DGVSearchDate.Name = "DGVSearchDate";
+            this.DGVSearchDate.Visible = false;
+            // 
+            // DGVSearchAdoptPortion
+            // 
+            this.DGVSearchAdoptPortion.HeaderText = "檢體採集部位";
+            this.DGVSearchAdoptPortion.Name = "DGVSearchAdoptPortion";
+            this.DGVSearchAdoptPortion.Visible = false;
+            // 
+            // DGVSearchLeaveBodyDatetime
+            // 
+            this.DGVSearchLeaveBodyDatetime.HeaderText = "檢體離體時刻";
+            this.DGVSearchLeaveBodyDatetime.Name = "DGVSearchLeaveBodyDatetime";
+            this.DGVSearchLeaveBodyDatetime.Visible = false;
+            // 
+            // DGVSearchDealDatetime
+            // 
+            this.DGVSearchDealDatetime.HeaderText = "檢體處理時刻";
+            this.DGVSearchDealDatetime.Name = "DGVSearchDealDatetime";
+            this.DGVSearchDealDatetime.Visible = false;
+            // 
+            // DGVSearchLeaveBodyEnvir
+            // 
+            this.DGVSearchLeaveBodyEnvir.HeaderText = "離體後環境";
+            this.DGVSearchLeaveBodyEnvir.Name = "DGVSearchLeaveBodyEnvir";
+            this.DGVSearchLeaveBodyEnvir.Visible = false;
+            // 
+            // DGVSearchLLeaveBodyHour
+            // 
+            this.DGVSearchLLeaveBodyHour.HeaderText = "離體後時間";
+            this.DGVSearchLLeaveBodyHour.Name = "DGVSearchLLeaveBodyHour";
+            this.DGVSearchLLeaveBodyHour.Visible = false;
+            // 
+            // DGVSearchClerkName
+            // 
+            this.DGVSearchClerkName.HeaderText = "檔案登錄人";
+            this.DGVSearchClerkName.Name = "DGVSearchClerkName";
+            this.DGVSearchClerkName.Visible = false;
+            // 
+            // DGVSearchPlanAgreeDate
+            // 
+            this.DGVSearchPlanAgreeDate.HeaderText = "研究簽署日期";
+            this.DGVSearchPlanAgreeDate.Name = "DGVSearchPlanAgreeDate";
+            this.DGVSearchPlanAgreeDate.Visible = false;
+            // 
+            // DGVSearchAgreeNoDate
+            // 
+            this.DGVSearchAgreeNoDate.HeaderText = "同意簽署日期";
+            this.DGVSearchAgreeNoDate.Name = "DGVSearchAgreeNoDate";
+            this.DGVSearchAgreeNoDate.Visible = false;
+            // 
+            // DGVUseExpireDate
+            // 
+            this.DGVUseExpireDate.HeaderText = "使用年限";
+            this.DGVUseExpireDate.Name = "DGVUseExpireDate";
+            this.DGVUseExpireDate.Visible = false;
+            // 
+            // DGVSearchStatus
+            // 
+            this.DGVSearchStatus.HeaderText = "退出、停止變更、死亡";
+            this.DGVSearchStatus.Name = "DGVSearchStatus";
+            this.DGVSearchStatus.Visible = false;
+            // 
+            // DGVSearchNote
+            // 
+            this.DGVSearchNote.HeaderText = "備註";
+            this.DGVSearchNote.Name = "DGVSearchNote";
+            this.DGVSearchNote.Visible = false;
             // 
             // BioBank
             // 
@@ -4824,16 +4950,32 @@
         //comboBox1
         private System.Windows.Forms.ComboBox cboAdoptPortion;
         private System.Windows.Forms.Button btnSearchOut;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn DGVSearchOutTable;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DGVSearchOutCNum;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DGVSearchOutCPos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DGVSearchOutCSex;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DGVSearchOutCAge;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DGVSearchOutCClass;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DGVSearchOutCDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DGVSearchOutCPart;
         private System.Windows.Forms.Button btnOutExcel;
         private System.Windows.Forms.Button btnOPExcel;
         private System.Windows.Forms.SaveFileDialog saveFileDialog2;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn DGVSearchOutTable;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DGVSearchLabNo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DGVSearchSubStock;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DGVSearchLabType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DGVSearchStoreageMethod;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DGVSearchSickPortion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DGVSearchDiagName1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DGVSearchDiagName2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DGVSearchDiagName3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DGVSearchNewLabPositon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DGVSearchSex;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DGVSearchAGE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DGVSearchDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DGVSearchAdoptPortion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DGVSearchLeaveBodyDatetime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DGVSearchDealDatetime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DGVSearchLeaveBodyEnvir;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DGVSearchLLeaveBodyHour;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DGVSearchClerkName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DGVSearchPlanAgreeDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DGVSearchAgreeNoDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DGVUseExpireDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DGVSearchStatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DGVSearchNote;
     }
 }
