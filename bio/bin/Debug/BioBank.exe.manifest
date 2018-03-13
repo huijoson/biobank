@@ -42,26 +42,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BioBank.exe" size="197120">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BioBank.exe" size="195072">
       <assemblyIdentity name="BioBank" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>3MXLSulTLXzzXPp8rZHu12YNLCI=</dsig:DigestValue>
+        <dsig:DigestValue>zBordc7bu3zcvsSVv0PNc4AuwT4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BioBank_Conn.dll" size="5632">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BioBank_Conn.dll" size="6144">
       <assemblyIdentity name="BioBank_Conn" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>OQus9RRsDlMKf5Zojp4JiOyNqvw=</dsig:DigestValue>
+        <dsig:DigestValue>55Gn45yr2FtYKW/Wa38MYIEtbJM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -299,15 +299,15 @@ namespace BioBank
 
                     case "dgvOutRecord":
                         //生成Header
-                        for (int i = 1; i < dgv.ColumnCount; i++)
+                        for (int i = 0; i < dgv.Columns.GetColumnCount(DataGridViewElementStates.Visible); i++)
                         {
-                            mySheet.Cells[1, i] = dgv.Columns[i].HeaderText;
+                            mySheet.Cells[1, i+1] = dgv.Columns[i].HeaderText;
                         }
 
                         //迴圈加入內容
-                        for (int i = 0; i < dgv.RowCount; i++)
+                        for (int i = 0; i < dgv.Rows.GetRowCount(DataGridViewElementStates.Visible); i++)
                         {
-                            for (int j = 1; j < dgv.ColumnCount; j++)
+                            for (int j = 0; j < dgv.Columns.GetColumnCount(DataGridViewElementStates.Visible); j++)
                             {
                                 if (dgv[j, i].ValueType == typeof(string))
                                 {
@@ -315,15 +315,15 @@ namespace BioBank
                                 }
                                 else
                                 {
-                                    mySheet.Cells[i + 2, j] = dgv[j, i].Value.ToString();
+                                    mySheet.Cells[i + 2, j + 1] = dgv[j, i].Value.ToString();
                                 }
                             }
                         }
 
                         //設定EXCEL範圍
-                        myRange = mySheet.Range[mySheet.Cells[1, 1], mySheet.Cells[dgv.Rows.Count + 1,
+                        myRange = mySheet.Range[mySheet.Cells[1, 1], mySheet.Cells[dgv.Rows.GetRowCount(DataGridViewElementStates.Visible) + 1,
 
-                        dgv.Columns.Count - 1]];
+                        dgv.Columns.GetColumnCount(DataGridViewElementStates.Visible)]];
                         break;
                 }
 

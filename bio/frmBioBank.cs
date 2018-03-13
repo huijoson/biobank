@@ -3284,7 +3284,7 @@ namespace BioBank
                 {
                     sCon.Open();
                     sSQL = "SELECT *  FROM [DB_BIO].[dbo].[BioPerMasterTbl] ";
-                    sSQL = sSQL + " where chTakeOutDate = '" + sOutTime + "'";
+                    sSQL = sSQL + " where chTakeOutDate = '" + sOutTime + "' ORDER BY chLabNo";
                     SqlCommand sCmd = new SqlCommand(sSQL, sCon);
                     SqlDataReader sRead = sCmd.ExecuteReader();
                     if (sRead.HasRows)
@@ -3293,42 +3293,45 @@ namespace BioBank
                         {
                             sLabNo = ClsShareFunc.gfunCheck(sRead["chLabNo"].ToString());
                             sNewLabPositon = ClsShareFunc.gfunCheck(sRead["chNewLabPositon"].ToString());
-                            sSex = ClsShareFunc.gfunCheck(sRead["chSex"].ToString());
-                            sAge = ClsShareFunc.gfunCheck(sRead["intAge"].ToString());
-                            sLabType = ClsShareFunc.gfunCheck(sRead["chLabType"].ToString());
-                            sLabAdoptDate = ClsShareFunc.gfunCheck(sRead["chLabAdoptDate"].ToString());
-                            sAdoptPortion = ClsShareFunc.gfunCheck(sRead["chAdoptPortion"].ToString());
-                            sStoreageMethod = ClsShareFunc.gfunCheck(sRead["chStoreageMethod"].ToString());
-                            sLabLeaveBodyDatetime = ClsShareFunc.gfunCheck(sRead["chLabLeaveBodyDatetime"].ToString());
-                            sLabDealDatetime = ClsShareFunc.gfunCheck(sRead["chLabDealDatetime"].ToString());
-                            sLabLeaveBodyEnvir = ClsShareFunc.gfunCheck(sRead["chLabLeaveBodyEnvir"].ToString());
-                            sLabLeaveBodyHour = ClsShareFunc.gfunCheck(sRead["chLabLeaveBodyHour"].ToString());
-                            sSubStock = ClsShareFunc.gfunCheck(sRead["chSubStock"].ToString());
-                            sSickPortion = ClsShareFunc.gfunCheck(sRead["chSickPortion"].ToString());
-                            sDiagName1 = ClsShareFunc.gfunCheck(sRead["chDiagName1"].ToString());
-                            sDiagName2 = ClsShareFunc.gfunCheck(sRead["chDiagName2"].ToString());
-                            sDiagName3 = ClsShareFunc.gfunCheck(sRead["chDiagName3"].ToString());
-                            sClerkName = ClsShareFunc.gfunCheck(sRead["chClerkName"].ToString());
-                            sPlanAgreeDate = ClsShareFunc.gfunCheck(sRead["chPlanAgreeDate"].ToString());
-                            sAgreeNoDate = ClsShareFunc.gfunCheck(sRead["chAgreeNoDate"].ToString());
-                            sUseExpireDate = ClsShareFunc.gfunCheck(sRead["chUseExpireDate"].ToString());
-                            sChangeRange = ClsShareFunc.gfunCheck(sRead["chChangeRange"].ToString());
-                            sStatus = ClsShareFunc.gfunCheck(sRead["chStatus"].ToString());
-                            sNote = ClsShareFunc.gfunCheck(sRead["chNote"].ToString());
-                            sTakeOutName = ClsShareFunc.gfunCheck(sRead["chTakeOutName"].ToString());
+                            //sSex = ClsShareFunc.gfunCheck(sRead["chSex"].ToString());
+                            //sAge = ClsShareFunc.gfunCheck(sRead["intAge"].ToString());
+                            //sLabType = ClsShareFunc.gfunCheck(sRead["chLabType"].ToString());
+                            //sLabAdoptDate = ClsShareFunc.gfunCheck(sRead["chLabAdoptDate"].ToString());
+                            //sAdoptPortion = ClsShareFunc.gfunCheck(sRead["chAdoptPortion"].ToString());
+                            //sStoreageMethod = ClsShareFunc.gfunCheck(sRead["chStoreageMethod"].ToString());
+                            //sLabLeaveBodyDatetime = ClsShareFunc.gfunCheck(sRead["chLabLeaveBodyDatetime"].ToString());
+                            //sLabDealDatetime = ClsShareFunc.gfunCheck(sRead["chLabDealDatetime"].ToString());
+                            //sLabLeaveBodyEnvir = ClsShareFunc.gfunCheck(sRead["chLabLeaveBodyEnvir"].ToString());
+                            //sLabLeaveBodyHour = ClsShareFunc.gfunCheck(sRead["chLabLeaveBodyHour"].ToString());
+                            //sSubStock = ClsShareFunc.gfunCheck(sRead["chSubStock"].ToString());
+                            //sSickPortion = ClsShareFunc.gfunCheck(sRead["chSickPortion"].ToString());
+                            //sDiagName1 = ClsShareFunc.gfunCheck(sRead["chDiagName1"].ToString());
+                            //sDiagName2 = ClsShareFunc.gfunCheck(sRead["chDiagName2"].ToString());
+                            //sDiagName3 = ClsShareFunc.gfunCheck(sRead["chDiagName3"].ToString());
+                            //sClerkName = ClsShareFunc.gfunCheck(sRead["chClerkName"].ToString());
+                            //sPlanAgreeDate = ClsShareFunc.gfunCheck(sRead["chPlanAgreeDate"].ToString());
+                            //sAgreeNoDate = ClsShareFunc.gfunCheck(sRead["chAgreeNoDate"].ToString());
+                            //sUseExpireDate = ClsShareFunc.gfunCheck(sRead["chUseExpireDate"].ToString());
+                            //sChangeRange = ClsShareFunc.gfunCheck(sRead["chChangeRange"].ToString());
+                            //sStatus = ClsShareFunc.gfunCheck(sRead["chStatus"].ToString());
+                            //sNote = ClsShareFunc.gfunCheck(sRead["chNote"].ToString());
+                            //sTakeOutName = ClsShareFunc.gfunCheck(sRead["chTakeOutName"].ToString());
                             sTakeOutDate = ClsShareFunc.gfunCheck(sRead["chTakeOutDate"].ToString());
                             sTakeOutApplicant = ClsShareFunc.gfunCheck(sRead["chTakeOutApplicant"].ToString());
                             sTakeOutPlanNo = ClsShareFunc.gfunCheck(sRead["chTakeOutPlanNo"].ToString());
-                            sTakeOutNote = ClsShareFunc.gfunCheck(sRead["chTakeOutNote"].ToString());
-                            sInComeDate = ClsShareFunc.gfunCheck(sRead["chInComeDate"].ToString());
-                            sPrintSeqNo = ClsShareFunc.gfunCheck(sRead["intPrintSeqNo"].ToString());
+                            //sTakeOutNote = ClsShareFunc.gfunCheck(sRead["chTakeOutNote"].ToString());
+                            //sInComeDate = ClsShareFunc.gfunCheck(sRead["chInComeDate"].ToString());
+                            //sPrintSeqNo = ClsShareFunc.gfunCheck(sRead["intPrintSeqNo"].ToString());
 
-                            dgvOutRecord.Rows.Add(sLabNo, sNewLabPositon, sSex, sAge, sLabType, sLabAdoptDate, sAdoptPortion,
-                                 sStoreageMethod, sLabLeaveBodyDatetime, sLabDealDatetime, sLabLeaveBodyEnvir,
-                                 sLabLeaveBodyHour, sSubStock, sSickPortion, sDiagName1, sDiagName2, sDiagName3,
-                                 sClerkName, sPlanAgreeDate, sAgreeNoDate, sUseExpireDate, sChangeRange,
-                                 sStatus, sNote, sTakeOutName, sTakeOutDate, sTakeOutApplicant, sTakeOutPlanNo, sTakeOutNote,
-                                 sInComeDate, sPrintSeqNo);
+                            //dgvOutRecord.Rows.Add(sLabNo, sNewLabPositon, sSex, sAge, sLabType, sLabAdoptDate, sAdoptPortion,
+                            //     sStoreageMethod, sLabLeaveBodyDatetime, sLabDealDatetime, sLabLeaveBodyEnvir,
+                            //     sLabLeaveBodyHour, sSubStock, sSickPortion, sDiagName1, sDiagName2, sDiagName3,
+                            //     sClerkName, sPlanAgreeDate, sAgreeNoDate, sUseExpireDate, sChangeRange,
+                            //     sStatus, sNote, sTakeOutName, sTakeOutDate, sTakeOutApplicant, sTakeOutPlanNo, sTakeOutNote,
+                            //     sInComeDate, sPrintSeqNo);
+
+                            dgvOutRecord.Rows.Add(sTakeOutDate, sTakeOutApplicant, sTakeOutPlanNo, 
+                                sNewLabPositon,sLabNo);
                         }
 
                     } sRead.Close();
