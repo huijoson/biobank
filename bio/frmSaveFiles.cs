@@ -23,8 +23,8 @@ namespace BioBank
 
         private void frmSaveFiles_Load(object sender, EventArgs e)
         {
-            
         }
+
         //資料夾目錄
         private void btnPath_Click(object sender, EventArgs e)
         {
@@ -45,6 +45,16 @@ namespace BioBank
             }
             else
                 MessageBox.Show("請選擇路徑，檔名不可為空白!");
+        }
+
+        private void txtFileName_Click(object sender, EventArgs e)
+        {
+            this.txtFileName.SelectAll();
+        }
+
+        private void txtPath_Click(object sender, EventArgs e)
+        {
+            this.txtPath.SelectAll();
         }
     }
 }

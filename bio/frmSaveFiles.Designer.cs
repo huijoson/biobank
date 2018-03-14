@@ -40,6 +40,7 @@
             this.txtPath.Name = "txtPath";
             this.txtPath.Size = new System.Drawing.Size(288, 22);
             this.txtPath.TabIndex = 0;
+            this.txtPath.Click += new System.EventHandler(this.txtPath_Click);
             // 
             // txtFileName
             // 
@@ -47,6 +48,7 @@
             this.txtFileName.Name = "txtFileName";
             this.txtFileName.Size = new System.Drawing.Size(288, 22);
             this.txtFileName.TabIndex = 1;
+            this.txtFileName.Click += new System.EventHandler(this.txtFileName_Click);
             // 
             // btnPath
             // 
@@ -79,7 +81,7 @@
             this.Controls.Add(this.txtPath);
             this.Name = "frmSaveFiles";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmSaveFiles";
+            this.Text = "儲存目的地";
             this.Load += new System.EventHandler(this.frmSaveFiles_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

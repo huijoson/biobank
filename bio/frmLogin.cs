@@ -323,7 +323,6 @@ namespace BioBank
                     }
                 }
             }
-
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -373,9 +372,6 @@ namespace BioBank
                     MessageBox.Show("Login Form Load's Error : " + ex.Message.ToString());
                     return;
                 }
-
-
-
             }
         }
 
