@@ -932,31 +932,31 @@ namespace BioBank
         //列印新檢體編碼(貼紙)
         private void buttonPrintLabNo_Click(object sender, EventArgs e)
         {
-            //DataGridView dgvPrint = new DataGridView();
-            //dgvPrint.Columns.Add("新檢體碼", "新檢體碼");
-            //dgvPrint.RowCount = dgvShowMsg.Rows.Count;
-            //for (int i = 0; i < dgvShowMsg.Rows.Count; i++)
-            //{
-            //    dgvPrint.Rows[i].Cells[0].Value = dgvShowMsg.Rows[i].Cells[0].Value;
-            //}
-            //ClsPrint _ClsPrint = new ClsPrint(dgvPrint, "新檢體碼");
-            //_ClsPrint.PrintForm();
+            var PD = new PrintDocument();
 
-            TSCLIB_DLL.openport("TTP243E");
-            TSCLIB_DLL.setup("30", "10", "2", "12", "0", "-1", "5");
-            TSCLIB_DLL.clearbuffer();
-
-            for (int i = 0; i < dgvShowMsg.Rows.Count; i++)
+            if (printFunction.IsPrinterExist("CAB MACH4/300"))
             {
-                //第一行：時間 & 性別 & 生日
-                TSCLIB_DLL.windowsfont(15, 5, 45, 0, 2, 0, "Times New Roman", dgvShowMsg.Rows[i].Cells[0].Value.ToString());
-                TSCLIB_DLL.printlabel("1", "1");
-                TSCLIB_DLL.clearbuffer();
+                PD.PrinterSettings.PrinterName = "CAB MACH4/300";
+                try
+                {
+                    for (int i = 0; i < dgvShowMsg.Rows.Count; i++)
+                    //for (int i = 0; i < 1; i++)
+                    {
+                        printNum = dgvShowMsg.Rows[i].Cells[0].Value.ToString();
+                        PD.PrintPage += new PrintPageEventHandler(PD_PrintPage);
+                        PD.Print();
+                    }
+                    //printNum = "U121516777";
+                    //PD.PrintPage += new PrintPageEventHandler(PD_PrintPage);
+                    //PD.Print();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
-            //TSCLIB_DLL.printlabel("1", "1");
-            TSCLIB_DLL.closeport();
-
         }
+
         private void comboBoxCase_SelectionChangeCommitted(object sender, EventArgs e)
         {
             if (cboTeamNo.Text != "")
@@ -2265,7 +2265,7 @@ namespace BioBank
                 int sRow = e.RowIndex;
 
                 CleardgvShowLReqNo();
-                if (e.ColumnIndex != 0)
+                if (e.ColumnIndex != 0 && sRow >= 0)
                 {
                     sLReqNo = dgvQryLReqNo.Rows[sRow].Cells[1].Value.ToString();
                     sYear = dgvQryLReqNo.Rows[sRow].Cells[21].Value.ToString();
@@ -3579,17 +3579,24 @@ namespace BioBank
             if (printFunction.IsPrinterExist("CAB MACH4/300"))
             {
                 PD.PrinterSettings.PrinterName = "CAB MACH4/300";
+                try
+                {
+                    for (int i = 0; i < dgvStorageRecord.Rows.Count; i++)
+                    //for (int i = 0; i < 1; i++)
+                    {
+                        printNum = dgvStorageRecord.Rows[i].Cells["檢體管號碼"].Value.ToString();
+                        PD.PrintPage += new PrintPageEventHandler(PD_PrintPage);
+                        PD.Print();
+                    }
+                    //printNum = "U121516777";
+                    //PD.PrintPage += new PrintPageEventHandler(PD_PrintPage);
+                    //PD.Print();
+                }
+                catch (Exception ex){
+                    MessageBox.Show(ex.Message);
+                }
             }
-            for (int i = 0; i < dgvStorageRecord.Rows.Count; i++)
-            //for (int i = 0; i < 1; i++)
-            {
-                printNum = dgvStorageRecord.Rows[i].Cells["檢體管號碼"].Value.ToString();
-                PD.PrintPage += new PrintPageEventHandler(PD_PrintPage);
-                PD.Print();
-            }
-            //printNum = "U121516777";
-            //PD.PrintPage += new PrintPageEventHandler(PD_PrintPage);
-            //PD.Print();
+            
         }
         public void PD_PrintPage(object sender, PrintPageEventArgs e)
         {
@@ -3663,6 +3670,56 @@ namespace BioBank
         }
         /* GridView 右鍵複製功能 ---------- End */
 
+        private void btnPrintChkOut_Click(object sender, EventArgs e)
+        {
+            //insert Event Log: 12. --篩選(列印)--
+            ClsShareFunc.insEvenLogt("12", ClsShareFunc.sUserName, "", "", "出庫紀錄(列印)--");
+            ClsPrint _ClsPrint = new ClsPrint(dgvOutRecord, "查詢列印");
+            _ClsPrint.PrintForm();
+        }
 
+        //輸入檢體編碼時按enter會做的事情
+        private void txtModLReqNo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(Convert.ToInt32(e.KeyChar) == 13){
+                txtModLReqNo.SelectAll();
+            }
+        }
+
+        private void dgvQryLReqNo_CurrentCellDirtyStateChanged(object sender, EventArgs e)
+        {
+            if (dgvQryLReqNo.IsCurrentCellDirty)
+            {
+                dgvQryLReqNo.CommitEdit(DataGridViewDataErrorContexts.Commit);
+            }
+        }
+
+        private void dgvQryLReqNo_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                string sLReqNo = "";
+                string sYear = "";
+                string sRange = "";
+                string sStatus = "";
+                string sNote = "";
+
+                CleardgvShowLReqNo();
+                if (e.ColumnIndex != 0 && dgvQryLReqNo.RowCount > 0)
+                {
+                    sLReqNo = dgvQryLReqNo.Rows[0].Cells[1].Value.ToString();
+                    sYear = dgvQryLReqNo.Rows[0].Cells[21].Value.ToString();
+                    sRange = dgvQryLReqNo.Rows[0].Cells[22].Value.ToString();
+                    sStatus = dgvQryLReqNo.Rows[0].Cells[23].Value.ToString().Trim();
+                    sNote = dgvQryLReqNo.Rows[0].Cells[24].Value.ToString();
+
+                    dgvShowLReqNo.Rows.Add(sLReqNo, sYear, sRange, sStatus, sNote);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("dgvQryLReqNo_RowHeaderMouseDoubleClick: " + ex.Message.ToString());
+            }
+        }
     }
 }

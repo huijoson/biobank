@@ -74,62 +74,76 @@ namespace BioBank
             string ID = txtID.Text;
             string sPwd = "";
             string sPwdVer = "";
+            string sOldPwd = "";
+            StringBuilder sbMsg = new StringBuilder();
+            sOldPwd = txtPWD.Text;
             sPwd = txtNewPwd.Text;
             sPwdVer = txtNewPwdVer.Text;
 
             /*1.帳號不為空白*/
             if (ID != "")
             {
-                    /*3.密碼輸入相同*/
-                    if (sPwd == sPwdVer)
+                //密碼不可以一樣
+                if (sOldPwd == sPwd || sOldPwd == sPwdVer)
+                {
+                    sbMsg.Append("密碼不能與之前相同");
+                    MessageBox.Show(sbMsg.ToString());
+                    return;
+                }
+                /*3.密碼輸入相同*/
+                if (sPwd == sPwdVer)
+                {
+
+
+                    if (VerAction("修改") == false)
+                        return;
+
+                    /*4.帳號存在Administrator db*/
+                    if (ClsShareFunc.CheckInDb(ClsShareFunc.DbAdmin(), ID, "modify") == true)
                     {
-                        if (VerAction("修改") == false)
-                            return;
+                        /*5.更新密碼*/
+                        //using (SqlConnection updateCon = new SqlConnection(ClsShareFunc.DB_SECConnection()))
+                        using (SqlConnection updateCon = BioBank_Conn.Class_biobank_conn.DB_SEC_conn())
+                        {
+                            updateCon.Open();
+                            SqlCommand updateCmd = new SqlCommand("update BioAdministratorKeyTbl " +
+                                "set chAdministratorKey = '" + GetMD5(sPwdVer) + "',chLastModPwdDT = dbo.GetDateToDate13(getdate())" + " where chUserId = '" + ID + "' ", updateCon);
+                            updateCmd.ExecuteNonQuery();
 
-                            /*4.帳號存在Administrator db*/
-                            if (ClsShareFunc.CheckInDb(ClsShareFunc.DbAdmin(), ID, "modify") == true)
+                            MessageBox.Show("密碼修改成功!請重新登入。");
+                            InitFrm();
+                            updateCon.Close();
+                            updateCon.Dispose();
+                        }
+                    }
+                    else
+                    {
+                        /*4.帳號存在 Common db*/
+                        if (ClsShareFunc.CheckInDb(ClsShareFunc.DbCom(), ID, "modify") == true)
+                        {
+                            /*5.更新密碼*/
+                            //using (SqlConnection updateCon = new SqlConnection(ClsShareFunc.DB_SECConnection()))
+                            using (SqlConnection updateCon = BioBank_Conn.Class_biobank_conn.DB_SEC_conn())
                             {
-                                /*5.更新密碼*/
-                                //using (SqlConnection updateCon = new SqlConnection(ClsShareFunc.DB_SECConnection()))
-                                using (SqlConnection updateCon = BioBank_Conn.Class_biobank_conn.DB_SEC_conn())
-                                {
-                                    updateCon.Open();
-                                    SqlCommand updateCmd = new SqlCommand("update BioAdministratorKeyTbl " +
-                                        "set chAdministratorKey = '" + GetMD5(sPwdVer) + "',chLastModPwdDT = dbo.GetDateToDate13(getdate())" + " where chUserId = '" + ID + "' ", updateCon);
-                                    updateCmd.ExecuteNonQuery();
+                                updateCon.Open();
+                                SqlCommand updateCmd = new SqlCommand("update BioCommonLoginTbl " +
+                                    "set chPassword = '" + GetMD5(sPwdVer) + "',chLastModPwdDT = dbo.GetDateToDate13(getdate())" + " where chUserId = '" + ID + "' ", updateCon);
+                                updateCmd.ExecuteNonQuery();
 
-                                    MessageBox.Show("密碼修改成功!請重新登入。");
-                                    InitFrm();
-                                    updateCon.Close();
-                                    updateCon.Dispose();                               
-                                }
-                            }
-                            else
-                            {
-                                /*4.帳號存在 Common db*/
-                                if (ClsShareFunc.CheckInDb(ClsShareFunc.DbCom(), ID, "modify") == true)
-                                {
-                                    /*5.更新密碼*/
-                                    //using (SqlConnection updateCon = new SqlConnection(ClsShareFunc.DB_SECConnection()))
-                                    using (SqlConnection updateCon = BioBank_Conn.Class_biobank_conn.DB_SEC_conn())
-                                    {
-                                        updateCon.Open();
-                                        SqlCommand updateCmd = new SqlCommand("update BioCommonLoginTbl " +
-                                            "set chPassword = '" + GetMD5(sPwdVer) + "',chLastModPwdDT = dbo.GetDateToDate13(getdate())" + " where chUserId = '" + ID + "' ", updateCon);
-                                        updateCmd.ExecuteNonQuery();
-
-                                        MessageBox.Show("密碼修改成功!請重新登入。");
-                                        InitFrm();
-                                        updateCon.Close();
-                                        updateCon.Dispose();
-                                    }
-                                }
-                                else
-                                    MessageBox.Show("查無此帳號!");
+                                MessageBox.Show("密碼修改成功!請重新登入。");
+                                InitFrm();
+                                updateCon.Close();
+                                updateCon.Dispose();
                             }
                         }
                         else
-                            MessageBox.Show("密碼不一致。請重新輸入!");
+                            MessageBox.Show("查無此帳號!");
+                    }
+                }
+                else {
+                    sbMsg.Append("\n密碼不一致。請重新輸入!");
+                    MessageBox.Show(sbMsg.ToString());
+                }
             }
             else
                 MessageBox.Show("請先登入!");
