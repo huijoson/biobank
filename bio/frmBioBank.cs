@@ -110,6 +110,7 @@ namespace BioBank
                     strSQL = "SELECT DISTINCT chAdoptPortion from dbo.BioPerMasterTbl";
                     SqlCommand sCmd = new SqlCommand(strSQL, sCon);
                     SqlDataReader sRead = sCmd.ExecuteReader();
+                    comboPart.Items.Clear();
                     if (sRead.HasRows)
                     {
                         while (sRead.Read())
@@ -332,7 +333,7 @@ namespace BioBank
             dgvShowMsg.Rows.Clear();
             InitImportPage();
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
-            openFileDialog1.Filter = "xls files (*.xls)|*.xls";
+            openFileDialog1.Filter = "xls files (*.xls)|*.xls|xlsx files (*.xlsx)|*.xlsx";
             //openFileDialog1.Filter = "xls files (*.*)|*.*";
             openFileDialog1.Title = "Select a xls File";
             openFileDialog1.RestoreDirectory = true;
