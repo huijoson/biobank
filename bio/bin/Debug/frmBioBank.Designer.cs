@@ -1192,7 +1192,7 @@
             // 
             // DGVSearchSubStock
             // 
-            this.DGVSearchSubStock.HeaderText = "分庫";
+            this.DGVSearchSubStock.HeaderText = "收案小組";
             this.DGVSearchSubStock.Name = "DGVSearchSubStock";
             // 
             // DGVSearchLabType
@@ -1564,7 +1564,7 @@
             // 
             // dataGridViewTextBoxColumn13
             // 
-            this.dataGridViewTextBoxColumn13.HeaderText = "分庫";
+            this.dataGridViewTextBoxColumn13.HeaderText = "收案小組";
             this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
             this.dataGridViewTextBoxColumn13.Width = 66;
             // 
@@ -1916,7 +1916,7 @@
             // 
             // Column43
             // 
-            this.Column43.HeaderText = "分庫";
+            this.Column43.HeaderText = "收案小組";
             this.Column43.Name = "Column43";
             this.Column43.Width = 61;
             // 
@@ -2235,7 +2235,7 @@
             // 
             // Column13
             // 
-            this.Column13.HeaderText = "分庫";
+            this.Column13.HeaderText = "收案小組";
             this.Column13.Name = "Column13";
             this.Column13.Width = 66;
             // 
@@ -2564,7 +2564,7 @@
             // 
             // dataGridViewTextBoxColumn43
             // 
-            this.dataGridViewTextBoxColumn43.HeaderText = "分庫";
+            this.dataGridViewTextBoxColumn43.HeaderText = "收案小組";
             this.dataGridViewTextBoxColumn43.Name = "dataGridViewTextBoxColumn43";
             this.dataGridViewTextBoxColumn43.Visible = false;
             this.dataGridViewTextBoxColumn43.Width = 66;
@@ -3774,7 +3774,7 @@
             // 
             // Column80
             // 
-            this.Column80.HeaderText = "分庫";
+            this.Column80.HeaderText = "收案小組";
             this.Column80.Name = "Column80";
             this.Column80.Width = 61;
             // 

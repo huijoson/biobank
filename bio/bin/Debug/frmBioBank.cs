@@ -34,9 +34,9 @@ namespace BioBank
         private ContextMenuStrip menu = new ContextMenuStrip();
 
         string[] StorageRecordColumns = { "檢體管號碼", "舊檢體位置","新檢體位置", "性別", "檢體採集當時年齡", "檢體種類", "檢體採集日期", "檢體採集部位",
-                                          "保存方式", "檢體離體時刻","檢體處理時刻","離體後環境", "離體後時間", "分庫", "罹病部位", "診斷名稱1", "診斷名稱2", "診斷名稱3",
+                                          "保存方式", "檢體離體時刻","檢體處理時刻","離體後環境", "離體後時間", "收案小組", "罹病部位", "診斷名稱1", "診斷名稱2", "診斷名稱3",
                                           "檔案登錄人", "研究計劃同意書", "同意書編號", "截止日期", "變更範圍", "退出、停止變更、死亡", "變更備註","出庫人","出庫日期","使用者(申請人)","計畫編號","出庫備註","入庫日期"};
-        //string[] StorageRecordColumns = { "分庫", "檢體種類", "保存方式", "罹病部位", "診斷名稱" };
+        //string[] StorageRecordColumns = { "收案小組", "檢體種類", "保存方式", "罹病部位", "診斷名稱" };
         public static string pFunction8_AdminID = "";
 
         public BioBank()
@@ -558,8 +558,8 @@ namespace BioBank
                 //病歷號是否為身分證 可pass
                 if (dt.Rows[i]["病歷號"].ToString().Length < 10)
                     Warning += "病歷號不是身分證" + Environment.NewLine;
-                if (dt.Rows[i]["分庫"].ToString() != cboTeamNo.Text.Substring(2, cboTeamNo.Text.Length - 2))
-                    Warning += "所選收案小組與分庫資料不同!\n";
+                if (dt.Rows[i]["收案小組"].ToString() != cboTeamNo.Text.Substring(2, cboTeamNo.Text.Length - 2))
+                    Warning += "所選收案小組與收案小組資料不同!\n";
                 if (Warning.Length > 0)
                     dgvShowMsg.Rows.Add("第" + (i + 2) + "列", Warning);
                 Warning = "";
@@ -818,7 +818,7 @@ namespace BioBank
                             //共通欄位
                             if (dgvShowExcel.Columns[j].Name == "檢體種類")
                                 BiologyDt.Rows[i]["chLabType"] = dgvShowExcel.Rows[i].Cells[j].Value.ToString().Substring(0, 1);
-                            else if (dgvShowExcel.Columns[j].Name == "分庫")
+                            else if (dgvShowExcel.Columns[j].Name == "收案小組")
                             {
                                 string[] temp = cboTeamNo.Text.Trim().Split('-');
                                 BiologyDt.Rows[i]["chSubStock"] = temp[1];

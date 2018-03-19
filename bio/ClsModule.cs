@@ -14,6 +14,7 @@ using System.Data.SqlClient;
 using System.Security.Cryptography;
 using System.Runtime.InteropServices;
 using System.Reflection;
+using Microsoft.Office.Interop.Excel;
 
 namespace BioBank
 {
@@ -242,6 +243,7 @@ namespace BioBank
                 string path = tmpPath;
                 // 新增Excel物件
                 myExcel = new Microsoft.Office.Interop.Excel.Application();
+                myExcel.Application.Workbooks.Add(true);
                 // 新增workbook
                 myBook = myExcel.Application.Workbooks.Add(true);
 
@@ -338,11 +340,13 @@ namespace BioBank
 
                 if (path.EndsWith("\\"))
                 {
-                    myBook.SaveAs(path + fileName + ".xlsx");
+                    myExcel.DisplayAlerts = false;
+                    myBook.SaveAs((path + @"\" + fileName + ".xls"), Excel.XlFileFormat.xlXMLSpreadsheet);
                 }
                 else
                 {
-                    myBook.SaveAs(path + "\\" + fileName + ".xlsx");
+                    myExcel.DisplayAlerts = false;
+                    myBook.SaveAs((path + @"\" + fileName + ".xls"), Excel.XlFileFormat.xlXMLSpreadsheet);
                 }
                 //ReleaseExcelCOM(mySheet, myBook, myExcel);
                 MessageBox.Show("匯出成功!");
