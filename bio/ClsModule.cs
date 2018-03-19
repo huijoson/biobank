@@ -369,5 +369,42 @@ namespace BioBank
             }
         }
         /* End 匯出 Excel */
-	}
+
+        /* 若後面有特殊字元的話就清除 */
+        internal static string clearLastMark(string p)
+        {
+            if (p.Length > 0)
+            {
+                int starPts = p.IndexOf("*");
+                if (starPts >= 0)
+                {
+                    return StrLeft(p, starPts);
+                }
+                else
+                {
+                    return p;
+                }
+            }
+            else
+            {
+                return p;
+            }
+        }
+
+        /* 字串處理用 */
+        public static string StrLeft(string s, int length)
+        {
+            return s.Substring(0, length);
+        }
+
+        public static string StrRight(string s, int length)
+        {
+            return s.Substring(s.Length - length);
+        }
+
+        public static string StrMid(string s, int start, int length)
+        {
+            return s.Substring(start, length);
+        }
+    }
 }

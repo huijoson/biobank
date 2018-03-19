@@ -410,13 +410,16 @@ namespace BioBank
 
                 //4.新增一個dtNew存放string格式
                 for (int j = 0; j < dt.Columns.Count; j++)
-                    dtNew.Columns.Add(dt.Columns[j].ColumnName);
+                    dtNew.Columns.Add(ClsShareFunc.clearLastMark(dt.Columns[j].ColumnName));
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
                     string[] tmpStr = new string[dt.Columns.Count];
                     for (int j = 0; j < dt.Columns.Count; j++)
                     {
-                        switch (dt.Columns[j].ColumnName)
+                        string tmpHeader = "";
+                        tmpHeader = ClsShareFunc.clearLastMark(dt.Columns[j].ColumnName);
+
+                        switch (tmpHeader)
                         {
                             //初始日期格式
                             case "出生日期":
@@ -445,6 +448,7 @@ namespace BioBank
                 }
             }
             return dtNew;
+
             /*DataTable dt = new DataTable();
             ExcelQueryFactory excel = new ExcelQueryFactory(filePath);
             //將excel的row取出來
@@ -732,8 +736,8 @@ namespace BioBank
                 textBoxFilePath.Text = "";
             }
         }
-        string[] secTabl = { "個案碼", "檢體管號碼", "病歷號", "出生日期", "研究計劃同意書",  "同意書編號",   
-                           "chPerCaseNo", "chLabPieNo", "chMRNo", "chBirthday", "chPlanAgree", "chAgreeNo"};
+        string[] secTabl = { "個案碼", "檢體管號碼", "病歷號", "出生日期", "研究計劃同意書",  "同意書編號", "姓名",   
+                           "chPerCaseNo", "chLabPieNo", "chMRNo", "chBirthday", "chPlanAgree", "chAgreeNo", "chMRName"};
         string[] comTabl = { "檢體位置","新檢體位置", "性別", "檢體採集當時年齡", "檢體採集日期", "檢體採集部位", "保存方式",  "檢體離體時刻","檢體處理時刻", "離體後環境", "離體後時間", "罹病部位", "診斷名稱1", "診斷名稱2", "診斷名稱3", "檔案登錄人","研究計劃簽署日期","同意書簽署日期", "截止日期", "變更範圍", "退出、停止變更、死亡", "備註",
                            "chOldLabPosition","chNewLabPositon", "chSex", "intAge", "chLabAdoptDate", "chAdoptPortion", "chStoreageMethod", "chLabLeaveBodyDatetime","chLabDealDatetime" , "chLabLeaveBodyEnvir", "chLabLeaveBodyHour", "chSickPortion", "chDiagName1", "chDiagName2", "chDiagName3", "chClerkName", "chPlanAgreeDate", "chAgreeNoDate", "chUseLimitYear", "chChangeRange", "chStatus", "chNote"};
         //存入資料庫
