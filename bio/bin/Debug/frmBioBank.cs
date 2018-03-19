@@ -209,7 +209,15 @@ namespace BioBank
             sYear = ""; sMonth = ""; sDday = ""; sHour = ""; sMiniute = ""; sSceond = "";
             string[] tempDate = date.Split(' ');
             string[] temp1 = tempDate[0].Split('/');
-            if (tempDate.Length > 1)
+            if (tempDate.Length == 1 && temp1[0] != "")
+            {
+                sYear = (Convert.ToInt32(temp1[0]) - 1911).ToString();
+                if (sYear.Length == 2)
+                    sYear = "0" + sYear;
+                sMonth = sStr(temp1[1]);
+                sDday = sStr(temp1[2]);
+            }
+            else
             {
                 string[] temp2 = tempDate[2].Split(':');
                 sYear = (Convert.ToInt32(temp1[0]) - 1911).ToString();
@@ -842,20 +850,20 @@ namespace BioBank
                             SlaverDt.Rows[i][j] = dgvShowExcel.Rows[i].Cells[j + ComColumn].Value;
                         }
                     }
-                    //更新資料庫
-                    SqlCommandBuilder builderSec = new SqlCommandBuilder(SecDtAdapter);
-                    SecDtAdapter.Update(SecDt);
-                    SqlCommandBuilder builderBio = new SqlCommandBuilder(BiologyDtAdapter);
-                    BiologyDtAdapter.Update(BiologyDt);
-                    SqlCommandBuilder builderSlaver = new SqlCommandBuilder(SlaverDtAdapter);
-                    SlaverDtAdapter.Update(SlaverDt);
-                    MessageBox.Show("匯入成功!!");
-                    buttonSaveToDB.Visible = false;
-                    // dgvShowExcel.Height = 208;
-                    dgvShowMsg.Visible = true;
-                    buttonPrintLabNo.Visible = true;
-                    cboTeamNo.Enabled = true;
-                    buttonPrint.Visible = true;
+                        //更新資料庫
+                        SqlCommandBuilder builderSec = new SqlCommandBuilder(SecDtAdapter);
+                        SecDtAdapter.Update(SecDt);
+                        SqlCommandBuilder builderBio = new SqlCommandBuilder(BiologyDtAdapter);
+                        BiologyDtAdapter.Update(BiologyDt);
+                        SqlCommandBuilder builderSlaver = new SqlCommandBuilder(SlaverDtAdapter);
+                        SlaverDtAdapter.Update(SlaverDt);
+                        MessageBox.Show("匯入成功!!");
+                        buttonSaveToDB.Visible = false;
+                        // dgvShowExcel.Height = 208;
+                        dgvShowMsg.Visible = true;
+                        buttonPrintLabNo.Visible = true;
+                        cboTeamNo.Enabled = true;
+                        buttonPrint.Visible = true;
                 }
             }
             return true;

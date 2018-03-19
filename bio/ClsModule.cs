@@ -371,23 +371,39 @@ namespace BioBank
         /* End 匯出 Excel */
 
         /* 若後面有特殊字元的話就清除 */
-        internal static string clearLastMark(string p)
+        public static string clearLastMark(string p)
         {
-            if (p.Length > 0)
+            try
             {
-                int starPts = p.IndexOf("*");
-                if (starPts >= 0)
+                if (p.Length > 0)
                 {
-                    return StrLeft(p, starPts);
+                    int starPts = p.IndexOf("*");
+                    if (starPts >= 0)
+                    {
+                        return StrLeft(p, starPts);
+                    }
+                    else
+                    {
+                        int vstarPts = p.IndexOf("^");
+                        if (vstarPts >= 0)
+                        {
+                            return StrLeft(p, vstarPts);
+                        }
+                        else
+                        {
+                            return p;
+                        }
+                    }
                 }
                 else
                 {
                     return p;
                 }
             }
-            else
+            catch (Exception ex)
             {
-                return p;
+                MessageBox.Show(ex.Message);
+                return "";
             }
         }
 
