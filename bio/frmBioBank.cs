@@ -106,11 +106,13 @@ namespace BioBank
             {
                 using (SqlConnection sCon = BioBank_Conn.Class_biobank_conn.DB_BIO_conn())
                 {
+                    
                     sCon.Open();
                     strSQL = "SELECT DISTINCT chAdoptPortion from dbo.BioPerMasterTbl";
                     SqlCommand sCmd = new SqlCommand(strSQL, sCon);
                     SqlDataReader sRead = sCmd.ExecuteReader();
                     comboPart.Items.Clear();
+                    comboPart.Items.Add("");
                     if (sRead.HasRows)
                     {
                         while (sRead.Read())
@@ -1146,7 +1148,27 @@ namespace BioBank
                 }
                 sql += " ) and ";
             }
-            sql = sql.Substring(0, sql.Length - 4) + " order by chLabType  ";
+            
+            //出庫
+            if (chkGetOut.Text != "")
+            {
+                string takeStr = chkGetOut.Text.ToString();
+                switch (takeStr)
+                {
+                    case "未出庫":
+                        sql += " chTakeOutDate is null ";
+                        break;
+                    case "出庫":
+                        sql += " chTakeOutDate is not null ";
+                        break;
+                }
+                sql += "and ";
+            }
+
+            //收案小組
+
+
+            sql = sql.Substring(0, sql.Length - 4) + " order by chLabType ";
 
             //insert Event Log: 11. --篩選(查詢)--
             ClsShareFunc.insEvenLogt("11", ClsShareFunc.sUserName, "", "", "篩選(查詢)--");
@@ -1154,7 +1176,6 @@ namespace BioBank
             {
                 conn.Open();
 
-                string sSQL = "";
                 string sLabNo, sNewLabPositon, sSex, sAge, sLabType, sLabAdoptDate, sAdoptPortion,
                     sStoreageMethod, sLabLeaveBodyDatetime, sLabDealDatetime, sLabLeaveBodyEnvir,
                     sLabLeaveBodyHour, sSubStock, sSickPortion, sDiagName1, sDiagName2, sDiagName3,
@@ -1176,6 +1197,9 @@ namespace BioBank
 
                         SqlCommand sCmd = new SqlCommand(sql, sCon);
                         SqlDataReader sRead = sCmd.ExecuteReader();
+                        int ctRowNum = 1;
+                        btnSearchOut.Visible = false;
+
                         while (sRead.Read())
                         {
                             sLabNo = ClsShareFunc.gfunCheck(sRead["chLabNo"].ToString());
@@ -1216,7 +1240,33 @@ namespace BioBank
                             //    sClerkName, sPlanAgreeDate, sAgreeNoDate, sUseExpireDate, sChangeRange,
                             //    sStatus, sNote,sTakeOutName, sTakeOutDate, sTakeOutApplicant, sTakeOutPlanNo, sTakeOutNote,
                             //    sInComeDate, sPrintSeqNo);
-                            dgvSearchData.Rows.Add(false, sLabNo, sSubStock, sLabType, sStoreageMethod, sSickPortion, sDiagName1, sDiagName2, sDiagName3);
+                            dgvSearchData.Rows.Add(ctRowNum, false, sLabNo, sSubStock, sLabType, sStoreageMethod, sSickPortion, sDiagName1, sDiagName2, sDiagName3);
+
+                            //有選未出庫的情況
+                            if (chkGetOut.Text != "")
+                            {
+                                string takeStr = chkGetOut.Text.ToString();
+                                if (takeStr == "出庫")
+                                {
+                                    //MessageBox.Show(dgvSearchData.Rows[ctRowNum-1].Cells[1].Value.ToString());
+                                    dgvSearchData.Rows[ctRowNum - 1].Cells[1].ReadOnly = true;
+                                    dgvSearchData.Rows[ctRowNum - 1].Cells[1].Value = true;
+                                }
+                                else{
+                                    btnSearchOut.Visible = true;
+                                }
+                            }
+                            //沒有選出庫未出庫的情況
+                            else
+                            {
+                                if (sTakeOutDate != "")
+                                {
+                                    dgvSearchData.Rows[ctRowNum - 1].Cells[1].ReadOnly = true;
+                                    dgvSearchData.Rows[ctRowNum - 1].Cells[1].Value = true;
+                                }
+                            }
+
+                            ctRowNum++;
                         }
                         sRead.Close();
                     }
@@ -3622,10 +3672,12 @@ namespace BioBank
         {
             tabForm.SelectedIndex = 4;
             dgvOutLReqNo.Rows.Clear();
+            string[] sNumArr = new string[100];
             string[] aStr = new string[30];
             for (int i = 0; i < dgvSearchData.Rows.Count; i++)
             {
-                DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)dgvSearchData.Rows[i].Cells[0];
+                DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)dgvSearchData.Rows[i].Cells[1];
+                sNumArr[i] = dgvSearchData.Rows[i].Cells[2].ToString();
                 if (chk.Value.ToString() == "True")
                 {
                     for (int j = 1; j < 8; j++)

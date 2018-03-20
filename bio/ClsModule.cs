@@ -338,19 +338,30 @@ namespace BioBank
                 //row自動對齊
                 myRange.EntireRow.AutoFit();
 
+                string xlsPathName = path + @"\" + fileName + ".xls";
+                string xlsxPathName = path + @"\" + fileName + ".xlsx";
+
                 if (path.EndsWith("\\"))
                 {
                     myExcel.DisplayAlerts = false;
-                    myBook.SaveAs((path + @"\" + fileName + ".xls"), Excel.XlFileFormat.xlXMLSpreadsheet);
+                    myBook.SaveAs(xlsPathName,
+                        Microsoft.Office.Interop.Excel.XlFileFormat.xlExcel5, Type.Missing,
+                        Type.Missing, Type.Missing, Type.Missing,
+                        Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlNoChange, Type.Missing,
+                        Type.Missing, Type.Missing, Type.Missing, Type.Missing);
                 }
                 else
                 {
                     myExcel.DisplayAlerts = false;
-                    myBook.SaveAs((path + @"\" + fileName + ".xls"), Excel.XlFileFormat.xlXMLSpreadsheet);
+                    myBook.SaveAs(xlsPathName,
+                        Microsoft.Office.Interop.Excel.XlFileFormat.xlExcel5, Type.Missing,
+                        Type.Missing, Type.Missing, Type.Missing,
+                        Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlNoChange, Type.Missing,
+                        Type.Missing, Type.Missing, Type.Missing, Type.Missing);
+                                }
+                                //ReleaseExcelCOM(mySheet, myBook, myExcel);
+                                MessageBox.Show("匯出成功!");
                 }
-                //ReleaseExcelCOM(mySheet, myBook, myExcel);
-                MessageBox.Show("匯出成功!");
-            }
 
             catch (Exception ex)
             {
