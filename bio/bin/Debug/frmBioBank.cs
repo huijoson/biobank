@@ -27,7 +27,7 @@ namespace BioBank
 
     public partial class BioBank : Form
     {
-        int ComColumn = 29;//共通欄位長度
+        int ComColumn = 30;//共通欄位長度
         Boolean bolClear;
         Boolean bolKeyPass;//是否需再打密碼(true:是/false:否)
         string sExcelName;
@@ -659,6 +659,8 @@ namespace BioBank
                 dbPrintMsg.Visible = false;
                 gbDataImport.Height = 445;
                 dgvShowExcel.Height = 400;
+
+                dgvShowExcel.Columns.Add("筆數", "筆數");
                 for (int i = 0; i < dt.Columns.Count; i++)
                 {
                     if (i == 3)
@@ -667,19 +669,24 @@ namespace BioBank
                         dgvShowExcel.Columns[i].ReadOnly = false;
                     }
                     dgvShowExcel.Columns.Add(dt.Columns[i].ColumnName, dt.Columns[i].ColumnName);
-                    if (i != 3)
+                    if (i != 4)
                         dgvShowExcel.Columns[i].ReadOnly = true;
                 }
                 dgvShowExcel.RowCount = dt.Rows.Count;
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
+                    
                     dgvShowExcel.Rows[i].HeaderCell.Value = (i + 2).ToString();
                     for (int j = 0; j < dt.Columns.Count; j++)
                     {
+                        if (j == 0)
+                        {
+                            dgvShowExcel.Rows[i].Cells[0].Value = i + 1;
+                        }
                         if (j < 3)
-                            dgvShowExcel.Rows[i].Cells[j].Value = dt.Rows[i][j].ToString().Trim();
-                        else
                             dgvShowExcel.Rows[i].Cells[j + 1].Value = dt.Rows[i][j].ToString().Trim();
+                        else
+                            dgvShowExcel.Rows[i].Cells[j + 2].Value = dt.Rows[i][j].ToString().Trim();
                     }
                 }
                 buttonPrint.Visible = false;
@@ -694,14 +701,14 @@ namespace BioBank
             ClsShareFunc.insEvenLogt("5", ClsShareFunc.sUserName, "", "", "匯入Excel (start)--" + sExcelName);
             InitImportPage();
             dbPrintMsg.Text = "列印訊息";
-            for (int i = 0; i < dgvShowExcel.Rows.Count; i++)
-            {
-                if (dgvShowExcel.Rows[i].Cells["新檢體位置"].Value == null)
-                {
-                    MessageBox.Show("新檢體位置不可空白!");
-                    return;
-                }
-            }
+            //for (int i = 0; i < dgvShowExcel.Rows.Count; i++)
+            //{
+            //    if (dgvShowExcel.Rows[i].Cells["新檢體位置"].Value == null)
+            //    {
+            //        MessageBox.Show("新檢體位置不可空白!");
+            //        return;
+            //    }
+            //}
             DialogResult myResult = MessageBox.Show("共有" + ExcelDt.Rows.Count + "筆資料，確定要倒入資料庫?", "資料格式正確", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (myResult == DialogResult.Yes)
             {
@@ -850,7 +857,8 @@ namespace BioBank
                         //小組資料庫
                         for (int j = 0; j < SlaverDt.Columns.Count; j++)
                         {
-                            SlaverDt.Rows[i][j] = dgvShowExcel.Rows[i].Cells[j + ComColumn].Value;
+                            //+2是因為編號跟新檢體位置
+                            SlaverDt.Rows[i][j] = dgvShowExcel.Rows[i].Cells[j + ComColumn + 2].Value;
                         }
                     }
                         //更新資料庫
@@ -1953,7 +1961,7 @@ namespace BioBank
             {
                 case 0://資料匯入
                     //StorageTimeRecord();
-                    LoadCase(cbGroup);
+                    //LoadCase(cbGroup);
                     break;
                 case 1://匯入紀錄       
                     StorageTimeRecord();
@@ -3871,6 +3879,29 @@ namespace BioBank
             catch (Exception ex)
             {
                 MessageBox.Show("dgvQryLReqNo_RowHeaderMouseDoubleClick: " + ex.Message.ToString());
+            }
+        }
+        //印列單筆貼紙
+        private void singPrtBtn_Click(object sender, EventArgs e)
+        {
+            var PD = new PrintDocument();
+
+            if (printFunction.IsPrinterExist("CAB MACH4/300"))
+            {
+                PD.PrinterSettings.PrinterName = "CAB MACH4/300";
+                try
+                {
+                    int rowNo = 0;
+                    rowNo = dgvStorageRecord.CurrentCell.RowIndex;
+                    for (int i = 0; i < dgvStorageRecord.Rows.Count; i++)
+                    printNum = dgvStorageRecord.Rows[rowNo].Cells["檢體管號碼"].Value.ToString();
+                    PD.PrintPage += new PrintPageEventHandler(PD_PrintPage);
+                    PD.Print();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
     }

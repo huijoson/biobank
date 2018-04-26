@@ -440,6 +440,7 @@
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.buttonSignOut = new System.Windows.Forms.Button();
             this.saveFileDialog2 = new System.Windows.Forms.SaveFileDialog();
+            this.singPrtBtn = new System.Windows.Forms.Button();
             this.tabForm.SuspendLayout();
             this.tpImport.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -728,6 +729,7 @@
             // tpImportRecord
             // 
             this.tpImportRecord.BackColor = System.Drawing.Color.PowderBlue;
+            this.tpImportRecord.Controls.Add(this.singPrtBtn);
             this.tpImportRecord.Controls.Add(this.cab_Button);
             this.tpImportRecord.Controls.Add(this.buttonRecordPrint);
             this.tpImportRecord.Controls.Add(this.StorageCount);
@@ -1165,10 +1167,10 @@
             this.DGVSearchDiagName1,
             this.DGVSearchDiagName2,
             this.DGVSearchDiagName3});
-            this.dgvSearchData.Location = new System.Drawing.Point(11, 268);
+            this.dgvSearchData.Location = new System.Drawing.Point(11, 301);
             this.dgvSearchData.Name = "dgvSearchData";
             this.dgvSearchData.RowTemplate.Height = 24;
-            this.dgvSearchData.Size = new System.Drawing.Size(976, 315);
+            this.dgvSearchData.Size = new System.Drawing.Size(976, 282);
             this.dgvSearchData.TabIndex = 5;
             this.dgvSearchData.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgvSearchData_MouseDown);
             // 
@@ -2469,9 +2471,9 @@
             // 
             // Column106
             // 
-            this.Column106.HeaderText = "出庫人";
+            this.Column106.HeaderText = "出庫申請人";
             this.Column106.Name = "Column106";
-            this.Column106.Width = 82;
+            this.Column106.Width = 114;
             // 
             // dataGridViewTextBoxColumn57
             // 
@@ -4406,6 +4408,16 @@
             this.buttonSignOut.UseVisualStyleBackColor = true;
             this.buttonSignOut.Click += new System.EventHandler(this.buttonSignOut_Click);
             // 
+            // singPrtBtn
+            // 
+            this.singPrtBtn.Location = new System.Drawing.Point(551, 6);
+            this.singPrtBtn.Name = "singPrtBtn";
+            this.singPrtBtn.Size = new System.Drawing.Size(123, 27);
+            this.singPrtBtn.TabIndex = 7;
+            this.singPrtBtn.Text = "印列單筆貼紙";
+            this.singPrtBtn.UseVisualStyleBackColor = true;
+            this.singPrtBtn.Click += new System.EventHandler(this.singPrtBtn_Click);
+            // 
             // BioBank
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -4846,6 +4858,19 @@
         private System.Windows.Forms.Button btnOutExcel;
         private System.Windows.Forms.Button btnOPExcel;
         private System.Windows.Forms.SaveFileDialog saveFileDialog2;
+        private System.Windows.Forms.Button btnPrintChkOut;
+        private System.Windows.Forms.ComboBox chkGetOut;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chNum;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn DGVSearchOutTable;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DGVSearchLabNo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DGVSearchSubStock;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DGVSearchLabType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DGVSearchStoreageMethod;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DGVSearchSickPortion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DGVSearchDiagName1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DGVSearchDiagName2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DGVSearchDiagName3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn55;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column106;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn57;
@@ -4877,18 +4902,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn58;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn59;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn60;
-        private System.Windows.Forms.Button btnPrintChkOut;
-        private System.Windows.Forms.ComboBox chkGetOut;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.DataGridViewTextBoxColumn chNum;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn DGVSearchOutTable;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DGVSearchLabNo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DGVSearchSubStock;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DGVSearchLabType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DGVSearchStoreageMethod;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DGVSearchSickPortion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DGVSearchDiagName1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DGVSearchDiagName2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DGVSearchDiagName3;
+        private System.Windows.Forms.Button singPrtBtn;
     }
 }
