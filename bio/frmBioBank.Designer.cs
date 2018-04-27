@@ -69,6 +69,7 @@
             this.dgvShowExcel = new System.Windows.Forms.DataGridView();
             this.textBoxFilePath = new System.Windows.Forms.TextBox();
             this.tpImportRecord = new System.Windows.Forms.TabPage();
+            this.singPrtBtn = new System.Windows.Forms.Button();
             this.cab_Button = new System.Windows.Forms.Button();
             this.buttonRecordPrint = new System.Windows.Forms.Button();
             this.StorageCount = new System.Windows.Forms.Label();
@@ -77,6 +78,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dgvStorageTime = new System.Windows.Forms.DataGridView();
             this.tpSelect = new System.Windows.Forms.TabPage();
+            this.btnSerarchAll = new System.Windows.Forms.Button();
+            this.txtSearchAll = new System.Windows.Forms.TextBox();
+            this.chSearchAll = new System.Windows.Forms.Label();
             this.chkGetOut = new System.Windows.Forms.ComboBox();
             this.label23 = new System.Windows.Forms.Label();
             this.cboAdoptPortion = new System.Windows.Forms.ComboBox();
@@ -440,7 +444,7 @@
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.buttonSignOut = new System.Windows.Forms.Button();
             this.saveFileDialog2 = new System.Windows.Forms.SaveFileDialog();
-            this.singPrtBtn = new System.Windows.Forms.Button();
+            this.tpReport = new System.Windows.Forms.TabPage();
             this.tabForm.SuspendLayout();
             this.tpImport.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -529,10 +533,11 @@
             this.tabForm.Controls.Add(this.tpSpAuth);
             this.tabForm.Controls.Add(this.tpBackup);
             this.tabForm.Controls.Add(this.tpLog);
+            this.tabForm.Controls.Add(this.tpReport);
             this.tabForm.Location = new System.Drawing.Point(-2, 0);
             this.tabForm.Name = "tabForm";
             this.tabForm.SelectedIndex = 0;
-            this.tabForm.Size = new System.Drawing.Size(1028, 614);
+            this.tabForm.Size = new System.Drawing.Size(1074, 614);
             this.tabForm.TabIndex = 4;
             this.tabForm.SelectedIndexChanged += new System.EventHandler(this.tabForm_SelectedIndexChanged);
             // 
@@ -547,14 +552,14 @@
             this.tpImport.Location = new System.Drawing.Point(4, 29);
             this.tpImport.Name = "tpImport";
             this.tpImport.Padding = new System.Windows.Forms.Padding(3);
-            this.tpImport.Size = new System.Drawing.Size(1020, 581);
+            this.tpImport.Size = new System.Drawing.Size(1066, 581);
             this.tpImport.TabIndex = 0;
             this.tpImport.Text = "資料匯入";
             // 
             // butClear
             // 
             this.butClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.butClear.Location = new System.Drawing.Point(780, 18);
+            this.butClear.Location = new System.Drawing.Point(826, 18);
             this.butClear.Name = "butClear";
             this.butClear.Size = new System.Drawing.Size(130, 36);
             this.butClear.TabIndex = 12;
@@ -605,7 +610,7 @@
             this.panel1.Controls.Add(this.textBoxFilePath);
             this.panel1.Location = new System.Drawing.Point(11, 54);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(928, 511);
+            this.panel1.Size = new System.Drawing.Size(974, 511);
             this.panel1.TabIndex = 7;
             this.panel1.Visible = false;
             // 
@@ -622,7 +627,7 @@
             this.dbPrintMsg.ForeColor = System.Drawing.Color.Red;
             this.dbPrintMsg.Location = new System.Drawing.Point(19, 283);
             this.dbPrintMsg.Name = "dbPrintMsg";
-            this.dbPrintMsg.Size = new System.Drawing.Size(886, 217);
+            this.dbPrintMsg.Size = new System.Drawing.Size(932, 217);
             this.dbPrintMsg.TabIndex = 16;
             this.dbPrintMsg.TabStop = false;
             this.dbPrintMsg.Text = "警告訊息";
@@ -653,7 +658,7 @@
             this.dgvShowMsg.Name = "dgvShowMsg";
             this.dgvShowMsg.ReadOnly = true;
             this.dgvShowMsg.RowTemplate.Height = 24;
-            this.dgvShowMsg.Size = new System.Drawing.Size(854, 147);
+            this.dgvShowMsg.Size = new System.Drawing.Size(900, 147);
             this.dgvShowMsg.TabIndex = 5;
             // 
             // buttonPrintLabNo
@@ -698,7 +703,7 @@
             this.gbDataImport.Font = new System.Drawing.Font("微軟正黑體", 10F);
             this.gbDataImport.Location = new System.Drawing.Point(19, 40);
             this.gbDataImport.Name = "gbDataImport";
-            this.gbDataImport.Size = new System.Drawing.Size(886, 237);
+            this.gbDataImport.Size = new System.Drawing.Size(932, 237);
             this.gbDataImport.TabIndex = 13;
             this.gbDataImport.TabStop = false;
             this.gbDataImport.Text = "資料匯入";
@@ -713,7 +718,7 @@
             this.dgvShowExcel.Location = new System.Drawing.Point(3, 21);
             this.dgvShowExcel.Name = "dgvShowExcel";
             this.dgvShowExcel.RowTemplate.Height = 24;
-            this.dgvShowExcel.Size = new System.Drawing.Size(880, 213);
+            this.dgvShowExcel.Size = new System.Drawing.Size(926, 213);
             this.dgvShowExcel.TabIndex = 18;
             // 
             // textBoxFilePath
@@ -740,9 +745,19 @@
             this.tpImportRecord.Location = new System.Drawing.Point(4, 29);
             this.tpImportRecord.Name = "tpImportRecord";
             this.tpImportRecord.Padding = new System.Windows.Forms.Padding(3);
-            this.tpImportRecord.Size = new System.Drawing.Size(1020, 581);
+            this.tpImportRecord.Size = new System.Drawing.Size(1066, 581);
             this.tpImportRecord.TabIndex = 1;
             this.tpImportRecord.Text = "匯入紀錄";
+            // 
+            // singPrtBtn
+            // 
+            this.singPrtBtn.Location = new System.Drawing.Point(551, 6);
+            this.singPrtBtn.Name = "singPrtBtn";
+            this.singPrtBtn.Size = new System.Drawing.Size(123, 27);
+            this.singPrtBtn.TabIndex = 7;
+            this.singPrtBtn.Text = "印列單筆貼紙";
+            this.singPrtBtn.UseVisualStyleBackColor = true;
+            this.singPrtBtn.Click += new System.EventHandler(this.singPrtBtn_Click);
             // 
             // cab_Button
             // 
@@ -834,6 +849,9 @@
             // tpSelect
             // 
             this.tpSelect.BackColor = System.Drawing.Color.PowderBlue;
+            this.tpSelect.Controls.Add(this.btnSerarchAll);
+            this.tpSelect.Controls.Add(this.txtSearchAll);
+            this.tpSelect.Controls.Add(this.chSearchAll);
             this.tpSelect.Controls.Add(this.chkGetOut);
             this.tpSelect.Controls.Add(this.label23);
             this.tpSelect.Controls.Add(this.cboAdoptPortion);
@@ -862,9 +880,35 @@
             this.tpSelect.Controls.Add(this.label5);
             this.tpSelect.Location = new System.Drawing.Point(4, 29);
             this.tpSelect.Name = "tpSelect";
-            this.tpSelect.Size = new System.Drawing.Size(1020, 581);
+            this.tpSelect.Size = new System.Drawing.Size(1066, 581);
             this.tpSelect.TabIndex = 3;
             this.tpSelect.Text = "篩選";
+            // 
+            // btnSerarchAll
+            // 
+            this.btnSerarchAll.Location = new System.Drawing.Point(870, 148);
+            this.btnSerarchAll.Name = "btnSerarchAll";
+            this.btnSerarchAll.Size = new System.Drawing.Size(100, 31);
+            this.btnSerarchAll.TabIndex = 23;
+            this.btnSerarchAll.Text = "全欄位檢索";
+            this.btnSerarchAll.UseVisualStyleBackColor = true;
+            this.btnSerarchAll.Click += new System.EventHandler(this.btnSerarchAll_Click);
+            // 
+            // txtSearchAll
+            // 
+            this.txtSearchAll.Location = new System.Drawing.Point(656, 150);
+            this.txtSearchAll.Name = "txtSearchAll";
+            this.txtSearchAll.Size = new System.Drawing.Size(208, 29);
+            this.txtSearchAll.TabIndex = 22;
+            // 
+            // chSearchAll
+            // 
+            this.chSearchAll.AutoSize = true;
+            this.chSearchAll.Location = new System.Drawing.Point(561, 153);
+            this.chSearchAll.Name = "chSearchAll";
+            this.chSearchAll.Size = new System.Drawing.Size(89, 20);
+            this.chSearchAll.TabIndex = 21;
+            this.chSearchAll.Text = "全欄位檢索";
             // 
             // chkGetOut
             // 
@@ -932,7 +976,7 @@
             this.comboBoxRel2.Items.AddRange(new object[] {
             "and",
             "or"});
-            this.comboBoxRel2.Location = new System.Drawing.Point(611, 187);
+            this.comboBoxRel2.Location = new System.Drawing.Point(734, 187);
             this.comboBoxRel2.Name = "comboBoxRel2";
             this.comboBoxRel2.Size = new System.Drawing.Size(64, 28);
             this.comboBoxRel2.TabIndex = 15;
@@ -943,7 +987,7 @@
             this.comboBoxRel1.Items.AddRange(new object[] {
             "and",
             "or"});
-            this.comboBoxRel1.Location = new System.Drawing.Point(327, 186);
+            this.comboBoxRel1.Location = new System.Drawing.Point(408, 187);
             this.comboBoxRel1.Name = "comboBoxRel1";
             this.comboBoxRel1.Size = new System.Drawing.Size(64, 28);
             this.comboBoxRel1.TabIndex = 15;
@@ -1126,16 +1170,18 @@
             // 
             // textBoxDiag2
             // 
-            this.textBoxDiag2.Location = new System.Drawing.Point(397, 186);
+            this.textBoxDiag2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.textBoxDiag2.Location = new System.Drawing.Point(478, 187);
             this.textBoxDiag2.Name = "textBoxDiag2";
-            this.textBoxDiag2.Size = new System.Drawing.Size(208, 29);
+            this.textBoxDiag2.Size = new System.Drawing.Size(249, 29);
             this.textBoxDiag2.TabIndex = 9;
             // 
             // textBoxDiag3
             // 
-            this.textBoxDiag3.Location = new System.Drawing.Point(681, 187);
+            this.textBoxDiag3.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.textBoxDiag3.Location = new System.Drawing.Point(804, 187);
             this.textBoxDiag3.Name = "textBoxDiag3";
-            this.textBoxDiag3.Size = new System.Drawing.Size(208, 29);
+            this.textBoxDiag3.Size = new System.Drawing.Size(228, 29);
             this.textBoxDiag3.TabIndex = 9;
             // 
             // buttonSearch
@@ -1167,10 +1213,10 @@
             this.DGVSearchDiagName1,
             this.DGVSearchDiagName2,
             this.DGVSearchDiagName3});
-            this.dgvSearchData.Location = new System.Drawing.Point(11, 301);
+            this.dgvSearchData.Location = new System.Drawing.Point(10, 263);
             this.dgvSearchData.Name = "dgvSearchData";
             this.dgvSearchData.RowTemplate.Height = 24;
-            this.dgvSearchData.Size = new System.Drawing.Size(976, 282);
+            this.dgvSearchData.Size = new System.Drawing.Size(1022, 282);
             this.dgvSearchData.TabIndex = 5;
             this.dgvSearchData.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgvSearchData_MouseDown);
             // 
@@ -1231,9 +1277,10 @@
             // 
             // textBoxDiag1
             // 
+            this.textBoxDiag1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.textBoxDiag1.Location = new System.Drawing.Point(112, 187);
             this.textBoxDiag1.Name = "textBoxDiag1";
-            this.textBoxDiag1.Size = new System.Drawing.Size(208, 29);
+            this.textBoxDiag1.Size = new System.Drawing.Size(290, 29);
             this.textBoxDiag1.TabIndex = 4;
             // 
             // textBoxchAdoptPortion
@@ -1324,7 +1371,7 @@
             this.tpQry.Location = new System.Drawing.Point(4, 29);
             this.tpQry.Name = "tpQry";
             this.tpQry.Padding = new System.Windows.Forms.Padding(3);
-            this.tpQry.Size = new System.Drawing.Size(1020, 581);
+            this.tpQry.Size = new System.Drawing.Size(1066, 581);
             this.tpQry.TabIndex = 2;
             this.tpQry.Text = "查詢/修改";
             // 
@@ -1348,7 +1395,7 @@
             this.groupBox2.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.groupBox2.Location = new System.Drawing.Point(18, 396);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(915, 148);
+            this.groupBox2.Size = new System.Drawing.Size(961, 148);
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "修改資料";
@@ -1356,11 +1403,10 @@
             // btnModLReqNo
             // 
             this.btnModLReqNo.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnModLReqNo.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnModLReqNo.Font = new System.Drawing.Font("微軟正黑體", 12F);
-            this.btnModLReqNo.Location = new System.Drawing.Point(3, 116);
+            this.btnModLReqNo.Location = new System.Drawing.Point(15, 115);
             this.btnModLReqNo.Name = "btnModLReqNo";
-            this.btnModLReqNo.Size = new System.Drawing.Size(909, 29);
+            this.btnModLReqNo.Size = new System.Drawing.Size(930, 29);
             this.btnModLReqNo.TabIndex = 8;
             this.btnModLReqNo.Text = "確認修改";
             this.btnModLReqNo.UseVisualStyleBackColor = true;
@@ -1386,7 +1432,7 @@
             this.dgvShowLReqNo.Location = new System.Drawing.Point(15, 29);
             this.dgvShowLReqNo.Name = "dgvShowLReqNo";
             this.dgvShowLReqNo.RowTemplate.Height = 24;
-            this.dgvShowLReqNo.Size = new System.Drawing.Size(884, 76);
+            this.dgvShowLReqNo.Size = new System.Drawing.Size(930, 76);
             this.dgvShowLReqNo.TabIndex = 7;
             // 
             // ColLReqNo
@@ -1476,11 +1522,12 @@
             this.dgvQryLReqNo.Location = new System.Drawing.Point(18, 67);
             this.dgvQryLReqNo.Name = "dgvQryLReqNo";
             this.dgvQryLReqNo.RowTemplate.Height = 24;
-            this.dgvQryLReqNo.Size = new System.Drawing.Size(915, 323);
+            this.dgvQryLReqNo.Size = new System.Drawing.Size(961, 323);
             this.dgvQryLReqNo.TabIndex = 12;
             this.dgvQryLReqNo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvQryLReqNo_CellContentClick);
             this.dgvQryLReqNo.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvQryLReqNo_CellValueChanged);
             this.dgvQryLReqNo.CurrentCellDirtyStateChanged += new System.EventHandler(this.dgvQryLReqNo_CurrentCellDirtyStateChanged);
+            this.dgvQryLReqNo.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvQryLReqNo_RowHeaderMouseClick);
             this.dgvQryLReqNo.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvQryLReqNo_RowHeaderMouseDoubleClick);
             // 
             // dataGridViewCheckBoxColumn1
@@ -1720,7 +1767,7 @@
             this.tpOut.Controls.Add(this.richtxtMsg);
             this.tpOut.Location = new System.Drawing.Point(4, 29);
             this.tpOut.Name = "tpOut";
-            this.tpOut.Size = new System.Drawing.Size(1020, 581);
+            this.tpOut.Size = new System.Drawing.Size(1066, 581);
             this.tpOut.TabIndex = 4;
             this.tpOut.Text = "出庫";
             // 
@@ -2370,7 +2417,7 @@
             this.tpOutRecord.Controls.Add(this.gbOutTime);
             this.tpOutRecord.Location = new System.Drawing.Point(4, 29);
             this.tpOutRecord.Name = "tpOutRecord";
-            this.tpOutRecord.Size = new System.Drawing.Size(1020, 581);
+            this.tpOutRecord.Size = new System.Drawing.Size(1066, 581);
             this.tpOutRecord.TabIndex = 9;
             this.tpOutRecord.Text = "出庫紀錄";
             // 
@@ -2732,7 +2779,7 @@
             this.tpAuothority.Controls.Add(this.pnlKey);
             this.tpAuothority.Location = new System.Drawing.Point(4, 29);
             this.tpAuothority.Name = "tpAuothority";
-            this.tpAuothority.Size = new System.Drawing.Size(1020, 581);
+            this.tpAuothority.Size = new System.Drawing.Size(1066, 581);
             this.tpAuothority.TabIndex = 7;
             this.tpAuothority.Text = "主管維護";
             // 
@@ -3079,7 +3126,7 @@
             this.tpInfoManage.Controls.Add(this.pnlInform);
             this.tpInfoManage.Location = new System.Drawing.Point(4, 29);
             this.tpInfoManage.Name = "tpInfoManage";
-            this.tpInfoManage.Size = new System.Drawing.Size(1020, 581);
+            this.tpInfoManage.Size = new System.Drawing.Size(1066, 581);
             this.tpInfoManage.TabIndex = 6;
             this.tpInfoManage.Text = "資訊室維護";
             this.tpInfoManage.UseVisualStyleBackColor = true;
@@ -3445,7 +3492,7 @@
             this.tpSpAuth.Controls.Add(this.gbID2LReqNo);
             this.tpSpAuth.Location = new System.Drawing.Point(4, 29);
             this.tpSpAuth.Name = "tpSpAuth";
-            this.tpSpAuth.Size = new System.Drawing.Size(1020, 581);
+            this.tpSpAuth.Size = new System.Drawing.Size(1066, 581);
             this.tpSpAuth.TabIndex = 8;
             this.tpSpAuth.Text = "特殊權限作業";
             this.tpSpAuth.Click += new System.EventHandler(this.tpSpAuth_Click);
@@ -4002,7 +4049,7 @@
             this.tpBackup.Location = new System.Drawing.Point(4, 29);
             this.tpBackup.Name = "tpBackup";
             this.tpBackup.Padding = new System.Windows.Forms.Padding(3);
-            this.tpBackup.Size = new System.Drawing.Size(1020, 581);
+            this.tpBackup.Size = new System.Drawing.Size(1066, 581);
             this.tpBackup.TabIndex = 10;
             this.tpBackup.Text = "備份";
             this.tpBackup.Click += new System.EventHandler(this.tpBackup_Click);
@@ -4280,7 +4327,7 @@
             this.tpLog.Location = new System.Drawing.Point(4, 29);
             this.tpLog.Name = "tpLog";
             this.tpLog.Padding = new System.Windows.Forms.Padding(3);
-            this.tpLog.Size = new System.Drawing.Size(1020, 581);
+            this.tpLog.Size = new System.Drawing.Size(1066, 581);
             this.tpLog.TabIndex = 11;
             this.tpLog.Text = "Log";
             // 
@@ -4400,7 +4447,7 @@
             // buttonSignOut
             // 
             this.buttonSignOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSignOut.Location = new System.Drawing.Point(944, 0);
+            this.buttonSignOut.Location = new System.Drawing.Point(990, 0);
             this.buttonSignOut.Name = "buttonSignOut";
             this.buttonSignOut.Size = new System.Drawing.Size(75, 27);
             this.buttonSignOut.TabIndex = 2;
@@ -4408,22 +4455,22 @@
             this.buttonSignOut.UseVisualStyleBackColor = true;
             this.buttonSignOut.Click += new System.EventHandler(this.buttonSignOut_Click);
             // 
-            // singPrtBtn
+            // tpReport
             // 
-            this.singPrtBtn.Location = new System.Drawing.Point(551, 6);
-            this.singPrtBtn.Name = "singPrtBtn";
-            this.singPrtBtn.Size = new System.Drawing.Size(123, 27);
-            this.singPrtBtn.TabIndex = 7;
-            this.singPrtBtn.Text = "印列單筆貼紙";
-            this.singPrtBtn.UseVisualStyleBackColor = true;
-            this.singPrtBtn.Click += new System.EventHandler(this.singPrtBtn_Click);
+            this.tpReport.BackColor = System.Drawing.Color.PowderBlue;
+            this.tpReport.Location = new System.Drawing.Point(4, 29);
+            this.tpReport.Name = "tpReport";
+            this.tpReport.Padding = new System.Windows.Forms.Padding(3);
+            this.tpReport.Size = new System.Drawing.Size(1066, 581);
+            this.tpReport.TabIndex = 12;
+            this.tpReport.Text = "報表";
             // 
             // BioBank
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.LightBlue;
-            this.ClientSize = new System.Drawing.Size(1026, 617);
+            this.ClientSize = new System.Drawing.Size(1072, 617);
             this.Controls.Add(this.buttonSignOut);
             this.Controls.Add(this.tabForm);
             this.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -4903,5 +4950,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn59;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn60;
         private System.Windows.Forms.Button singPrtBtn;
+        private System.Windows.Forms.Button btnSerarchAll;
+        private System.Windows.Forms.TextBox txtSearchAll;
+        private System.Windows.Forms.Label chSearchAll;
+        private System.Windows.Forms.TabPage tpReport;
     }
 }
