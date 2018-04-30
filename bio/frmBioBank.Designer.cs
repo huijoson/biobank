@@ -134,11 +134,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnModLReqNo = new System.Windows.Forms.Button();
             this.dgvShowLReqNo = new System.Windows.Forms.DataGridView();
-            this.ColLReqNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColYear = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColRange = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColStatus = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.sNote = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvQryLReqNo = new System.Windows.Forms.DataGridView();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -440,11 +435,17 @@
             this.dataGridViewTextBoxColumn64 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn65 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.OtherValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tpReport = new System.Windows.Forms.TabPage();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.buttonSignOut = new System.Windows.Forms.Button();
             this.saveFileDialog2 = new System.Windows.Forms.SaveFileDialog();
-            this.tpReport = new System.Windows.Forms.TabPage();
+            this.ColLReqNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chPosition = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColYear = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColRange = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColStatus = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.sNote = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabForm.SuspendLayout();
             this.tpImport.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -1425,6 +1426,7 @@
             this.dgvShowLReqNo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvShowLReqNo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColLReqNo,
+            this.chPosition,
             this.ColYear,
             this.ColRange,
             this.ColStatus,
@@ -1434,38 +1436,6 @@
             this.dgvShowLReqNo.RowTemplate.Height = 24;
             this.dgvShowLReqNo.Size = new System.Drawing.Size(930, 76);
             this.dgvShowLReqNo.TabIndex = 7;
-            // 
-            // ColLReqNo
-            // 
-            this.ColLReqNo.HeaderText = "檢體編號";
-            this.ColLReqNo.Name = "ColLReqNo";
-            // 
-            // ColYear
-            // 
-            this.ColYear.HeaderText = "使用年限";
-            this.ColYear.Name = "ColYear";
-            // 
-            // ColRange
-            // 
-            this.ColRange.HeaderText = "變更範圍";
-            this.ColRange.Name = "ColRange";
-            // 
-            // ColStatus
-            // 
-            this.ColStatus.HeaderText = "狀態";
-            this.ColStatus.Items.AddRange(new object[] {
-            "",
-            "退出",
-            "停止變更",
-            "死亡"});
-            this.ColStatus.Name = "ColStatus";
-            this.ColStatus.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ColStatus.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // sNote
-            // 
-            this.sNote.HeaderText = "備註";
-            this.sNote.Name = "sNote";
             // 
             // dgvQryLReqNo
             // 
@@ -4434,6 +4404,16 @@
             this.OtherValue.Name = "OtherValue";
             this.OtherValue.Width = 121;
             // 
+            // tpReport
+            // 
+            this.tpReport.BackColor = System.Drawing.Color.PowderBlue;
+            this.tpReport.Location = new System.Drawing.Point(4, 29);
+            this.tpReport.Name = "tpReport";
+            this.tpReport.Padding = new System.Windows.Forms.Padding(3);
+            this.tpReport.Size = new System.Drawing.Size(1066, 581);
+            this.tpReport.TabIndex = 12;
+            this.tpReport.Text = "報表";
+            // 
             // printPreviewDialog1
             // 
             this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
@@ -4455,15 +4435,42 @@
             this.buttonSignOut.UseVisualStyleBackColor = true;
             this.buttonSignOut.Click += new System.EventHandler(this.buttonSignOut_Click);
             // 
-            // tpReport
+            // ColLReqNo
             // 
-            this.tpReport.BackColor = System.Drawing.Color.PowderBlue;
-            this.tpReport.Location = new System.Drawing.Point(4, 29);
-            this.tpReport.Name = "tpReport";
-            this.tpReport.Padding = new System.Windows.Forms.Padding(3);
-            this.tpReport.Size = new System.Drawing.Size(1066, 581);
-            this.tpReport.TabIndex = 12;
-            this.tpReport.Text = "報表";
+            this.ColLReqNo.HeaderText = "檢體編號";
+            this.ColLReqNo.Name = "ColLReqNo";
+            // 
+            // chPosition
+            // 
+            this.chPosition.HeaderText = "檢體位置";
+            this.chPosition.Name = "chPosition";
+            // 
+            // ColYear
+            // 
+            this.ColYear.HeaderText = "使用年限";
+            this.ColYear.Name = "ColYear";
+            // 
+            // ColRange
+            // 
+            this.ColRange.HeaderText = "變更範圍";
+            this.ColRange.Name = "ColRange";
+            // 
+            // ColStatus
+            // 
+            this.ColStatus.HeaderText = "狀態";
+            this.ColStatus.Items.AddRange(new object[] {
+            "",
+            "退出",
+            "停止變更",
+            "死亡"});
+            this.ColStatus.Name = "ColStatus";
+            this.ColStatus.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColStatus.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // sNote
+            // 
+            this.sNote.HeaderText = "備註";
+            this.sNote.Name = "sNote";
             // 
             // BioBank
             // 
@@ -4723,11 +4730,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnModLReqNo;
         private System.Windows.Forms.DataGridView dgvShowLReqNo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColLReqNo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColYear;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColRange;
-        private System.Windows.Forms.DataGridViewComboBoxColumn ColStatus;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sNote;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column81;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column82;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column83;
@@ -4954,5 +4956,11 @@
         private System.Windows.Forms.TextBox txtSearchAll;
         private System.Windows.Forms.Label chSearchAll;
         private System.Windows.Forms.TabPage tpReport;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColLReqNo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chPosition;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColYear;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColRange;
+        private System.Windows.Forms.DataGridViewComboBoxColumn ColStatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sNote;
     }
 }

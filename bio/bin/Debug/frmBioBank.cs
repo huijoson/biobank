@@ -2316,56 +2316,53 @@ namespace BioBank
             string sStatus = "";
             string sNote = "";
             string sSQL = "";
+            string sPosition = "";
             try
             {
-                
-                    tmpLReqNo = txtModLReqNo.Text;
-                    sLReqNo = dgvShowLReqNo.Rows[0].Cells[0].Value.ToString().Trim();
-                    sYear = dgvShowLReqNo.Rows[0].Cells[1].Value.ToString().Trim();
-                    sRange = dgvShowLReqNo.Rows[0].Cells[2].Value.ToString().Trim();
-                    sStatus = dgvShowLReqNo.Rows[0].Cells[3].Value.ToString().Trim();
-                    sNote = dgvShowLReqNo.Rows[0].Cells[4].Value.ToString().Trim();
 
-                    if (sYear.Length > 7)
-                    {
-                        MessageBox.Show("使用年限--長度不可超出7 bytes!");
-                        return;
-                    }
-                    else if (Convert.ToInt32(sYear) < Convert.ToInt32(ChangeDateTime(DateTime.Now.ToString()).Substring(0,7)))
-                    {
-                        MessageBox.Show("超過使用年限");
-                        return;
-                    }
-                    if (sRange.Length > 100)
-                    {
-                        MessageBox.Show("變更範圍--長度不可超出100 bytes!");
-                        return;
-                    }
-                    if (sRange.Length > 30)
-                    {
-                        MessageBox.Show("狀態--長度不可超出30 bytes!");
-                        return;
-                    }
-                    if (sNote.Length > 100)
-                    {
-                        MessageBox.Show("備註--長度不可超出100 bytes!");
-                        return;
-                    }
-                    //insert Event Log: 14. --修改檢體資料--
-                    ClsShareFunc.insEvenLogt("14", ClsShareFunc.sUserName, sLReqNo, "", "修改檢體資料--");
-                    using (SqlConnection sCon = BioBank_Conn.Class_biobank_conn.DB_BIO_conn())
-                    {
-                        sCon.Open();
-                        sSQL = "update BioPerMasterTbl set chUseExpireDate='" + sYear + "' , chChangeRange='" + sRange + "' , chStatus='" + sStatus;
-                        sSQL = sSQL + "' , chNote='" + sNote + "' where chLabNo='" + sLReqNo + "'";
-                    
-                        SqlCommand sCmd = new SqlCommand(sSQL, sCon);
-                        sCmd.ExecuteNonQuery();
-                    
-                        dgvShowLReqNo.Rows.Clear();
-                        dgvQryLReqNo.Rows.Clear();
-                        QryLReqNo(tmpLReqNo, dgvQryLReqNo);
-                    }                
+                tmpLReqNo = txtModLReqNo.Text;
+                sLReqNo = dgvShowLReqNo.Rows[0].Cells[0].Value.ToString().Trim();
+                sPosition = dgvShowLReqNo.Rows[0].Cells[1].Value == null ? "" : dgvShowLReqNo.Rows[0].Cells[1].Value.ToString().Trim();
+                sYear = dgvShowLReqNo.Rows[0].Cells[2].Value.ToString().Trim();
+                sRange = dgvShowLReqNo.Rows[0].Cells[3].Value.ToString().Trim();
+                sStatus = dgvShowLReqNo.Rows[0].Cells[4].Value.ToString().Trim();
+                sNote = dgvShowLReqNo.Rows[0].Cells[5].Value.ToString().Trim();
+
+                if (sYear.Length > 7)
+                {
+                    MessageBox.Show("使用年限--長度不可超出7 bytes!");
+                    return;
+                }
+                if (sRange.Length > 100)
+                {
+                    MessageBox.Show("變更範圍--長度不可超出100 bytes!");
+                    return;
+                }
+                if (sRange.Length > 30)
+                {
+                    MessageBox.Show("狀態--長度不可超出30 bytes!");
+                    return;
+                }
+                if (sNote.Length > 100)
+                {
+                    MessageBox.Show("備註--長度不可超出100 bytes!");
+                    return;
+                }
+                //insert Event Log: 14. --修改檢體資料--
+                ClsShareFunc.insEvenLogt("14", ClsShareFunc.sUserName, sLReqNo, "", "修改檢體資料--");
+                using (SqlConnection sCon = BioBank_Conn.Class_biobank_conn.DB_BIO_conn())
+                {
+                    sCon.Open();
+                    sSQL = "update BioPerMasterTbl set chNewLabPositon='" + sPosition + "', chUseExpireDate='" + sYear + "' , chChangeRange='" + sRange + "' , chStatus='" + sStatus;
+                    sSQL = sSQL + "' , chNote='" + sNote + "' where chLabNo='" + sLReqNo + "'";
+
+                    SqlCommand sCmd = new SqlCommand(sSQL, sCon);
+                    sCmd.ExecuteNonQuery();
+
+                    dgvShowLReqNo.Rows.Clear();
+                    dgvQryLReqNo.Rows.Clear();
+                    QryLReqNo(tmpLReqNo, dgvQryLReqNo);
+                }
                 MessageBox.Show("修改完成!");
             }
             catch (Exception ex)
@@ -2403,18 +2400,20 @@ namespace BioBank
                 string sRange = "";
                 string sStatus = "";
                 string sNote = "";
+                string sPosition = "";
                 int sRow = e.RowIndex;
 
                 CleardgvShowLReqNo();
                 if (e.ColumnIndex != 0 && sRow >= 0)
                 {
                     sLReqNo = dgvQryLReqNo.Rows[sRow].Cells[1].Value.ToString();
+                    sPosition = dgvQryLReqNo.Rows[sRow].Cells[2].Value.ToString();
                     sYear = dgvQryLReqNo.Rows[sRow].Cells[21].Value.ToString();
                     sRange = dgvQryLReqNo.Rows[sRow].Cells[22].Value.ToString();
                     sStatus = dgvQryLReqNo.Rows[sRow].Cells[23].Value.ToString().Trim();
                     sNote = dgvQryLReqNo.Rows[sRow].Cells[24].Value.ToString();
 
-                    dgvShowLReqNo.Rows.Add(sLReqNo, sYear, sRange, sStatus, sNote);
+                    dgvShowLReqNo.Rows.Add(sLReqNo, sPosition, sYear, sRange, sStatus, sNote);
                 }
             }
             catch (Exception ex)
@@ -3438,7 +3437,6 @@ namespace BioBank
                         while (sRead.Read())
                         {
                             sLabNo = ClsShareFunc.gfunCheck(sRead["chLabNo"].ToString());
-                            sNewLabPositon = ClsShareFunc.gfunCheck(sRead["chNewLabPositon"].ToString());
                             //sSex = ClsShareFunc.gfunCheck(sRead["chSex"].ToString());
                             //sAge = ClsShareFunc.gfunCheck(sRead["intAge"].ToString());
                             //sLabType = ClsShareFunc.gfunCheck(sRead["chLabType"].ToString());
@@ -3461,9 +3459,10 @@ namespace BioBank
                             //sChangeRange = ClsShareFunc.gfunCheck(sRead["chChangeRange"].ToString());
                             //sStatus = ClsShareFunc.gfunCheck(sRead["chStatus"].ToString());
                             //sNote = ClsShareFunc.gfunCheck(sRead["chNote"].ToString());
-                            //sTakeOutName = ClsShareFunc.gfunCheck(sRead["chTakeOutName"].ToString());
                             sTakeOutDate = ClsShareFunc.gfunCheck(sRead["chTakeOutDate"].ToString());
+                            sTakeOutName = ClsShareFunc.gfunCheck(sRead["chTakeOutName"].ToString());
                             sTakeOutApplicant = ClsShareFunc.gfunCheck(sRead["chTakeOutApplicant"].ToString());
+                            sNewLabPositon = ClsShareFunc.gfunCheck(sRead["chNewLabPositon"].ToString());
                             sTakeOutPlanNo = ClsShareFunc.gfunCheck(sRead["chTakeOutPlanNo"].ToString());
                             //sTakeOutNote = ClsShareFunc.gfunCheck(sRead["chTakeOutNote"].ToString());
                             //sInComeDate = ClsShareFunc.gfunCheck(sRead["chInComeDate"].ToString());
@@ -3476,8 +3475,8 @@ namespace BioBank
                             //     sStatus, sNote, sTakeOutName, sTakeOutDate, sTakeOutApplicant, sTakeOutPlanNo, sTakeOutNote,
                             //     sInComeDate, sPrintSeqNo);
 
-                            dgvOutRecord.Rows.Add(sTakeOutDate, sTakeOutApplicant, sTakeOutPlanNo, 
-                                sNewLabPositon,sLabNo);
+                            dgvOutRecord.Rows.Add(sTakeOutDate, sTakeOutName, sTakeOutApplicant, sTakeOutPlanNo,
+                                sNewLabPositon, sLabNo);
                         }
 
                     } sRead.Close();
