@@ -1241,9 +1241,53 @@ namespace BioBank
                 }
                 sql += "and ";
             }
+            //如果都沒有選擇任何一項
+            if (sql.Trim().Substring(sql.Length - 6, 5) == "where")
+                sql = sql.Substring(0, sql.Length - 7);
+            else
+                sql = sql.Substring(0, sql.Length - 4);
 
-            sql = sql.Substring(0, sql.Length - 4) + " order by chLabType ";
+            //全欄位檢索
+            string strAll = txtSearchAll.Text.Trim();
+            if (strAll != "")
+            {
+                sql = "select * from (" + sql + ") as a where "
+                    + "chLabNo like '%" + strAll + "%'"
+                    + " or chOldLabPosition like '%" + strAll + "%'"
+                    + " or chNewLabPositon like '%" + strAll + "%'"
+                    + " or chSex like '%" + strAll + "%'"
+                    + " or intAge like '%" + strAll + "%'"
+                    + " or chLabType like '%" + strAll + "%'"
+                    + " or chLabAdoptDate like '%" + strAll + "%'"
+                    + " or chStoreageMethod like '%" + strAll + "%'"
+                    + " or chLabLeaveBodyDatetime like '%" + strAll + "%'"
+                    + " or chLabDealDatetime like '%" + strAll + "%'"
+                    + " or chLabLeaveBodyEnvir like '%" + strAll + "%'"
+                    + " or chLabLeaveBodyHour like '%" + strAll + "%'"
+                    + " or chSubStock like '%" + strAll + "%'"
+                    + " or chSickPortion like '%" + strAll + "%'"
+                    + " or chDiagName1 like '%" + strAll + "%'"
+                    + " or chDiagName2 like '%" + strAll + "%'"
+                    + " or chDiagName3 like '%" + strAll + "%'"
+                    + " or chClerkName like '%" + strAll + "%'"
+                    + " or chPlanAgreeDate like '%" + strAll + "%'"
+                    + " or chAgreeNoDate like '%" + strAll + "%'"
+                    + " or chUseExpireDate like '%" + strAll + "%'"
+                    + " or chChangeRange like '%" + strAll + "%'"
+                    + " or chStatus like '%" + strAll + "%'"
+                    + " or chNote like '%" + strAll + "%'"
+                    + " or chTakeOutName like '%" + strAll + "%'"
+                    + " or chTakeOutDate like '%" + strAll + "%'"
+                    + " or chTakeOutApplicant like '%" + strAll + "%'"
+                    + " or chTakeOutPlanNo like '%" + strAll + "%'"
+                    + " or chTakeOutNote like '%" + strAll + "%'"
+                    + " or chInComeDate like '%" + strAll + "%' order by chLabType";
+             }
+            else{
+                sql += " order by chLabType";
+            }
 
+            
             //insert Event Log: 11. --篩選(查詢)--
             ClsShareFunc.insEvenLogt("11", ClsShareFunc.sUserName, "", "", "篩選(查詢)--");
             using (SqlConnection conn = BioBank_Conn.Class_biobank_conn.DB_BIO_conn())
@@ -2303,6 +2347,7 @@ namespace BioBank
                 QryLReqNo(sLReqNo, dgvQryLReqNo);
             else
                 dgvQryLReqNo.Rows.Clear();
+            dgvShowLReqNo.Rows.Clear();
         }
 
         /*查詢/修改 - 修改檢體資訊*/
