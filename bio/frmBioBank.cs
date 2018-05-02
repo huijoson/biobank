@@ -361,7 +361,7 @@ namespace BioBank
 
                     //5.檢查format
                     ExcelDt = dtNew;
-                    CheckWarning(dtNew);
+                      CheckWarning(dtNew);
 
                 }
                 catch (Exception ex)
@@ -529,6 +529,10 @@ namespace BioBank
 
         private void CheckWarning(DataTable dt)
         {
+            //warning flag
+            Boolean warningFlag = false;
+            StringBuilder sbWarning = new StringBuilder();
+
             //判斷column數是否相同
             using (SqlConnection conn = BioBank_Conn.Class_biobank_conn.DB_BIO_conn())
             {
@@ -547,13 +551,16 @@ namespace BioBank
             dgvShowMsg.Columns.Add("row", "第幾列");
             dgvShowMsg.Columns.Add("msg", "錯誤訊息");
             string Warning = "";
+            string bodyExWarning = "";
             string SlaverTbl = "BioPerSlaver" + cboTeamNo.Text.Substring(0, 1) + "Tbl";
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 if (checkRepeat(dt.Rows[i]) == false)
                 {
-                    MessageBox.Show("檢體管號重複，請重新確認資料");
-                    return;
+                    warningFlag = true;
+
+                    bodyExWarning = "檢體管號碼重複:" + dt.Rows[i][1];
+                    dgvShowMsg.Rows.Add("第" + Convert.ToInt32(i+1) + "列", bodyExWarning);
                 }
                 //病歷號是否為身分證 可pass
                 if (dt.Rows[i]["病歷號"].ToString().Length < 10)
@@ -573,6 +580,10 @@ namespace BioBank
             }
             else
                 CheckFile(dt);
+            if (warningFlag == true)
+            {
+                MessageBox.Show("檢體管號重複，請重新確認資料");
+            }
         }
 
         private void InitImportPage()
@@ -697,34 +708,75 @@ namespace BioBank
             //insert Event Log: 5. --匯入Excel (start)--
             ClsShareFunc.insEvenLogt("5", ClsShareFunc.sUserName, "", "", "匯入Excel (start)--" + sExcelName);
             ArrayList posList = new ArrayList();
+            Dictionary<string, string> dicPos = new Dictionary<string, string>();
+            Dictionary<string, string> dicSpacePos = new Dictionary<string, string>();
+            Boolean checkFlag = false;
             InitImportPage();
             dbPrintMsg.Text = "列印訊息";
+
+            //檢查使用者輸入有沒有重複的檢體
+            dgvShowMsg.Rows.Clear();
+
             for (int i = 0; i < dgvShowExcel.Rows.Count; i++)
             {
+
                 if (dgvShowExcel.Rows[i].Cells["新檢體位置"].Value == null)
                 {
-                    MessageBox.Show("新檢體位置不可空白!");
-                    return;
+                    dicSpacePos.Add((i + 1).ToString(), "");
+                    checkFlag = true;
                 }
                 else
                 {
-                    if (!posList.Contains(dgvShowExcel.Rows[i].Cells["新檢體位置"].Value.ToString()))
+                    dicPos.Add((i + 1).ToString(), dgvShowExcel.Rows[i].Cells["新檢體位置"].Value.ToString());
+                }
+            }
+            //檢查重複值
+            if (checkFlag != true)
+            {
+                var duplicateValues = dicPos.GroupBy(x => x.Value).Where(x => x.Count() > 1);
+                if (duplicateValues.Count() > 0)
+                {
+                    foreach (KeyValuePair<string, string> item in dicPos)
                     {
-                        posList.Add(dgvShowExcel.Rows[i].Cells["新檢體位置"].Value.ToString());
-                    }
-                    else
-                    {
-                        MessageBox.Show("檢體位置重複!");
-                        return;
+                        foreach (var item2 in duplicateValues)
+                        {
+                            if (item.Value == item2.Key)
+                            {
+                                dgvShowMsg.Rows.Add("第" + item.Key + "列", "檢體位置重複: " +
+                                dgvShowExcel.Rows[Convert.ToInt32(item.Key) - 1].Cells["檢體管號碼"].Value.ToString() + " : " +
+                                dgvShowExcel.Rows[Convert.ToInt32(item.Key) - 1].Cells["新檢體位置"].Value.ToString());
+                            }
+                        }
                     }
                 }
-                
+                posList = checkPos(dicPos);
+                if (posList.Count > 0)
+                {
+                    for (int i = 0; i <= posList.Count; i++)
+                    {
+                        dgvShowMsg.Rows.Add("第" + posList[i] + "列", "檢體位置重複: " +
+                                    dgvShowExcel.Rows[Convert.ToInt32(posList[i])+1].Cells["檢體管號碼"].Value.ToString() + " : " +
+                                    dgvShowExcel.Rows[Convert.ToInt32(posList[i])+1].Cells["新檢體位置"].Value.ToString());
+                    }
+                }
+                if (dgvShowMsg.Rows.Count > 0)
+                {
+                    MessageBox.Show("檢體位置不可重複!");
+                    return;
+                }
             }
-            if (checkPos(posList))
+            else
             {
-                MessageBox.Show("檢體位置重複!");
+                foreach (KeyValuePair<string, string> item in dicSpacePos)
+                {
+                    dgvShowMsg.Rows.Add("第" + item.Key + "列", "檢體位置空白: " +
+                                dgvShowExcel.Rows[Convert.ToInt32(item.Key) - 1].Cells["檢體管號碼"].Value.ToString() + " : " +
+                                "");
+                }
+                MessageBox.Show("檢體位置不可空白!");
                 return;
             }
+
             DialogResult myResult = MessageBox.Show("共有" + ExcelDt.Rows.Count + "筆資料，確定要倒入資料庫?", "資料格式正確", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (myResult == DialogResult.Yes)
             {
@@ -771,9 +823,10 @@ namespace BioBank
             }
         }
         //-------------------------確認檢體位置有沒有重複
-        private bool checkPos(ArrayList posList)
+        private ArrayList checkPos(Dictionary<string, string> dicPos)
         {
             string strSQL = "select distinct chNewLabPositon from [DB_BIO].[dbo].[BioPerMasterTbl]";
+            ArrayList alRepeatList = new ArrayList();
             using (SqlConnection conn1 = BioBank_Conn.Class_biobank_conn.DB_BIO_conn())
             {
                 conn1.Open();
@@ -784,17 +837,18 @@ namespace BioBank
                 {
                     while (sRead.Read())
                     {
-                        for (int i = 0; i <= posList.Count; i++)
+                        foreach (KeyValuePair<string, string> item in dicPos)
                         {
-                            if (posList.Contains(ClsShareFunc.gfunCheck(sRead["chNewLabPositon"].ToString())))
+                            if (item.Value == ClsShareFunc.gfunCheck(sRead["chNewLabPositon"].ToString()))
                             {
-                                return true;
+                                alRepeatList.Add(item.Key);
                             }
                         }
                     }
                 }
+
+                return alRepeatList;
             }
-            return false;
         }
         //--------------------
         string[] secTabl = { "個案碼", "檢體管號碼", "病歷號", "出生日期", "研究計劃同意書",  "同意書編號", "姓名",   
@@ -1175,6 +1229,11 @@ namespace BioBank
                     }
                 }
             }
+            if (sql.Substring(sql.Length - 4, 4).Trim() == "or")
+            {
+                sql = sql.Substring(0, sql.Length - 4) + " and ";
+            }
+            
             //診斷
             if (textBoxDiag1.Text != "" || textBoxDiag2.Text != "" || textBoxDiag3.Text != "")
             {
