@@ -1484,7 +1484,7 @@ namespace BioBank
                             ctRowNum++;
                         }
                         sRead.Close();
-                        if(txtSDate.Text.ToString() == "" && txtEDate.Text.ToString() == "")
+                        if (txtSDate.Text.ToString() == "" && txtEDate.Text.ToString() == "" && dicExpired.Count != 0)
                         {
                             checkExpired(dicExpired);
                         }
@@ -1500,6 +1500,7 @@ namespace BioBank
         private void checkExpired(Dictionary<string,string> dic)
         {
             StringBuilder sbExpired = new StringBuilder();
+            Boolean expiredFlag = false;
             sbExpired.AppendLine("以下檢體編號已過期:");
             foreach (KeyValuePair<string, string> item in dic)
             {
@@ -1508,10 +1509,14 @@ namespace BioBank
                     if (Convert.ToInt32(item.Value) < Convert.ToInt32(GetTime()))
                     {
                         sbExpired.AppendLine(item.Key);
+                        expiredFlag = true;
                     }
                 }
             }
-            MessageBox.Show(sbExpired.ToString());
+            if (expiredFlag)
+            {
+                MessageBox.Show(sbExpired.ToString());
+            }
         }
 
         ////查詢-選擇小組欄位
