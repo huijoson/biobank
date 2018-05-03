@@ -63,6 +63,8 @@ namespace BioBank
             ClsShareFunc.sLoginDepartment = splitTxt[1].Replace("(", "").Replace(")", "").Replace("】", "").Trim();
             ClsShareFunc.sUserId = splitTxt[3].Trim();
             ClsShareFunc.sUserName = splitTxt[5].Trim();
+            //txtSDate.Text = ClsShareFunc.getTodayDate();
+            //txtEDate.Text = ClsShareFunc.getTodayDate();
 
             /*2.主管維護只有主管才能使用
             switch (ClsShareFunc.sLoginIdentity)
@@ -736,32 +738,46 @@ namespace BioBank
                 var duplicateValues = dicPos.GroupBy(x => x.Value).Where(x => x.Count() > 1);
                 if (duplicateValues.Count() > 0)
                 {
-                    foreach (KeyValuePair<string, string> item in dicPos)
+                    try
                     {
-                        foreach (var item2 in duplicateValues)
+                        foreach (KeyValuePair<string, string> item in dicPos)
                         {
-                            if (item.Value == item2.Key)
+                            foreach (var item2 in duplicateValues)
                             {
-                                dgvShowMsg.Rows.Add("第" + item.Key + "列", "檢體位置重複: " +
-                                dgvShowExcel.Rows[Convert.ToInt32(item.Key) - 1].Cells["檢體管號碼"].Value.ToString() + " : " +
-                                dgvShowExcel.Rows[Convert.ToInt32(item.Key) - 1].Cells["新檢體位置"].Value.ToString());
+                                if (item.Value == item2.Key)
+                                {
+                                    dgvShowMsg.Rows.Add("第" + item.Key + "列", "檢體位置重複: " +
+                                    dgvShowExcel.Rows[Convert.ToInt32(item.Key) - 1].Cells["檢體管號碼"].Value.ToString() + " : " +
+                                    dgvShowExcel.Rows[Convert.ToInt32(item.Key) - 1].Cells["新檢體位置"].Value.ToString());
+                                }
                             }
                         }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("檢查目前輸入的檢體位置有無重複的錯誤: " + ex.Message);
                     }
                 }
                 posList = checkPos(dicPos);
                 if (posList.Count > 0)
                 {
-                    for (int i = 0; i <= posList.Count; i++)
+                    try
                     {
-                        dgvShowMsg.Rows.Add("第" + posList[i] + "列", "檢體位置重複: " +
-                                    dgvShowExcel.Rows[Convert.ToInt32(posList[i])+1].Cells["檢體管號碼"].Value.ToString() + " : " +
-                                    dgvShowExcel.Rows[Convert.ToInt32(posList[i])+1].Cells["新檢體位置"].Value.ToString());
+                        for (int i = 0; i <= posList.Count; i++)
+                        {
+                            dgvShowMsg.Rows.Add("第" + posList[i] + "列", "檢體位置重複: " +
+                                        dgvShowExcel.Rows[Convert.ToInt32(posList[i]) - 1].Cells["檢體管號碼"].Value.ToString() + " : " +
+                                        dgvShowExcel.Rows[Convert.ToInt32(posList[i]) - 1].Cells["新檢體位置"].Value.ToString());
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("檢查資料庫與目前輸入的檢體位置的錯誤: " + ex.Message);
                     }
                 }
                 if (dgvShowMsg.Rows.Count > 0)
                 {
-                    MessageBox.Show("檢體位置不可重複!");
+                    MessageBox.Show("共 " + dgvShowMsg.Rows.Count + " 筆檢體位置重複，檢體位置不可重複!");
                     return;
                 }
             }
@@ -773,7 +789,7 @@ namespace BioBank
                                 dgvShowExcel.Rows[Convert.ToInt32(item.Key) - 1].Cells["檢體管號碼"].Value.ToString() + " : " +
                                 "");
                 }
-                MessageBox.Show("檢體位置不可空白!");
+                MessageBox.Show("共 " + dgvShowMsg.Rows.Count + " 筆檢體位置空白，檢體位置不可空白!");
                 return;
             }
 
@@ -1300,6 +1316,26 @@ namespace BioBank
                 }
                 sql += "and ";
             }
+
+            //檢體保存期限
+            if (txtSDate.Text.ToString().Trim() != "" || txtEDate.Text.ToString().Trim() != "")
+            {
+                if (txtSDate.Text.ToString().Trim() == txtEDate.Text.ToString().Trim())
+                {
+                    txtEDate.Text = "";
+                }
+
+                if (txtSDate.Text.ToString().Trim() != "")
+                {
+                    sql += "chUseExpireDate >= " + txtSDate.Text.ToString().Trim() + " or ISNULL(chUseExpireDate,'') = '' and ";
+                }
+                if (txtEDate.Text.ToString().Trim() != "")
+                {
+                    sql += "chUseExpireDate <= " + txtEDate.Text.ToString().Trim() + " or ISNULL(chUseExpireDate,'') = '' and ";
+                }
+            }
+
+
             //如果都沒有選擇任何一項
             if (sql.Trim().Substring(sql.Length - 6, 5) == "where")
                 sql = sql.Substring(0, sql.Length - 7);
@@ -1375,6 +1411,7 @@ namespace BioBank
                         SqlCommand sCmd = new SqlCommand(sql, sCon);
                         SqlDataReader sRead = sCmd.ExecuteReader();
                         int ctRowNum = 1;
+                        Dictionary<string, string> dicExpired = new Dictionary<string, string>();
                         btnSearchOut.Visible = false;
 
                         while (sRead.Read())
@@ -1411,6 +1448,7 @@ namespace BioBank
                             sInComeDate = ClsShareFunc.gfunCheck(sRead["chInComeDate"].ToString());
                             sPrintSeqNo = ClsShareFunc.gfunCheck(sRead["intPrintSeqNo"].ToString());
 
+                            dicExpired.Add(sLabNo, sUseExpireDate);
                             //dgvSearchData.Rows.Add(false, sLabNo, sNewLabPositon, sSex, sAge, sLabType, sLabAdoptDate, sAdoptPortion,
                             //    sStoreageMethod, sLabLeaveBodyDatetime, sLabDealDatetime, sLabLeaveBodyEnvir,
                             //    sLabLeaveBodyHour, sSubStock, sSickPortion, sDiagName1, sDiagName2, sDiagName3,
@@ -1446,14 +1484,36 @@ namespace BioBank
                             ctRowNum++;
                         }
                         sRead.Close();
+                        if(txtSDate.Text.ToString() == "" && txtEDate.Text.ToString() == "")
+                        {
+                            checkExpired(dicExpired);
+                        }
                     }
                 }
-                catch (Exception ex)
+                 catch (Exception ex)
                 {
                     MessageBox.Show("QryLReqNo: " + ex.Message.ToString());
                 }
             }
         }
+        //檢查那些篩選出來的檢體已過期
+        private void checkExpired(Dictionary<string,string> dic)
+        {
+            StringBuilder sbExpired = new StringBuilder();
+            sbExpired.AppendLine("以下檢體編號已過期:");
+            foreach (KeyValuePair<string, string> item in dic)
+            {
+                if (item.Value != "")
+                {
+                    if (Convert.ToInt32(item.Value) < Convert.ToInt32(GetTime()))
+                    {
+                        sbExpired.AppendLine(item.Key);
+                    }
+                }
+            }
+            MessageBox.Show(sbExpired.ToString());
+        }
+
         ////查詢-選擇小組欄位
         //private void comboBoxCase2_SelectedIndexChanged(object sender, EventArgs e)
         //{
@@ -4249,6 +4309,16 @@ namespace BioBank
             {
                 MessageBox.Show("diagnosis error: " + e.Message.ToString());
             }
+        }
+
+        private void txtSDate_MouseClick(object sender, MouseEventArgs e)
+        {
+            txtSDate.SelectAll();
+        }
+
+        private void txtEDate_MouseClick(object sender, MouseEventArgs e)
+        {
+            txtEDate.SelectAll();
         }
 
     }

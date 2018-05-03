@@ -15,6 +15,7 @@ using System.Security.Cryptography;
 using System.Runtime.InteropServices;
 using System.Reflection;
 using Microsoft.Office.Interop.Excel;
+using System.Globalization;
 
 namespace BioBank
 {
@@ -204,6 +205,13 @@ namespace BioBank
             workbook = null;
             app = null;
             GC.Collect();
+        }
+
+        /* get today date */
+        public static string getTodayDate()
+        {
+            TaiwanCalendar twCal = new TaiwanCalendar();
+            return string.Format("{0}{1}{2}", twCal.GetYear(DateTime.Now),DateTime.Now.Month.ToString().PadLeft(2,'0'), DateTime.Now.Day.ToString().PadLeft(2,'0'));
         }
 
         public static void OutPutExcel(DataGridView dgv, string pathName, string fileName)
