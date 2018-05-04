@@ -1320,18 +1320,15 @@ namespace BioBank
             //檢體保存期限
             if (txtSDate.Text.ToString().Trim() != "" || txtEDate.Text.ToString().Trim() != "")
             {
-                if (txtSDate.Text.ToString().Trim() == txtEDate.Text.ToString().Trim())
+                if (txtSDate.Text.ToString().Trim() != "" && txtEDate.Text.ToString().Trim() != "")
                 {
-                    txtEDate.Text = "";
+                    sql += "chUseExpireDate >= " + txtSDate.Text.ToString().Trim() + " and ";
+                    sql += "chUseExpireDate <= " + txtEDate.Text.ToString().Trim() + " and ";
                 }
-
-                if (txtSDate.Text.ToString().Trim() != "")
+                else
                 {
-                    sql += "chUseExpireDate >= " + txtSDate.Text.ToString().Trim() + " or ISNULL(chUseExpireDate,'') = '' and ";
-                }
-                if (txtEDate.Text.ToString().Trim() != "")
-                {
-                    sql += "chUseExpireDate <= " + txtEDate.Text.ToString().Trim() + " or ISNULL(chUseExpireDate,'') = '' and ";
+                    MessageBox.Show("日期欄位不可有一空白!!");
+                    return;
                 }
             }
 
@@ -1549,126 +1546,7 @@ namespace BioBank
             ClsPrint _ClsPrint = new ClsPrint(dgvSearchData, "查詢列印");
             _ClsPrint.PrintForm();
         }
-        //出庫
-        /*       private void textBoxTakeOut_KeyDown(object sender, KeyEventArgs e)
-               {
-                   if (e.KeyCode == Keys.Enter)
-                   {
-                       if (txtOutLReqNo.Text != "")
-                       {
-                           using (SqlConnection conn = BioBank_Conn.Class_biobank_conn.DB_BIO_conn())
-                           {
-                               string sql = "select chLabNo  檢體編號,chNewLabPositon  檢體位置,chTakeOutDate  出庫日期,chTakeOutApplicant 申請人,chTakeOutPlanNo 計畫編號,chTakeOutNote 備註 from BioPerMasterTbl where chLabNo='" + txtOutLReqNo.Text + "'";
-                               conn.Open();
-                               SqlDataAdapter searchAdapter = new SqlDataAdapter(sql, conn);
-                               DataTable dtDate = new DataTable();
-                               searchAdapter.Fill(dtDate);
-                               dgvOutLReqNoDetail.DataSource = dtDate;
-                               if (dtDate.Rows[0]["出庫日期"].ToString().Trim() != "")
-                               {
-                                   btnOut.Visible = false;
-                                   MessageBox.Show("此檢體已出庫!");
-                                   return;
-                               }
-                               btnOut.Visible = true;
-                           }
-                           for (int i = 0; i < dgvOutLReqNoDetail.Columns.Count; i++)
-                           {
-                               if (i < 2)
-                                   dgvOutLReqNoDetail.Rows[0].Cells[i].ReadOnly = true;
-                               else
-                                   dgvOutLReqNoDetail.Rows[0].Cells[i].ReadOnly = false;
-                           }
-                       }
-                   }
-               }*/
-        /*      private void buttonTakeOut_Click(object sender, EventArgs e)
-              {
-                  for (int i = 2; i < dgvOutLReqNoDetail.Columns.Count - 1; i++)
-                  {
-                      if (dgvOutLReqNoDetail.Rows[0].Cells[i].Value.ToString().Trim() == "")
-                      {
-                          MessageBox.Show("資料不可空白!");
-                          return;
-                      }
-                  }
-                  using (SqlConnection conn = BioBank_Conn.Class_biobank_conn.DB_BIO_conn())
-                  {
-                      conn.Open();
-                      string sql = @"update BioPerMasterTbl set chTakeOutDate='" + dgvOutLReqNoDetail.Rows[0].Cells[2].Value + "' , chTakeOutApplicant='" + dgvOutLReqNoDetail.Rows[0].Cells[3].Value +
-                          "' , chTakeOutPlanNo='" + dgvOutLReqNoDetail.Rows[0].Cells[4].Value + "' , chTakeOutNote='" + dgvOutLReqNoDetail.Rows[0].Cells[5].Value + "' where chLabNo='" + dgvOutLReqNoDetail.Rows[0].Cells[0].Value + "'";
-                      SqlCommand cmdUpdataRead = new SqlCommand(sql, conn);
-                      cmdUpdataRead.ExecuteNonQuery();
-                      MessageBox.Show("出庫完成!");
-                      dgvOutLReqNoDetail.DataSource = null;
-                  }
-              }*/
-        //修改
-        /*     private void textBoxModify_KeyDown(object sender, KeyEventArgs e)
-             {
-                 if (e.KeyCode == Keys.Enter)
-                 {
-                     if (txtModLReqNo.Text != "")
-                     {
-                         dgvModify.Columns.Clear();
-                         DataGridViewComboBoxColumn comboCoiumn = new DataGridViewComboBoxColumn();
-                         comboCoiumn.Items.Add("  ");
-                         comboCoiumn.Items.Add("退出");
-                         comboCoiumn.Items.Add("停止");
-                         comboCoiumn.Items.Add("變更");
-                         comboCoiumn.Items.Add("死亡");
-                         comboCoiumn.Name = "狀態";
-                         dgvModify.Columns.Add("檢體編號", "檢體編號");
-                         dgvModify.Columns.Add("使用年限", "使用年限");
-                         dgvModify.Columns.Add("變更範圍", "變更範圍");
-                         dgvModify.Columns.Add(comboCoiumn);
-                         dgvModify.Columns.Add("備註", "備註");
-                         using (SqlConnection conn = BioBank_Conn.Class_biobank_conn.DB_BIO_conn())
-                         {
-                             string sql = "select chLabNo  檢體編號,chUseExpireDate  使用年限,chChangeRange  變更範圍,chStatus 狀態,chNote 備註 from BioPerMasterTbl where chLabNo='" + txtModLReqNo.Text + "'";
-                             conn.Open();
-                             SqlDataAdapter searchAdapter = new SqlDataAdapter(sql, conn);
-                             DataTable dtDate = new DataTable();
-                             searchAdapter.Fill(dtDate);
-                             dgvModify.Rows.Add();
-                         for (int i = 0; i < dgvModify.Columns.Count; i++)
-                         {
-                             if (i != 3)
-                                 dgvModify.Rows[0].Cells[i].Value = dtDate.Rows[0][i].ToString();
-                             else
-                             {
-                                 for (int j = 0; j < comboCoiumn.Items.Count; j++)
-                                 {
-                                     if (dtDate.Rows[0][i].ToString().Trim() == comboCoiumn.Items[j].ToString())
-                                         dgvModify.Rows[0].Cells[3].Value = comboCoiumn.Items[j].ToString();
-                                 }
-                             }
-                             if (i < 1)
-                                 dgvModify.Rows[0].Cells[i].ReadOnly = true;
-                             else
-                                 dgvModify.Rows[0].Cells[i].ReadOnly = false;
-                         }}
-                     }
-                 }
-             }*/
-        /*
-            private void buttonModify_Click(object sender, EventArgs e)
-            {
-                using (SqlConnection conn = BioBank_Conn.Class_biobank_conn.DB_BIO_conn())
-                {
-                    conn.Open();
-                    string sql = @"update BioPerMasterTbl set chUseExpireDate='" + dgvShowLReqNo.Rows[0].Cells[1].Value + "' , chChangeRange='" + dgvShowLReqNo.Rows[0].Cells[2].Value +
-                        "' , chStatus='" + dgvShowLReqNo.Rows[0].Cells[3].Value + "' , chNote='" + dgvShowLReqNo.Rows[0].Cells[4].Value + "' where chLabNo='" + dgvShowLReqNo.Rows[0].Cells[0].Value + "'";
-                    SqlCommand cmdUpdataRead = new SqlCommand(sql, conn);
-                    cmdUpdataRead.ExecuteNonQuery();
-                    MessageBox.Show("修改完成!");
-                    dgvShowLReqNo.DataSource = null;
-                }
-            }*/
-
-
-        /***************************************************************************************************/
-        /***************************************************************************************************/
+        
         /*查詢 BioCommonLoginTbl 中成員資料*/
         private void cmdQuery(DataGridView dgv)
         {
@@ -2486,12 +2364,29 @@ namespace BioBank
             string sNote = "";
             string sSQL = "";
             string sPosition = "";
+            Dictionary<string, string> dicPos = new Dictionary<string, string>();
+            ArrayList arrPos = new ArrayList();
             try
             {
 
                 tmpLReqNo = txtModLReqNo.Text;
                 sLReqNo = dgvShowLReqNo.Rows[0].Cells[0].Value.ToString().Trim();
                 sPosition = dgvShowLReqNo.Rows[0].Cells[1].Value == null ? "" : dgvShowLReqNo.Rows[0].Cells[1].Value.ToString().Trim();
+                if (sPosition == "")
+                {
+                    MessageBox.Show("檢體位置不得為空白!");
+                    return;
+                }
+                else
+                {
+                    dicPos.Add("1", sPosition);
+                    arrPos = checkPos(dicPos);
+                    if (arrPos.Count > 0)
+                    {
+                        MessageBox.Show("檢體位置重複!");
+                        return;
+                    }
+                }
                 sYear = dgvShowLReqNo.Rows[0].Cells[2].Value.ToString().Trim();
                 sRange = dgvShowLReqNo.Rows[0].Cells[3].Value.ToString().Trim();
                 sStatus = dgvShowLReqNo.Rows[0].Cells[4].Value.ToString().Trim();
@@ -4324,6 +4219,14 @@ namespace BioBank
         private void txtEDate_MouseClick(object sender, MouseEventArgs e)
         {
             txtEDate.SelectAll();
+        }
+
+        private void txtSDate_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == Convert.ToChar(13))
+            {
+                txtEDate.Focus();
+            }
         }
 
     }
