@@ -1322,13 +1322,27 @@ namespace BioBank
             {
                 if (txtSDate.Text.ToString().Trim() != "" && txtEDate.Text.ToString().Trim() != "")
                 {
-                    sql += "chUseExpireDate >= " + txtSDate.Text.ToString().Trim() + " and ";
-                    sql += "chUseExpireDate <= " + txtEDate.Text.ToString().Trim() + " and ";
+                    if (txtSDate.Text.ToString().Trim() == txtEDate.Text.ToString().Trim())
+                    {
+                        sql += "chUseExpireDate = '" + txtSDate.Text.ToString().Trim() + "' and ";
+                    }
+                    else
+                    {
+                        sql += "chUseExpireDate >= '" + txtSDate.Text.ToString().Trim() + "' and ";
+                        sql += "chUseExpireDate <= '" + txtEDate.Text.ToString().Trim() + "' and ";
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("日期欄位不可有一空白!!");
-                    return;
+                    if (txtSDate.Text.ToString().Trim() == "")
+                    {
+                        txtSDate.Text = txtEDate.Text.ToString().Trim();
+                    }
+                    if (txtEDate.Text.ToString().Trim() == "")
+                    {
+                        txtEDate.Text = txtSDate.Text.ToString().Trim();
+                    }
+                    sql += "chUseExpireDate = '" + txtSDate.Text.ToString().Trim() + "' and ";
                 }
             }
 
@@ -1452,7 +1466,7 @@ namespace BioBank
                             //    sClerkName, sPlanAgreeDate, sAgreeNoDate, sUseExpireDate, sChangeRange,
                             //    sStatus, sNote,sTakeOutName, sTakeOutDate, sTakeOutApplicant, sTakeOutPlanNo, sTakeOutNote,
                             //    sInComeDate, sPrintSeqNo);
-                            dgvSearchData.Rows.Add(ctRowNum, false, sLabNo, sSubStock, sLabType, sStoreageMethod, sSickPortion, sDiagName1, sDiagName2, sDiagName3);
+                            dgvSearchData.Rows.Add(ctRowNum, false, sLabNo, sSubStock, sLabType, sStoreageMethod, sUseExpireDate, sAdoptPortion, sDiagName1, sDiagName2, sDiagName3);
 
                             //有選未出庫的情況
                             if (chkGetOut.Text != "")
@@ -1481,6 +1495,7 @@ namespace BioBank
                             ctRowNum++;
                         }
                         sRead.Close();
+
                         if (txtSDate.Text.ToString() == "" && txtEDate.Text.ToString() == "" && dicExpired.Count != 0)
                         {
                             checkExpired(dicExpired);
@@ -1498,6 +1513,7 @@ namespace BioBank
         {
             StringBuilder sbExpired = new StringBuilder();
             Boolean expiredFlag = false;
+            int count = 1;
             sbExpired.AppendLine("以下檢體編號已過期:");
             foreach (KeyValuePair<string, string> item in dic)
             {
@@ -1505,10 +1521,11 @@ namespace BioBank
                 {
                     if (Convert.ToInt32(item.Value) < Convert.ToInt32(GetTime()))
                     {
-                        sbExpired.AppendLine(item.Key);
+                        sbExpired.AppendLine(count + " : " + item.Key);
                         expiredFlag = true;
                     }
                 }
+                count++;
             }
             if (expiredFlag)
             {
@@ -2372,6 +2389,10 @@ namespace BioBank
                 tmpLReqNo = txtModLReqNo.Text;
                 sLReqNo = dgvShowLReqNo.Rows[0].Cells[0].Value.ToString().Trim();
                 sPosition = dgvShowLReqNo.Rows[0].Cells[1].Value == null ? "" : dgvShowLReqNo.Rows[0].Cells[1].Value.ToString().Trim();
+                sYear = dgvShowLReqNo.Rows[0].Cells[2].Value.ToString().Trim();
+                sRange = dgvShowLReqNo.Rows[0].Cells[3].Value.ToString().Trim();
+                sStatus = dgvShowLReqNo.Rows[0].Cells[4].Value.ToString().Trim();
+                sNote = dgvShowLReqNo.Rows[0].Cells[5].Value.ToString().Trim();
                 if (sPosition == "")
                 {
                     MessageBox.Show("檢體位置不得為空白!");
@@ -2379,6 +2400,10 @@ namespace BioBank
                 }
                 else
                 {
+                    if (sStatus.Length > 0 && sStatus == "退出")
+                    {
+                        sPosition = sPosition + "(退)";
+                    }
                     dicPos.Add("1", sPosition);
                     arrPos = checkPos(dicPos);
                     if (arrPos.Count > 0)
@@ -2387,10 +2412,6 @@ namespace BioBank
                         return;
                     }
                 }
-                sYear = dgvShowLReqNo.Rows[0].Cells[2].Value.ToString().Trim();
-                sRange = dgvShowLReqNo.Rows[0].Cells[3].Value.ToString().Trim();
-                sStatus = dgvShowLReqNo.Rows[0].Cells[4].Value.ToString().Trim();
-                sNote = dgvShowLReqNo.Rows[0].Cells[5].Value.ToString().Trim();
 
                 if (sYear.Length > 7)
                 {
@@ -2412,6 +2433,8 @@ namespace BioBank
                     MessageBox.Show("備註--長度不可超出100 bytes!");
                     return;
                 }
+                
+
                 //insert Event Log: 14. --修改檢體資料--
                 ClsShareFunc.insEvenLogt("14", ClsShareFunc.sUserName, sLReqNo, "", "修改檢體資料--");
                 using (SqlConnection sCon = BioBank_Conn.Class_biobank_conn.DB_BIO_conn())
