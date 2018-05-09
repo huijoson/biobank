@@ -872,16 +872,41 @@ namespace BioBank
                             }
                         }
                     }
+                    sRead.Close();
                 }
                 buttonPrint.Visible = true;
                 return dicRepeat;
             }
         }
-        //-------------------------確認自身檢體位置有沒有重複
-        private ArrayList checkSelfPos(Dictionary<string, string> dicPos)
+
+        //抓取上一次的檢體位置
+        private string getBefPos(string sLReqNo)
         {
+            string beforePos = "";
+            string strSQL = "select distinct chNewLabPositon from [DB_BIO].[dbo].[BioPerMasterTbl] where chLabNo = '" + sLReqNo + "'";
+            using (SqlConnection conn1 = BioBank_Conn.Class_biobank_conn.DB_BIO_conn())
+            {
+                conn1.Open();
+                SqlCommand sCmd = new SqlCommand(strSQL, conn1);
+                SqlDataReader sRead = sCmd.ExecuteReader();
+
+                if (sRead.HasRows)
+                {
+                    while (sRead.Read())
+                    {
+                        beforePos = ClsShareFunc.gfunCheck(sRead["chNewLabPositon"].ToString());
+                    }
+                    sRead.Close();
+                }
+            }
+            return beforePos;
+        }
+        //-------------------------確認除了自身檢體位置外的有沒有重複
+        private Dictionary<string, string> checkSelfPos(Dictionary<string, string> dicPos)
+        {
+            string backStr = "";
             string strSQL = "select distinct chNewLabPositon from [DB_BIO].[dbo].[BioPerMasterTbl] where chLabNo != '" + dicPos.First().Key + "'";
-            ArrayList alRepeatList = new ArrayList();
+            Dictionary<string, string> dicRepeat = new Dictionary<string, string>();
             using (SqlConnection conn1 = BioBank_Conn.Class_biobank_conn.DB_BIO_conn())
             {
                 conn1.Open();
@@ -893,16 +918,23 @@ namespace BioBank
                     while (sRead.Read())
                     {
                         foreach (KeyValuePair<string, string> item in dicPos)
-                        {
-                            if (item.Value == ClsShareFunc.gfunCheck(sRead["chNewLabPositon"].ToString()))
+                        {   
+                            backStr = ClsShareFunc.gfunCheck(sRead["chNewLabPositon"].ToString());
+                            if (item.Value == backStr)
                             {
-                                alRepeatList.Add(item.Key);
+                                if (backStr.Length > 2)
+                                {
+                                    if (backStr.Substring(backStr.Length - 3,3) != "(退)")
+                                    {
+                                        dicRepeat.Add(item.Key, ClsShareFunc.gfunCheck(sRead["chNewLabPositon"].ToString()));
+                                    }
+                                }
                             }
                         }
                     }
+                    sRead.Close();
                 }
-
-                return alRepeatList;
+                return dicRepeat;
             }
         }
         //--------------------
@@ -2430,8 +2462,11 @@ namespace BioBank
             string sNote = "";
             string sSQL = "";
             string sPosition = "";
+            string exitEx = "";
+            string prefixExit = "";
+            string repeatPos = "";
             Dictionary<string, string> dicPos = new Dictionary<string, string>();
-            ArrayList arrPos = new ArrayList();
+            Dictionary<string, string> dicRepeatPos = new Dictionary<string, string>();
             try
             {
 
@@ -2454,8 +2489,25 @@ namespace BioBank
                         sPosition = sPosition + "(退)";
                     }
                     dicPos.Add(sLReqNo, sPosition);
-                    arrPos = checkSelfPos(dicPos);
-                    if (arrPos.Count > 0)
+                    dicRepeatPos = checkSelfPos(dicPos);
+                    //檢查有沒有亂退出檢體，檢體退出的位置必須與前一次位置一樣
+                    if (sPosition.Length > 2)
+                    {
+                        if (sPosition.Substring(sPosition.Length - 3, 3) == "(退)")
+                        {
+                            exitEx = sPosition.Substring(sPosition.Length - 3, 3);
+                            prefixExit = sPosition.Substring(0, sPosition.Length - 3);
+                            repeatPos = getBefPos(sLReqNo);
+                            if (prefixExit != repeatPos)
+                            {
+                                dgvShowLReqNo.Rows[0].Cells[1].Value = repeatPos;
+                                MessageBox.Show("請先退出檢體，再修改檢體位置!");
+                                return;
+                            }
+                        }
+                    }
+                    //如果有重複的位置就RETURN
+                    if (dicRepeatPos.Count > 0)
                     {
                         MessageBox.Show("檢體位置重複!");
                         return;
