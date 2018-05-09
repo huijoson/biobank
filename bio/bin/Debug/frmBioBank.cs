@@ -488,7 +488,7 @@ namespace BioBank
             return dt;*/
         }
 
-        string[] CheckColumn = { @"個案碼", "檢體管號碼", "病歷號", "性別", "出生日期", "檢體種類",
+        string[] CheckColumn = { @"個案碼", "檢體管號碼", "病歷號", "姓名", "性別", "出生日期", "檢體種類",
                                    "檢體採集日期", "檢體採集部位", "保存方式",  "罹病部位", "診斷名稱1", "檔案登錄人", "同意書編號", "同意書簽署日期" };
         string[] changeDate = { "出生日期", "檢體採集日期", "研究計劃簽署日期", "同意書簽署日期", "檢體離體時刻", "檢體處理時刻" };
         string ErrorString = "";
@@ -569,8 +569,10 @@ namespace BioBank
                     Warning += "病歷號不是身分證" + Environment.NewLine;
                 if (dt.Rows[i]["收案小組"].ToString() != cboTeamNo.Text.Substring(2, cboTeamNo.Text.Length - 2))
                     Warning += "所選收案小組與收案小組資料不同!\n";
+                
                 if (Warning.Length > 0)
                     dgvShowMsg.Rows.Add("第" + (i + 2) + "列", Warning);
+                
                 Warning = "";
             }
             if (dgvShowMsg.Rows.Count > 0)
@@ -842,6 +844,34 @@ namespace BioBank
         private ArrayList checkPos(Dictionary<string, string> dicPos)
         {
             string strSQL = "select distinct chNewLabPositon from [DB_BIO].[dbo].[BioPerMasterTbl]";
+            ArrayList alRepeatList = new ArrayList();
+            using (SqlConnection conn1 = BioBank_Conn.Class_biobank_conn.DB_BIO_conn())
+            {
+                conn1.Open();
+                SqlCommand sCmd = new SqlCommand(strSQL, conn1);
+                SqlDataReader sRead = sCmd.ExecuteReader();
+
+                if (sRead.HasRows)
+                {
+                    while (sRead.Read())
+                    {
+                        foreach (KeyValuePair<string, string> item in dicPos)
+                        {
+                            if (item.Value == ClsShareFunc.gfunCheck(sRead["chNewLabPositon"].ToString()))
+                            {
+                                alRepeatList.Add(item.Key);
+                            }
+                        }
+                    }
+                }
+
+                return alRepeatList;
+            }
+        }
+        //-------------------------確認自身檢體位置有沒有重複
+        private ArrayList checkSelfPos(Dictionary<string, string> dicPos)
+        {
+            string strSQL = "select distinct chNewLabPositon from [DB_BIO].[dbo].[BioPerMasterTbl] where chLabNo != '" + dicPos.First().Key + "'";
             ArrayList alRepeatList = new ArrayList();
             using (SqlConnection conn1 = BioBank_Conn.Class_biobank_conn.DB_BIO_conn())
             {
@@ -1328,19 +1358,29 @@ namespace BioBank
                     }
                     else
                     {
-                        sql += "chUseExpireDate >= '" + txtSDate.Text.ToString().Trim() + "' and ";
-                        sql += "chUseExpireDate <= '" + txtEDate.Text.ToString().Trim() + "' and ";
+                        if (txtEDate.Text.ToString().Trim() == "9991231")
+                        {
+                            sql += "(chUseExpireDate >= '" + txtSDate.Text.ToString().Trim() + "' or ";
+                            sql += "ISNULL(chUseExpireDate, '') = '') and ";
+                        }
+                        else
+                        {
+                            sql += "chUseExpireDate >= '" + txtSDate.Text.ToString().Trim() + "' and ";
+                            sql += "chUseExpireDate <= '" + txtEDate.Text.ToString().Trim() + "' and ";
+                        }
                     }
                 }
                 else
                 {
                     if (txtSDate.Text.ToString().Trim() == "")
                     {
-                        txtSDate.Text = txtEDate.Text.ToString().Trim();
+                        MessageBox.Show("請輸入查詢起始日期!");
+                        return;
                     }
                     if (txtEDate.Text.ToString().Trim() == "")
                     {
-                        txtEDate.Text = txtSDate.Text.ToString().Trim();
+                        MessageBox.Show("請輸入查詢結束日期!");
+                        return;
                     }
                     sql += "chUseExpireDate = '" + txtSDate.Text.ToString().Trim() + "' and ";
                 }
@@ -2404,8 +2444,8 @@ namespace BioBank
                     {
                         sPosition = sPosition + "(退)";
                     }
-                    dicPos.Add("1", sPosition);
-                    arrPos = checkPos(dicPos);
+                    dicPos.Add(sLReqNo, sPosition);
+                    arrPos = checkSelfPos(dicPos);
                     if (arrPos.Count > 0)
                     {
                         MessageBox.Show("檢體位置重複!");
@@ -4249,6 +4289,7 @@ namespace BioBank
             if(e.KeyChar == Convert.ToChar(13))
             {
                 txtEDate.Focus();
+                txtEDate.Text = txtSDate.Text;
             }
         }
 
