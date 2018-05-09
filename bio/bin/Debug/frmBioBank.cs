@@ -711,7 +711,7 @@ namespace BioBank
         {
             //insert Event Log: 5. --匯入Excel (start)--
             ClsShareFunc.insEvenLogt("5", ClsShareFunc.sUserName, "", "", "匯入Excel (start)--" + sExcelName);
-            ArrayList posList = new ArrayList();
+            Dictionary<string, string> dicRepeat = new Dictionary<string, string>();
             Dictionary<string, string> dicPos = new Dictionary<string, string>();
             Dictionary<string, string> dicSpacePos = new Dictionary<string, string>();
             Boolean checkFlag = false;
@@ -748,8 +748,8 @@ namespace BioBank
                             {
                                 if (item.Value == item2.Key)
                                 {
-                                    dgvShowMsg.Rows.Add("第" + item.Key + "列", "檢體位置重複: " +
-                                    dgvShowExcel.Rows[Convert.ToInt32(item.Key) - 1].Cells["檢體管號碼"].Value.ToString() + " : " +
+                                    dgvShowMsg.Rows.Add("第" + item.Key + "列", "輸入檢體位置重複! 檢體管號碼:" +
+                                    dgvShowExcel.Rows[Convert.ToInt32(item.Key) - 1].Cells["檢體管號碼"].Value.ToString() + " ,新檢體位置:" +
                                     dgvShowExcel.Rows[Convert.ToInt32(item.Key) - 1].Cells["新檢體位置"].Value.ToString());
                                 }
                             }
@@ -760,17 +760,25 @@ namespace BioBank
                         Console.WriteLine("檢查目前輸入的檢體位置有無重複的錯誤: " + ex.Message);
                     }
                 }
-                posList = checkPos(dicPos);
-                if (posList.Count > 0)
+                dicRepeat = checkPos(dicPos);
+                if (dicRepeat.Count > 0)
                 {
                     try
                     {
-                        for (int i = 0; i <= posList.Count; i++)
+                        foreach (KeyValuePair<string, string> item in dicRepeat)
                         {
-                            dgvShowMsg.Rows.Add("第" + posList[i] + "列", "檢體位置重複: " +
-                                        dgvShowExcel.Rows[Convert.ToInt32(posList[i]) - 1].Cells["檢體管號碼"].Value.ToString() + " : " +
-                                        dgvShowExcel.Rows[Convert.ToInt32(posList[i]) - 1].Cells["新檢體位置"].Value.ToString());
+                            dgvShowMsg.Rows.Add("第" + item.Key + "列", "與資料表檢體位置重複! 檢體管號碼:" +
+                                dgvShowExcel.Rows[Convert.ToInt32(item.Key) - 1].Cells["檢體管號碼"].Value.ToString() + ", 新檢體位置:" +
+                                dgvShowExcel.Rows[Convert.ToInt32(item.Key) - 1].Cells["新檢體位置"].Value.ToString() + " 與 檢體碼:" +
+                                item.Value.ToString() + " 位置重複");
                         }
+
+                        //for (int i = 0; i <= dicRepeat.Count; i++)
+                        //{
+                        //    dgvShowMsg.Rows.Add("第" + dicRepeat + "列", "檢體位置重複: " +
+                        //                dgvShowExcel.Rows[Convert.ToInt32(posList[i]) - 1].Cells["檢體管號碼"].Value.ToString() + " : " +
+                        //                dgvShowExcel.Rows[Convert.ToInt32(posList[i]) - 1].Cells["新檢體位置"].Value.ToString());
+                        //}
                     }
                     catch (Exception ex)
                     {
@@ -792,6 +800,7 @@ namespace BioBank
                                 "");
                 }
                 MessageBox.Show("共 " + dgvShowMsg.Rows.Count + " 筆檢體位置空白，檢體位置不可空白!");
+                buttonPrint.Visible = true;
                 return;
             }
 
@@ -840,11 +849,11 @@ namespace BioBank
                 textBoxFilePath.Text = "";
             }
         }
-        //-------------------------確認檢體位置有沒有重複
-        private ArrayList checkPos(Dictionary<string, string> dicPos)
+        //-------------------------確認檢體位置有沒有重複 key:編號 value:新檢體位置
+        private Dictionary<string,string> checkPos(Dictionary<string, string> dicPos)
         {
-            string strSQL = "select distinct chNewLabPositon from [DB_BIO].[dbo].[BioPerMasterTbl]";
-            ArrayList alRepeatList = new ArrayList();
+            string strSQL = "select distinct chNewLabPositon, chLabNo from [DB_BIO].[dbo].[BioPerMasterTbl]";
+            Dictionary<string, string> dicRepeat = new Dictionary<string, string>();
             using (SqlConnection conn1 = BioBank_Conn.Class_biobank_conn.DB_BIO_conn())
             {
                 conn1.Open();
@@ -859,13 +868,13 @@ namespace BioBank
                         {
                             if (item.Value == ClsShareFunc.gfunCheck(sRead["chNewLabPositon"].ToString()))
                             {
-                                alRepeatList.Add(item.Key);
+                                dicRepeat.Add(item.Key, ClsShareFunc.gfunCheck(sRead["chLabNo"].ToString()));
                             }
                         }
                     }
                 }
-
-                return alRepeatList;
+                buttonPrint.Visible = true;
+                return dicRepeat;
             }
         }
         //-------------------------確認自身檢體位置有沒有重複
@@ -2429,10 +2438,10 @@ namespace BioBank
                 tmpLReqNo = txtModLReqNo.Text;
                 sLReqNo = dgvShowLReqNo.Rows[0].Cells[0].Value.ToString().Trim();
                 sPosition = dgvShowLReqNo.Rows[0].Cells[1].Value == null ? "" : dgvShowLReqNo.Rows[0].Cells[1].Value.ToString().Trim();
-                sYear = dgvShowLReqNo.Rows[0].Cells[2].Value.ToString().Trim();
-                sRange = dgvShowLReqNo.Rows[0].Cells[3].Value.ToString().Trim();
-                sStatus = dgvShowLReqNo.Rows[0].Cells[4].Value.ToString().Trim();
-                sNote = dgvShowLReqNo.Rows[0].Cells[5].Value.ToString().Trim();
+                sYear = dgvShowLReqNo.Rows[0].Cells[2].Value == null ? "" : dgvShowLReqNo.Rows[0].Cells[2].Value.ToString().Trim();
+                sRange = dgvShowLReqNo.Rows[0].Cells[3].Value == null ? "" : dgvShowLReqNo.Rows[0].Cells[3].Value.ToString().Trim();
+                sStatus = dgvShowLReqNo.Rows[0].Cells[4].Value == null ? "" : dgvShowLReqNo.Rows[0].Cells[4].Value.ToString().Trim();
+                sNote = dgvShowLReqNo.Rows[0].Cells[5].Value == null ? "" : dgvShowLReqNo.Rows[0].Cells[5].Value.ToString().Trim();
                 if (sPosition == "")
                 {
                     MessageBox.Show("檢體位置不得為空白!");
